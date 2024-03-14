@@ -1,0 +1,360 @@
+import { ChangeEvent, FC, useState } from 'react'
+import {
+	BsDownload,
+	BsFillFileEarmarkPdfFill,
+	BsFillPeopleFill,
+} from 'react-icons/bs'
+import { IoLogoWhatsapp } from 'react-icons/io5'
+import { LuHome, LuKeySquare } from 'react-icons/lu'
+import { SiGooglemaps } from 'react-icons/si'
+import { useParams } from 'react-router-dom'
+import { ToastContainer, toast } from 'react-toastify'
+import { instance } from '../api/axios.ts'
+import { useAppSelector } from '../hooks/redux.ts'
+import { IProperty } from '../models/IProperty.ts'
+import { checkAuth, fetchProperty } from '../store/reducers/ActionsCreator.ts'
+
+export const AssetPage: FC = () => {
+	const [inputValue, setInputValue] = useState<number>()
+
+	const { id } = useParams<{ id: string }>() // Ensure the id is a string
+	const properties = useAppSelector(state => state.property.property)
+
+	// Find the property by id
+	const property = properties?.find((item: IProperty) => item.id === id)
+
+	const user = useAppSelector(state => state.user.user)
+
+	const createPurchase = async (tokens: number) => {
+		try {
+			const data = {
+				propertyId: id,
+				buyerId: user!.id,
+				tokens: tokens,
+			}
+
+			await instance.post(`/purchase`, data)
+			// If you need to do something after the request, you can put it here
+			fetchProperty()
+			checkAuth()
+			toast.success(`You buy ${tokens} pieces`)
+		} catch (error) {
+			console.error('Error creating purchase:', error)
+			toast.error('Error creating purchase. Please try again.')
+		}
+	}
+
+	const handleInputChange = (e: ChangeEvent<HTMLInputElement>) => {
+		const value = parseInt(e.target.value, 10)
+		if (
+			!isNaN(value) &&
+			value >= 0 &&
+			value <= property!.availableTokens &&
+			value <= user!.balance / property!.priceToken
+		) {
+			setInputValue(value)
+		}
+	}
+
+	const handleMaxButtonClick = () => {
+		const maxTokens = Math.min(
+			property!.availableTokens,
+			Math.floor(user!.balance / property!.priceToken)
+		)
+		setInputValue(maxTokens)
+	}
+
+	const formattedDescription = {
+		__html: property?.description,
+	}
+
+	const purchasedTokens = property!.tokens - property!.availableTokens
+	const percentagePurchased = (purchasedTokens / property!.tokens) * 100
+	return (
+		<div className='md:ml-[20px] mt-5 md:mt-0 flex flex-col md:flex-row'>
+			{property ? (
+				<>
+					<div className='w-full md:w-2/3 flex flex-col rounded-xl bg-color--primary-bg min-h-0 overflow-hidden p-5'>
+						<p className='text-2xl text-22-bold-140'>{property.name}</p>
+						<div className='flex mt-3'>
+							<div className='rounded-xl inline-block h-6  bg-green-200 px-1 border-green-600 border-[1px]'>
+								<p className='text-sm text-green-600'>On sale</p>
+							</div>
+							<div className='ml-2 rounded-xl flex h-6 px-2 border-gray-400 border-[1px]'>
+								<SiGooglemaps className='w-3 mt-0.5 text-gray-400' />
+								<p className='text-sm text-gray-400 ml-1'>
+									{property.mainLocation}
+								</p>
+							</div>
+							<div className='ml-2 rounded-xl flex bg-green-200 h-6 px-2 border-green-600 border-[1px]'>
+								<LuKeySquare className='w-3 text-green-600' />
+								<p className='text-sm ml-1 text-green-600'>Rented</p>
+							</div>
+						</div>
+						<div className='w-full flex flex-col md:flex-row mt-3 h-auto rounded-xl'>
+							<div className='w-full md:w-4/5 mr-3 mb-2 md:mb-0 items-center justify-center'>
+								<img
+									src={`/villas/${property.photoUrls[0]}`}
+									className='object-cover h-auto md:h-[548px] md:max-h-full rounded-xl'
+									alt=''
+								/>
+							</div>
+							<div className='flex w-full md:w-1/5 flex-col h-[548px]'>
+								<img
+									src={`/villas/${property.photoUrls[1]}`}
+									alt='Small Image 1'
+									className='mb-2 h-auto md:h-[130px] object-cover rounded-xl'
+								/>
+								<img
+									src={`/villas/${property.photoUrls[2]}`}
+									alt='Small Image 2'
+									className='mb-2 h-auto md:h-[130px] object-cover rounded-xl'
+								/>
+								<img
+									src={`/villas/${property.photoUrls[3]}`}
+									alt='Small Image 2'
+									className='mb-2 h-auto md:h-[130px] object-cover rounded-xl'
+								/>
+								<img
+									src={`/villas/${property.photoUrls[4]}`}
+									alt='Small Image 3'
+									className='object-cover h-auto md:h-[130px] rounded-xl'
+								/>
+							</div>
+						</div>
+						<div className='flex flex-col md:flex-row mt-[350px] md:mt-5'>
+							<p className='text-xl px-5'>Details</p>
+							<p className='text-xl px-5'>Documents</p>
+							<p className='text-xl px-5'>Financials</p>
+						</div>
+						<h4 className='mt-7'>Details</h4>
+						<div className='flex mt-3 flex-col md:flex-row justify-around'>
+							<div className='bg-color--secondary-bg border border-color--border flex flex-col items-center justify-center my-2 md:my-0 rounded-xl px-16 py-2'>
+								<svg
+									width='18'
+									className='mb-2'
+									height='19'
+									viewBox='0 0 24 25'
+									fill='none'
+									xmlns='http://www.w3.org/2000/svg'>
+									<path
+										d='M20.5359 2.20001H3.46392C2.39249 2.20001 1.52393 3.06858 1.52393 4.14001V21.212C1.52393 22.2834 2.39249 23.152 3.46392 23.152H20.5359C21.6074 23.152 22.4759 22.2834 22.4759 21.212V4.14001C22.4759 3.06858 21.6074 2.20001 20.5359 2.20001Z'
+										stroke='#00B4CC'
+										strokeWidth='2.425'></path>
+									<path
+										d='M11 10V13.2C11 13.6418 10.6337 14 10.1818 14H2'
+										stroke='#00B4CC'
+										strokeWidth='2.425'></path>
+									<path
+										d='M11 3V7.656'
+										stroke='#00B4CC'
+										strokeWidth='2.425'></path>
+									<path
+										d='M16 2C16 5.42858 18.7794 8.208 22.208 8.208'
+										stroke='#00B4CC'
+										strokeWidth='2.425'></path>
+									<path
+										d='M22.536 15H14.7761C14.3475 15 14 15.3474 14 15.776V23.536'
+										stroke='#00B4CC'
+										strokeWidth='2.425'></path>
+								</svg>
+								<p>{property.houseArea} ㎡</p>
+							</div>
+							<div className='bg-color--secondary-bg border border-color--border flex flex-col items-center my-2 md:my-0 justify-center rounded-xl px-16 py-2'>
+								<LuHome className='text-2xl text-[#00B4CC] mb-2' />
+								<p>Commerce</p>
+							</div>
+							<div className='bg-color--secondary-bg border border-color--border flex flex-col items-center my-2 md:my-0 justify-center rounded-xl px-16 py-2'>
+								<BsFillPeopleFill className='text-2xl text-[#00B4CC] mb-2' />
+								<p>Occupied</p>
+							</div>
+						</div>
+						<div>
+							<p className='text-gray-300 text-xl my-5'>About the property</p>
+							<p
+								//@ts-ignore
+								dangerouslySetInnerHTML={formattedDescription}
+							/>
+						</div>
+						<div className='mt-5'>
+							<iframe
+								width='100%'
+								height='554'
+								src={property.videoUrl}
+								allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture'
+								allowFullScreen
+								title='Embedded youtube'
+							/>
+						</div>
+						<h4 className='my-7'>Documents</h4>
+						<div className='flex flex-col'>
+							<div className='flex mb-3 bg-color--border rounded-xl px-4 text-lg py-5 items-center justify-between'>
+								<BsFillFileEarmarkPdfFill className='text-2xl cursor-pointer transition-colors duration-300 ease-in-out hover:text-sky-600' />{' '}
+								DAO LLC Reference{' '}
+								<BsDownload className='text-2xl cursor-pointer transition-colors duration-300 ease-in-out hover:text-sky-600' />
+							</div>
+						</div>
+						<h4 className='my-7 text-white'>Financials</h4>
+						<div className='ml-5 flex-col flex'>
+							<div className='flex justify-between mb-5'>
+								<p className='text-white text-lg'>Total Investment Value</p>
+								<p className='text-white text-lg'>
+									${property.price.toLocaleString()}
+								</p>
+							</div>
+							<div className='flex justify-between mb-3'>
+								<p className='text-gray-200'>Legal fees (1.35%)</p>
+								<p className='text-gray-200'>
+									${property.legalFees.toLocaleString()}
+								</p>
+							</div>
+							<hr />
+							<div className='flex justify-between my-4'>
+								<p className='text-white text-lg'>Base price of the asset</p>
+								<p className='text-white text-lg'>
+									${(property.price - property.legalFees).toLocaleString()}
+								</p>
+							</div>
+							<div className='flex justify-between mb-5'>
+								<p className='text-gray-200'>ROI</p>
+								<p className='text-gray-200'>{property.roi}%</p>
+							</div>
+							<div className='flex justify-between mb-3'>
+								<p className='text-gray-200'>Rent per year (expected)</p>
+								<p className='text-gray-200'>
+									${property.rentPerYear.toLocaleString()}
+								</p>
+							</div>
+							<div className='flex justify-between mb-3'>
+								<p className='text-white text-lg'>Facility management (30%)</p>
+								<p className='text-white text-lg'>
+									${property.facilityManagement.toLocaleString()}
+								</p>
+							</div>
+							<p className='text-xs'>
+								The current calculated values are approximate, they may vary up
+								or down, depending on the rental of each individual property.
+							</p>
+						</div>
+						<h4 className='my-7'>Location</h4>
+						<a
+							href='#'
+							className='font-bold cursor-pointer transition-colors duration-300 ease-in-out hover:text-sky-600'>
+							{property.mainLocation}
+						</a>
+						<div>
+							<iframe
+								className='w-full mt-3 min-h-[400px] h-auto'
+								loading='lazy'
+								allowFullScreen
+								referrerPolicy='no-referrer-when-downgrade'
+								src={`https://www.google.com/maps/embed/v1/place?key=AIzaSyD90dblmkKeJB699g-Iggzm4TCzr1QlGdg
+								&q=${property.location1},${property.location2}`}></iframe>
+						</div>
+						<div className='w-full flex justify-between items-center rounded-xl bg-color--secondary-bg mt-7 py-8 px-4'>
+							<div>
+								<h4 className='text-white'>
+									Have more questions about property?
+								</h4>
+							</div>
+							<div className='rounded-xl flex items-center p-4 justify-center bg-green-600 border-[1px] border-green-800 cursor-pointer'>
+								<IoLogoWhatsapp className='text-green-200 text-2xl' />
+								<p className='text-green-200 mx-3'>Call us an WhatsApp</p>
+							</div>
+						</div>
+					</div>
+					<div className='flex h-1/2 flex-col md:mr-3 md:w-1/3'>
+						<div className='ml-0 md:ml-[10px] my-5 md:my-0 h-1/2 bg-color--primary-bg rounded-xl w-full '>
+							<div className='bg-color--secondary-bg p-5 items-center flex rounded-t-xl justify-between'>
+								<div className='py-5'>
+									<p className='pb-4'>Property price</p>
+									<p className='text-sky-500 font-bold text-[37px]'>
+										${property.price.toLocaleString()}
+									</p>
+								</div>
+								<div>
+									<p className='text-gray-500 text-3xl'>
+										ROI: <span className='text-sky-500'>{property.roi}%</span>
+									</p>
+								</div>
+							</div>
+							<div className='p-5'>
+								<div className='flex text-sm items-center justify-between'>
+									<p>
+										Fractions Price:{' '}
+										<span className='text-sky-500 text-lg font-bold'>
+											${property.priceToken}
+										</span>
+									</p>
+									<p>
+										Collected:{' '}
+										<span className='font-bold'>
+											{percentagePurchased.toFixed(2)}%
+										</span>
+									</p>
+								</div>
+								<div className='mt-4'>
+									<div className='styles_progressBar__Xp6qx'>
+										<div className='styles_fillerWrapper__5cKm8'>
+											<div
+												className='styles_filler__fITGx'
+												style={{ width: `${percentagePurchased.toFixed(2)}%` }}>
+												<span className='styles_collectedText__p6_dr'>
+													Collected :
+												</span>
+											</div>
+											<div className='styles_collected__ZFp3q'>Collected :</div>
+											<div className='styles_progress__YVFzC'>
+												{percentagePurchased.toFixed(2)}%
+											</div>
+										</div>
+									</div>
+								</div>
+								<div className='flex mt-4 justify-between'>
+									<p>Buy amount</p>
+									{user ? (
+										<p>Your balance: {user.balance}</p>
+									) : (
+										<p>Your balance: 0</p>
+									)}
+								</div>
+								<div className='flex items-center mt-2 bg-gray-200 border rounded-xl p-1'>
+									<input
+										type='number'
+										max={property.availableTokens}
+										value={inputValue}
+										onChange={handleInputChange}
+										className='w-full p-2 hover:none bg-gray-200 text-gray-600 font-bold text-lg rounded-l-md focus:outline-none '
+									/>
+									<button
+										onClick={handleMaxButtonClick}
+										className='px-4 py-2 text-sky-400 font-bold focus:outline-none'>
+										MAX
+									</button>
+								</div>
+								{user ? (
+									<button
+										onClick={() => createPurchase(inputValue!)}
+										className='bg-sky-400 w-full h-12 rounded-xl font-bold text-white mt-4'>
+										Buy Tokens
+									</button>
+								) : (
+									<button
+										disabled
+										type='submit'
+										className='bg-sky-400 disabled:bg-gray-400 w-full h-12 rounded-xl font-bold text-white mt-4'>
+										Buy Tokens
+									</button>
+								)}
+							</div>
+						</div>
+					</div>
+
+					<ToastContainer />
+				</>
+			) : (
+				<p>Loading</p>
+			)}
+		</div>
+	)
+}

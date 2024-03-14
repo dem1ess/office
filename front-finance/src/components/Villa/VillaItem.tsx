@@ -1,0 +1,93 @@
+import { Link } from 'react-router-dom'
+import { IProperty } from '../../models/IProperty.ts'
+
+interface IProps {
+	property: IProperty
+}
+export function VillaItem({ property }: IProps) {
+	const purchasedTokens = property.tokens - property.availableTokens
+	const percentagePurchased = (purchasedTokens / property.tokens) * 100
+	return (
+		<div className='flex w-full m-0 md:mr-5 bg-color--primary-bg flex-col border border-color--border rounded-xl p-5'>
+			<Link to={`/asset/${property.id}`}>
+				<div className='w-full'>
+					<div
+						style={{ backgroundImage: `url(villas/${property.photoUrls[0]})` }}
+						className='bg-cover bg-center h-[348px] rounded-xl'></div>
+				</div>
+				<div className='w-full mt-5'>
+					<div className='flex justify-between'>
+						<div className='flex flex-col'>
+							<p className='styles_addressLine__7Wf2L'>{property.name}</p>
+							<p className='styles_city__pfuUW py-5'>Indonesia , Bali</p>
+						</div>
+						<div
+							className='styles_status__0gCRC'
+							style={{ backgroundColor: '#e6f9e5', padding: '4px 16px' }}>
+							<div
+								className='styles_statusDot__xGtp_'
+								style={{ backgroundColor: '#228d21' }}></div>
+							<p
+								style={{ color: '#228d21' }}
+								className='styles_statusTitle__fz_3b'>
+								On Sale
+							</p>
+						</div>
+					</div>
+					<div className='flex justify-between pt-8'>
+						<div>
+							<p className='mb-4'>Price</p>
+							<p className='text-sky-40 0 py-5 font-bold text-[37px]'>
+								$ {property.price.toLocaleString()}
+							</p>
+						</div>
+						<div>
+							<p className='mb-4'>Fraction Price</p>
+							<p className='text-sky-400 py-5 font-bold text-[37px]'>
+								$ {property.priceToken}
+							</p>
+						</div>
+					</div>
+					<div className='py-5 styles_bottomInfo__X25WU'>
+						<div className='styles_bottomElement__RparB'>
+							<div className='styles_tokenIrr__Gu31I'>
+								<div className='flex justify-start'>
+									<p className='pb-3'>ROI</p>
+								</div>
+								<p className='styles_bottomValue__A3PzE'>{property.roi}%</p>
+							</div>
+						</div>
+
+						<div className='styles_bottomElement__RparB'>
+							<div className='styles_tokenRentStart__BovuN'>
+								<div className='flex justify-start'>
+									<p className='pb-3'>Rent start date</p>
+								</div>
+								<p className='styles_bottomValue__A3PzE styles_rentStartDate__7eaEr'>
+									2023-12-10
+								</p>
+							</div>
+						</div>
+					</div>
+					<div className='mt-2 md:mt-[32px]'>
+						<div className='styles_progressBar__Xp6qx'>
+							<div className='styles_fillerWrapper__5cKm8'>
+								<div
+									className='styles_filler__fITGx'
+									style={{ width: `${percentagePurchased}%` }}>
+									<span className='styles_collectedText__p6_dr'>
+										Collected :
+									</span>
+								</div>
+								<div className='styles_collected__ZFp3q'>Collected :</div>
+								<div className='styles_progress__YVFzC'>
+									{percentagePurchased.toFixed(2)}%
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</Link>
+		</div>
+	)
+}
