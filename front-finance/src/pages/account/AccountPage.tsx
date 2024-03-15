@@ -1,6 +1,5 @@
 import { useEffect } from 'react'
 import { useDispatch } from 'react-redux'
-import { Link } from 'react-router-dom'
 import { MainVillaComponent } from '../../components/Villa/MainVilla.tsx'
 import { useAppSelector } from '../../hooks/redux.ts'
 import { IPurchase } from '../../models/IPurchase.ts'

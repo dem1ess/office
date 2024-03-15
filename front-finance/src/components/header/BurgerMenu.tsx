@@ -7,6 +7,7 @@ import {RootState} from "../../store/store.ts";
 interface BurgerMenuProps {
 	show: boolean
 	onClose: () => void
+	logoutHandler: () => void
 }
 
 const BurgerMenu: React.FC<BurgerMenuProps> = ({ show, onClose, logoutHandler }) => {

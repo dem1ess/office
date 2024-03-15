@@ -6,7 +6,6 @@ import {
 } from 'react-icons/bs'
 import { IoLogoWhatsapp } from 'react-icons/io5'
 import { LuHome, LuKeySquare } from 'react-icons/lu'
-import { SiGooglemaps } from 'react-icons/si'
 import { useParams } from 'react-router-dom'
 import { ToastContainer, toast } from 'react-toastify'
 import { instance } from '../api/axios.ts'
