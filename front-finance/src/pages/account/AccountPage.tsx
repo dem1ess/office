@@ -32,6 +32,23 @@ export default function AccountPage() {
 		)
 	})
 
+
+	const incomes = purchases.map(purchase => {
+		// Находим свойство с соответствующим propertyId
+		const property = properties.find(property => property.id === purchase.propertyId);
+
+		if (property) {
+			const income = purchase.tokens * (((property.rentPerYear - (0.3 * property.rentPerYear)) / 1000)/365);
+			return income;
+		} else {
+			// Если свойство не найдено, возвращаем 0 дохода
+			return 0;
+		}
+	});
+
+	const totalIncome = incomes.reduce((acc, income) => acc + income, 0);
+
+
 	const propertiesWithTokens = propertiesWithShare.map(property => {
 		const totalTokens = purchases.reduce((acc, purchase) => {
 			if (purchase.propertyId === property.id && purchase.buyerId === user.id) {
@@ -39,6 +56,7 @@ export default function AccountPage() {
 			}
 			return acc
 		}, 0)
+		console.log(propertiesWithShare)
 		return { ...property, totalTokens }
 	})
 
@@ -67,47 +85,17 @@ export default function AccountPage() {
 				<div className='flex flex-col md:flex-row'>
 					<div className='w-full md:w-1/3 mx-0 md:mx-5'>
 						<div className='flex w-full md:w-2/3'>
-							<div className='text-xl text-white font-bold mb-4'>
+							<div className='text-xl text-white font-bold mb-0 mt-4 md:mt-0 md:mb-4'>
 								Asset Overview
 							</div>
 						</div>
 						<div className={s.totalRentInfo}>
-							<p className='text-xl'>Total Rent Balance</p>
+							<p className='text-xl mt-4'>Total Rent Balance</p>
 							<div className={`${s.balanceGraphic} py-5`}>
 								<div className={s.rentBalanceClaim}>
-									<p className='text-3xl pb-5'>
-										${(user.balance + totalSpent).toLocaleString()}
+									<p className='text-6xl font-bold text-green-400 pb-5'>
+										${(totalIncome).toLocaleString()}
 									</p>
-									<div className={s.buttons}>
-										<button
-											className={`${s.claimAllButton} Button_root__0ygym text-white`}>
-											<div className={s.arrowWrapper}>
-												<svg
-													width='10'
-													height='10'
-													viewBox='0 0 16 16'
-													fill='none'
-													xmlns='http://www.w3.org/2000/svg'
-													className={s.arrowIcon}>
-													<path
-														d='M13.5 8H2.5'
-														stroke='#58667E'
-														strokeWidth='2'
-														strokeLinecap='round'
-														strokeLinejoin='round'></path>
-													<path
-														d='M7 3.5L2.5 8L7 12.5'
-														stroke='#58667E'
-														strokeWidth='2'
-														strokeLinecap='round'
-														strokeLinejoin='round'></path>
-												</svg>
-											</div>
-											<Link to='/'>
-												<p>Claim All</p>
-											</Link>
-										</button>
-									</div>
 								</div>
 							</div>
 							<div className='styles_tableWrapper__ZU9fr'>
@@ -238,7 +226,7 @@ export default function AccountPage() {
 												</div>
 												<div>
 													<p className='DetailsTable_details_text_grey__nTKdr'>
-														Total Tokens
+														Total Units
 													</p>
 													<p className='DetailsTable_details_text_purple__SEzmS'>
 														+ {totalTokens}
@@ -265,7 +253,7 @@ export default function AccountPage() {
 														Total Property Value
 													</p>
 													<p className='DetailsTable_details_text_purple__SEzmS'>
-														${totalSpent}
+														${totalSpent.toLocaleString()}
 													</p>
 												</div>
 											</td>
@@ -275,29 +263,32 @@ export default function AccountPage() {
 							</div>
 						</div>
 						<div className='flex flex-col mt-3 w-full'>
-							<div className='p-5 border flex flex-col border-color--border rounded-b-xl'>
-								<p className='styles_headerTitle__6d1cy'>Order History</p>
-								<div className='px-7 flex justify-between'>
-									<p>ID:</p> <p>Fractions:</p>
-									<p>Total Cost:</p>
+							<div className='md:p-5 border flex flex-col border-color--border rounded-b-xl'>
+								<p className='styles_headerTitle__6d1cy ml-5 mt-3'>Order History</p>
+								<div className='md: px-7 flex justify-between'>
+									<p>ID</p>
+									<div className="flex">
+										<p className='mr-9'>Unit</p>
+										<p>Total</p>
+									</div>
 								</div>
 								{purchases.map(p => (
-									<div className='flex flex-col bg-color--secondary-bg px-5 py-1 justify-center m-3 rounded'>
-										<div className='flex flex-row text-white'>
+									<div className='flex flex-col bg-color--secondary-bg md:px-5 px-1 py-1 justify-center m-3 rounded'>
+										<div className='flex flex-row  justify-between text-white'>
 											<div className='flex flex-col mr-2'>
 												<p>{p.id}</p>
 											</div>{' '}
-											<div className='flex flex-col mr-2'>
-												<p className='px-4'> {p.tokens}</p>
+											<div className='flex flex-col '>
+												<p className='md:px-4 px-2'> {p.tokens}</p>
 											</div>
-											<p>{p.totalCost}</p>
+											<p>{`${p.totalCost.toLocaleString()}$`}</p>
 										</div>
 									</div>
 								))}
 							</div>
 						</div>
 					</div>
-					<div className='w-full'>
+					<div className='mt-5 md:mt-0 w-full'>
 						<div className={s.headerWrapper}>
 							<div className='text-xl text-white font-bold mb-4'>
 								Your Properties

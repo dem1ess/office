@@ -43,7 +43,7 @@ export function HeroSelections() {
 						id='w-node-_39a22fe0-22f0-0bcf-597e-c84a48ee7f06-48ee7eec'
 						to='/'
 						target='_blank'
-						className='button small_sign static-light w-inline-block'>
+						className='button whity small_sign static-light w-inline-block'>
 						<div>Sign up / Log in</div>
 					</Link>
 				</div>

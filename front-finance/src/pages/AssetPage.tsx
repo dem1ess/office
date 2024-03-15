@@ -71,21 +71,16 @@ export const AssetPage: FC = () => {
 	const purchasedTokens = property!.tokens - property!.availableTokens
 	const percentagePurchased = (purchasedTokens / property!.tokens) * 100
 	return (
-		<div className='md:ml-[20px] mt-5 md:mt-0 flex flex-col md:flex-row'>
+		<div className='md:ml-[20px] ml-0 mt-5 md:mt-0 flex flex-col-reverse md:flex-row'>
 			{property ? (
 				<>
 					<div className='w-full md:w-2/3 flex flex-col rounded-xl bg-color--primary-bg min-h-0 overflow-hidden p-5'>
 						<p className='text-2xl text-22-bold-140'>{property.name}</p>
 						<div className='flex mt-3'>
-							<div className='rounded-xl inline-block h-6  bg-green-200 px-1 border-green-600 border-[1px]'>
+							<div className='rounded-xl inline-block bg-green-200 px-1 border-green-600 border-[1px]'>
 								<p className='text-sm text-green-600'>On sale</p>
 							</div>
-							<div className='ml-2 rounded-xl flex h-6 px-2 border-gray-400 border-[1px]'>
-								<SiGooglemaps className='w-3 mt-0.5 text-gray-400' />
-								<p className='text-sm text-gray-400 ml-1'>
-									{property.mainLocation}
-								</p>
-							</div>
+
 							<div className='ml-2 rounded-xl flex bg-green-200 h-6 px-2 border-green-600 border-[1px]'>
 								<LuKeySquare className='w-3 text-green-600' />
 								<p className='text-sm ml-1 text-green-600'>Rented</p>
@@ -99,7 +94,7 @@ export const AssetPage: FC = () => {
 									alt=''
 								/>
 							</div>
-							<div className='flex w-full md:w-1/5 flex-col h-[548px]'>
+							<div className='flex w-full md:w-1/5 flex-col md:h-[548px]'>
 								<img
 									src={`/villas/${property.photoUrls[1]}`}
 									alt='Small Image 1'
@@ -122,12 +117,8 @@ export const AssetPage: FC = () => {
 								/>
 							</div>
 						</div>
-						<div className='flex flex-col md:flex-row mt-[350px] md:mt-5'>
-							<p className='text-xl px-5'>Details</p>
-							<p className='text-xl px-5'>Documents</p>
-							<p className='text-xl px-5'>Financials</p>
-						</div>
-						<h4 className='mt-7'>Details</h4>
+
+						<h4 className='mt-7 text-white'>Details</h4>
 						<div className='flex mt-3 flex-col md:flex-row justify-around'>
 							<div className='bg-color--secondary-bg border border-color--border flex flex-col items-center justify-center my-2 md:my-0 rounded-xl px-16 py-2'>
 								<svg
@@ -158,15 +149,15 @@ export const AssetPage: FC = () => {
 										stroke='#00B4CC'
 										strokeWidth='2.425'></path>
 								</svg>
-								<p>{property.houseArea} ㎡</p>
+								<p>{property.landArea} ㎡</p>
 							</div>
 							<div className='bg-color--secondary-bg border border-color--border flex flex-col items-center my-2 md:my-0 justify-center rounded-xl px-16 py-2'>
 								<LuHome className='text-2xl text-[#00B4CC] mb-2' />
-								<p>Commerce</p>
+								<p>{property.houseArea} ㎡</p>
 							</div>
 							<div className='bg-color--secondary-bg border border-color--border flex flex-col items-center my-2 md:my-0 justify-center rounded-xl px-16 py-2'>
 								<BsFillPeopleFill className='text-2xl text-[#00B4CC] mb-2' />
-								<p>Occupied</p>
+								<p>{property.distanceToSea}</p>
 							</div>
 						</div>
 						<div>
@@ -236,10 +227,10 @@ export const AssetPage: FC = () => {
 								or down, depending on the rental of each individual property.
 							</p>
 						</div>
-						<h4 className='my-7'>Location</h4>
+						<h4 className='mt-7 mb-3 text-white'>Location</h4>
 						<a
 							href='#'
-							className='font-bold cursor-pointer transition-colors duration-300 ease-in-out hover:text-sky-600'>
+							className='font-bold cursor-pointer pl-5 pb-2 text-white transition-colors duration-300 ease-in-out hover:text-sky-600'>
 							{property.mainLocation}
 						</a>
 						<div>
@@ -267,13 +258,13 @@ export const AssetPage: FC = () => {
 						<div className='ml-0 md:ml-[10px] my-5 md:my-0 h-1/2 bg-color--primary-bg rounded-xl w-full '>
 							<div className='bg-color--secondary-bg p-5 items-center flex rounded-t-xl justify-between'>
 								<div className='py-5'>
-									<p className='pb-4'>Property price</p>
+									<p className='pb-4'>Estate price</p>
 									<p className='text-sky-500 font-bold text-[37px]'>
 										${property.price.toLocaleString()}
 									</p>
 								</div>
 								<div>
-									<p className='text-gray-500 text-3xl'>
+									<p className='text-gray-500 pt-8 text-3xl'>
 										ROI: <span className='text-sky-500'>{property.roi}%</span>
 									</p>
 								</div>
@@ -281,7 +272,7 @@ export const AssetPage: FC = () => {
 							<div className='p-5'>
 								<div className='flex text-sm items-center justify-between'>
 									<p>
-										Fractions Price:{' '}
+										Unit Price:{' '}
 										<span className='text-sky-500 text-lg font-bold'>
 											${property.priceToken}
 										</span>
@@ -313,7 +304,7 @@ export const AssetPage: FC = () => {
 								<div className='flex mt-4 justify-between'>
 									<p>Buy amount</p>
 									{user ? (
-										<p>Your balance: {user.balance}</p>
+										<p>Your balance: {user.balance.toLocaleString()} $</p>
 									) : (
 										<p>Your balance: 0</p>
 									)}

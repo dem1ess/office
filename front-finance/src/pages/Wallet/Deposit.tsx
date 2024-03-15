@@ -16,10 +16,6 @@ export function WalletDeposit() {
                         <p className='text-sky-500 text-lg'>Back to Wallet</p>
                     </div>
                 </Link>
-                {/*<div className='mt-7'>*/}
-                {/*    <p className='text-lg mb-3'>Select method</p>*/}
-                {/*    <CurrencySelector/>*/}
-                {/*</div>*/}
                 <p className='text-lg my-3'>
                     Enter amount</p>
                 <input type="number"

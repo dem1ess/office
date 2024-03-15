@@ -28,10 +28,14 @@
 	text-align: center;
 	font-family: var(--font-family--primary);
 }
+
+.btn-gradient {
+	background-image: linear-gradient(76deg, #00adcc, #00ccc0);
+}
+
 .styles_walletButtonWrapper__5Q3zx p {
 	font-size: 12px;
 	font-weight: 600;
-	color: #343c4a;
 	padding-top: 6px;
 }
 .styles_walletButton__PDVQb {
@@ -827,7 +831,6 @@
 .styles_wallet__mbi07 {
 	background: var(--color--secondary-bg);
 	border-radius: 12px;
-	margin-right: 16px;
 	height: max-content;
 }
 .styles_walletActions__pCmZM {
@@ -848,7 +851,7 @@
 	padding: 24px 0 32px;
 }
 .styles_totalBalanceValue__KVoKa span {
-	color: #b5bcc9;
+	color: #d3d5dc;
 }
 .styles_walletActionsButtons__7E2e0 {
 	display: flex;

@@ -1161,8 +1161,6 @@
 	stroke: var(--mpColorPrimary);
 }
 .DetailsTable_tableDetails__q6yn_ {
-	border-bottom: 1px dashed var(--color--border);
-	border-top: 1px dashed var(--color--border);
 	padding: 8px 0;
 }
 .DetailsTable_tableDetails__q6yn_ tbody {
@@ -1881,7 +1879,7 @@
 	margin-right: 18px;
 }
 .styles_tableWrapper__ZU9fr {
-	margin-top: 40px;
+	margin-bottom: 40px;
 	display: flex;
 	justify-content: center;
 }

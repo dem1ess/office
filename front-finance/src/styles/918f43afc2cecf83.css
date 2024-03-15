@@ -364,12 +364,12 @@ a.Button_root__0ygym {
 	margin: auto;
 }
 .BinaryxLabel_logo__HKkd8 .BinaryxLabel_image__DuLsB {
-	height: 50px;
+	height: 70px;
 	max-width: 175px;
 	display: block;
 }
 .BinaryxLabel_logoMobile__Su8SY .BinaryxLabel_image__DuLsB {
-	height: 45px;
+	height: 70px;
 	margin-top: 0;
 }
 .BinaryxLabel_logoMobile__Su8SY .BinaryxLabel_imageTokenEstate__tcTiO {
@@ -406,7 +406,7 @@ a.Button_root__0ygym {
 		margin-left: 8px;
 	}
 	.BinaryxLabel_logo__HKkd8 .BinaryxLabel_image__DuLsB {
-		height: 82px;
+		height: 190px;
 	}
 }
 .WalletInfoMobile_root__jhYSG {
@@ -1273,7 +1273,6 @@ a.Button_root__0ygym {
 .DesktopBar_walletConnectButton__YSbTf {
 	background-color: var(--mpColorPrimary);
 	border-radius: 24px;
-	display: flex;
 	align-items: center;
 	margin: 0 12px;
 	white-space: nowrap;
@@ -2599,9 +2598,7 @@ a.Button_root__0ygym {
 		grid-template-columns: 100%;
 		margin: 0;
 	}
-	.DefaultLayout_contentChildren__UAU26 {
-		margin: 10px ;
-	}
+
 	.DefaultLayout_header__Q0qOg {
 		width: 100%;
 		margin: 0;

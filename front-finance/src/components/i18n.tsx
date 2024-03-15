@@ -15,11 +15,11 @@ const LanguageSelector: React.FC<LanguageSelectorProps> = () => {
 			<select
 				id='language'
 				onChange={changeLanguage}
-				className='mt-1 block w-full border-color--secondary-bg rounded-xl text-white shadow-sm py-1 px-2 bg-color--secondary-bg text-sm'>
-				<option value='en'>English</option>
-				<option value='pl'>Polski</option>
-				<option value='it'>Italiano</option>
-				<option value='de'>Deutsch</option>
+				className='mt-1 block w-full border-color--secondary-bg rounded-xl font-bold text-white shadow-sm py-1 px-2 bg-color--secondary-bg text-sm'>
+				<option className="font-bold" value='en'>Eng</option>
+				<option className="font-bold" value='pl'>Pl</option>
+				<option className="font-bold" value='it'>IT</option>
+				<option className="font-bold" value='de'>DE</option>
 			</select>
 		</div>
 	)

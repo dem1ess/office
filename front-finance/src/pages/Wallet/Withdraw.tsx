@@ -23,24 +23,24 @@ export function Withdraw() {
                 <div className="mb-8">
                     <p className="styles_header__v3sCm">TLD Wallet</p>
                 </div>
-                <div className="styles_wallet__mbi07 w-1/2">
+                <div className="styles_wallet__mbi07 md:w-1/2 border-color--border border">
                     <div className="styles_walletActions__pCmZM">
                         <div>
                             <p className="styles_totalBalanceHeader__sUjSj">Overall balance</p>
-                            <p className="styles_totalBalanceValue__KVoKa">
+                            <p className="styles_totalBalanceValue__KVoKa text-white">
                                 {user ? <span>{user.balance}</span> : <span>--</span>}
-                                <span> USDT</span>
+                                <span> USD</span>
                             </p>
                         </div>
                         <div className="flex justify-center items-center">
-                            <div className="styles_walletButtonWrapper__5Q3zx styles_walletActionButton__OMw2H">
-                                <button className="styles_walletButton__PDVQb bg-gray-400 Button_root__0ygym">
+                            <div className="styles_walletButtonWrapper__5Q3zx  styles_walletActionButton__OMw2H">
+                                <button className="styles_walletButton__PDVQb btn-gradient Button_root__0ygym">
                                     <BsSendFill />
                                 </button>
-                                <p>Send</p>
+                                <p>Withdraw</p>
                             </div>
                             <Link to='deposit'>
-                                <div className="styles_walletButtonWrapper__5Q3zx styles_walletActionButton__OMw2H">
+                                <div className="styles_walletButtonWrapper__5Q3zx">
                                     <button className="styles_walletButton__PDVQb bg-sky-400 Button_root__0ygym">
                                         <IoMdAdd className="text-3xl"/>
                                     </button>
@@ -50,9 +50,9 @@ export function Withdraw() {
                         </div>
                     </div>
                     <div className="styles_balancesWrapper__BIGba">
-                        <div className="styles_balancesHeader__wiF0e">
+                        <div className="flex justify-between mx-5">
                             <p>Transaction History</p>
-                            <p>Status</p>
+                            <p className='pl-8'>Status</p>
                             <p>Amount</p>
                         </div>
                         <div className="styles_balances__0nTGG">

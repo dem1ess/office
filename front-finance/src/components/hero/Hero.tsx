@@ -10,13 +10,13 @@ export function Hero() {
 				className='hero-content z-1'>
 				<h1
 					id='second-block'
-					className='text-[42px] textcolor-white pb-4'>
+					className='text-[42px] text-white pb-4'>
 					Get passive income from rental real estate with investments from 470$
 				</h1>
-				<h2 className='text-4xl textcolor-white mob-pad-l-r'>
+				<h2 className='text-4xl text-white mob-pad-l-r'>
 					Investments in real estate
 				</h2>
-				<div className='hero-content-buttons'>
+				<div className='hero-content-buttons '>
 					<a
 						href='/'
 						target='_blank'
@@ -27,7 +27,7 @@ export function Hero() {
 							width='28'
 							height='28'
 							alt=''
-							className='icon-24'
+							className='icon-24 text-sky-500'
 						/>
 						<div>Browse properties</div>
 					</a>

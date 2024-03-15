@@ -11,9 +11,8 @@ import { WeChoose } from '../components/weChoose/weChoose'
 
 export const HomePage: FC = () => {
 	return (
-		<main className='m-5'>
+		<main className='m-1 md:m-5'>
 			<div id='hero' className='section hero'>
-				<Header />
 				<HeroSelections />
 				<Hero />
 				<img

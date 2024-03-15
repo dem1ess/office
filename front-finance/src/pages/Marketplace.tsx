@@ -16,7 +16,6 @@ export const MarketplacePage: FC = () => {
 	return (
 		<div className="AssetsListController_root__iaV8e">
 			<div className="Container_container__nWO8i">
-				<div className="AssetsListController_contentWrapper__IHdXf">
 					<div className="AssetsListController_pageContent__D_UK3">
 						<div className="AssetsListController_crudTopNav__LsPdX">
 							<h2 className="text-white mb-3">Marketplace</h2>
@@ -66,7 +65,6 @@ export const MarketplacePage: FC = () => {
 						</div>
 					</div>
 				</div>
-			</div>
 		</div>
 	)
 }

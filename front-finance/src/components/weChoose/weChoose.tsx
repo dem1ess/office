@@ -5,7 +5,7 @@ export function WeChoose() {
             <div className="wrapp">
                 <div className="agent-program-box">
                     <div className="is--green agent-program-title py-8 px-5">
-                        <h2 className="bold-20px">
+                        <h2>
                             Villas are in our ownership for 20 years, we research the property market and our experts choose the best highly liquid offers, after that our lawyers get involved and thoroughly check all documents and permits.</h2>
                     </div>
                     <div className="flex-is-grow">

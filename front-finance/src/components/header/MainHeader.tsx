@@ -37,6 +37,7 @@ export function MainHeaderComponent() {
 		toast.success('You logout')
 	}
 
+	// @ts-ignore
 	return (
 		<div className="DefaultLayout_header__Q0qOg">
 			<div className="DesktopBar_root__Am6ZS">
@@ -49,16 +50,15 @@ export function MainHeaderComponent() {
 										<img src="/TLD_logo_beige.svg" alt="Logo" />
 									</div>
 									<p className="styles_fourStepsText__RzOim">
-										Three steps to buy tokens
+										Three steps to buy units
 									</p>
 								</div>
 								<div className="styles_stepsWrapper__SGFJ4">
 									<div className="styles_step__63BMk">
 										<div className={user ? `styles_successWrapper__xMm_U` : `styles_stepNumber__XqYeI`}>
-											{user ? <svg width="14" height="10" viewBox="0 0 10 8" fill="none"
-																	 xmlns="http://www.w3.org/2000/svg">
-												<path d="M9.125 1.375L3.62188 6.625L0.875 4" stroke="white" stroke-width="1.5"
-															stroke-linecap="round" stroke-linejoin="round"></path>
+											{user ? <svg width="14" height="10" viewBox="0 0 10 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+												<path d="M9.125 1.375L3.62188 6.625L0.875 4" stroke="white" strokeWidth="1.5"
+															strokeLinecap="round" strokeLinejoin="round"></path>
 											</svg> : 1}
 										</div>
 										<div className="styles_linkHide__hKrHj ">Sign up</div>
@@ -68,8 +68,8 @@ export function MainHeaderComponent() {
 										<div className={user?.isVerif ? `styles_successWrapper__xMm_U` : `styles_stepNumber__XqYeI`}>
 											{user?.isVerif ? <svg width="14" height="10" viewBox="0 0 10 8" fill="none"
 																	 xmlns="http://www.w3.org/2000/svg">
-												<path d="M9.125 1.375L3.62188 6.625L0.875 4" stroke="white" stroke-width="1.5"
-															stroke-linecap="round" stroke-linejoin="round"></path>
+												<path d="M9.125 1.375L3.62188 6.625L0.875 4" stroke="white" strokeWidth="1.5"
+															strokeLinecap="round" strokeLinejoin="round"></path>
 											</svg> : 2}
 										</div>
 										<div className="styles_linkHide__hKrHj">Verification</div>
@@ -77,7 +77,7 @@ export function MainHeaderComponent() {
 									<div className="styles_dash__HDftA"></div>
 									<div className="styles_step__63BMk">
 										<div className="styles_stepNumber__XqYeI">3</div>
-										<div className="styles_linkHide__hKrHj">Buy a property</div>
+										<div className="styles_linkHide__hKrHj">Buy units</div>
 									</div>
 								</div>
 							</div>
@@ -87,18 +87,18 @@ export function MainHeaderComponent() {
 						<div className="DesktopBar_buttonsContainer__oNNAt">
 							<div className="DesktopBar_center__glZ2G">
 								{user ? (
-									<div className="text-white flex justify-center items-center">
-										{user.id}{' '}
+										<div className="text-white mx-3 flex justify-center text-lg items-center">
+											{user.email}{' '}
 										<button
 											onClick={logoutHandler}
-											className="DesktopBar_walletConnectButton__YSbTf Button_root__0ygym">
+											className="DesktopBar_walletConnectButton__YSbTf hidden md:flex Button_root__0ygym">
 											<p>Logout</p>
 										</button>
 									</div>
 								) : (
 									<button
 										onClick={handleOpenLoginModal}
-										className="DesktopBar_walletConnectButton__YSbTf Button_root__0ygym">
+										className="DesktopBar_walletConnectButton__YSbTf flex Button_root__0ygym">
 										<p>Sign up / Log in</p>
 									</button>
 								)}
@@ -119,7 +119,7 @@ export function MainHeaderComponent() {
 					</div>
 				</div>
 			</div>
-			<BurgerMenu show={showBurgerMenu} onClose={handleCloseBurgerl}/>
+			<BurgerMenu logoutHandler={logoutHandler} show={showBurgerMenu} onClose={handleCloseBurgerl}/>
 			<LoginModal show={showLoginModal} onClose={handleCloseLoginModal} />
 			<ToastContainer />
 		</div>

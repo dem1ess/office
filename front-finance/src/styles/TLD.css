@@ -217,15 +217,7 @@ th {
 html {
 	height: 100%;
 }
-body {
-	min-height: 100%;
-	color: #333;
-	background-color: #fff;
-	margin: 0;
-	font-family: Arial, sans-serif;
-	font-size: 14px;
-	line-height: 20px;
-}
+
 img {
 	max-width: 100%;
 	vertical-align: middle;
@@ -1903,13 +1895,7 @@ textarea.w-select {
 	grid-auto-columns: 1fr;
 	display: grid;
 }
-body {
-	color: #1c2129;
-	font-family: Manrope, sans-serif;
-	font-size: 16px;
-	font-style: normal;
-	line-height: 100%;
-}
+
 h1 {
 	margin-top: 0;
 	margin-bottom: 0;
@@ -4045,11 +4031,10 @@ strong {
 	background-image: linear-gradient(76deg, #00adcc, #00ccc0);
 }
 .button.whity {
-	color: #343c4a;
-	background-color: #fff;
+	background-image: linear-gradient(76deg, #8dfcf5, #bff8cc);
 }
 .button.whity:hover {
-	background-image: linear-gradient(76deg, #8dfcf5, #bff8cc);
+	background-image: linear-gradient(76deg, #69f4eb, #b1f6c0);
 }
 .button.whity.icon {
 	color: var(--dark--80);
@@ -4824,13 +4809,14 @@ strong {
 	line-height: 110%;
 }
 .menu-logo-image {
-	width: 9vw;
-	height: 8vw;
+	width: 11vw;
+	height: 11vw;
 	background-image: url('/TLD_logo_beige.svg');
 	background-position: 50%;
 	background-repeat: no-repeat;
 	background-size: contain;
 	padding-bottom: 0;
+	margin-left: -1vw;
 }
 /*.menu-logo-image.light {*/
 /*	background-image: url('/TLD_logo_beige.svg');*/
@@ -6829,6 +6815,7 @@ strong {
 	background-size: cover;
 	padding-top: 3.33333em;
 	padding-bottom: 3.33333em;
+	backdrop-filter: blur(16px);
 }
 .fold.is--agent-program.is--radius {
 	border-radius: 1.6vw;
@@ -9540,8 +9527,8 @@ strong {
 		height: 3.6vw;
 	}
 	.lang-logo {
-		grid-column-gap: 3.1vw;
-		grid-row-gap: 3.1vw;
+		grid-column-gap: 7.1vw;
+		grid-row-gap: 7.1vw;
 	}
 	.blue_infoblock {
 		padding: 1vw 1.66vw;
@@ -11830,7 +11817,7 @@ strong {
 	}
 	.apart-cover {
 		width: 100%;
-		height: 30vw;
+		height: 50vw;
 	}
 	.apart-title {
 		grid-column-gap: 4vw;
@@ -12555,10 +12542,7 @@ strong {
 		background-image: url(https://assets-global.website-files.com/6512b085884d0caef09c7545/653a82e988e6794f8790e73b_hero-cards-mobile_ru.png);
 		background-size: cover;
 	}
-	.body {
-		padding-left: 0;
-		padding-right: 0;
-	}
+
 	.table-image-desktop {
 		width: 100vw;
 		height: auto;
@@ -12674,8 +12658,8 @@ strong {
 		padding-right: 0;
 	}
 	.lang-logo {
-		grid-column-gap: 4.26vw;
-		grid-row-gap: 4.26vw;
+		height: 150px;
+		width: 190px;
 	}
 	.blue_infoblock {
 		padding: 2.13vw 5.3vw;

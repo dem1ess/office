@@ -13,7 +13,7 @@ const RealEstateSection: React.FC = () => {
 						<br />
 					</span>
 					<br />
-					<span className='text-4xl'>
+					<span className='text-2xl md:text-4xl'>
 						{' '}
 						Bali is a tourist paradise and <br />
 						<span className='text-color--border'>

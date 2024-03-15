@@ -11,21 +11,10 @@ const ApartmentItem: React.FC<Iprops> = ({ property }) => {
 		<div
 			id={property.id}
 			role='group'
-			className='apartments-item rounded-xl shadow-small overflow-hidden border-4 border-color--border min-h-[400px] min-w-[387.333px] max-h-[900px] max-w-[387.333px]'>
+			className='apartments-item rounded-xl shadow-small overflow-hidden border-4 border-color--border min-h-[510px] min-w-[350.333px] max-h-[900px] max-w-[387.333px]'>
 			<Link
 				to={`/asset/${property.id}`}
 				className='itme-link-wrapper w-inline-block'>
-				<div className='apart-since w-condition-invisible'>
-					<img
-						loading='lazy'
-						src='/images/653ff790f1cae4717e7b8766_Key.svg'
-						alt=''
-						className='icon-16'
-					/>
-					<div className='newtext-12-semi-110-2'>Sold and Rented since</div>
-					<div className='newtext-12-semi-110-2 w-dyn-bind-empty'></div>
-				</div>
-
 				<div className='apart-cover'>
 					<img src={`/villas/${property.photoUrls[0]}`} alt={property.description} className='apart-cover-image' />
 				</div>
@@ -41,24 +30,26 @@ const ApartmentItem: React.FC<Iprops> = ({ property }) => {
 
 				<div className="apart-percents">
 					<div className="apart-percents-growth">
-						<div className="newtext-16-regular-150 textcolor-dark-60">
+						<div className='text-xl text-gray-100'>
 							Year of commissioning
 						</div>
-						<div className='newtext-18-bold-120-2 text-gray-300'>
+						<div className="newtext-16-regular-150 text-gray-200">
 							{property.yearOfCompletion}
 						</div>
 					</div>
 					<div className='apart-percents-return'>
-						<div className='newtext-16-regular-150 textcolor-dark-60'>ROI</div>
-						<div className='newtext-18-bold-120-2 text-gray-300'>
+						<div className='text-xl text-gray-100'>
+							ROI
+						</div>
+						<div className='newtext-16-regular-150 text-gray-200'>
 							{property.roi}%
 						</div>
 					</div>
 					<div className='apart-percents-growth'>
-						<div className='newtext-16-regular-150 textcolor-dark-60'>
+						<div className='text-xl text-gray-100'>
 							Number of particles purchased
 						</div>
-						<div className='newtext-18-bold-120-2 text-gray-300'>
+						<div className='newtext-16-regular-150 text-gray-200'>
 							{property.tokens}
 						</div>
 					</div>

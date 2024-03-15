@@ -8,7 +8,7 @@ export function VillaItem({ property }: IProps) {
 	const purchasedTokens = property.tokens - property.availableTokens
 	const percentagePurchased = (purchasedTokens / property.tokens) * 100
 	return (
-		<div className='flex w-full m-0 md:mr-5 bg-color--primary-bg flex-col border border-color--border rounded-xl p-5'>
+		<div className='flex w-full mb-5 md:m-0 md:mr-5 bg-color--primary-bg flex-col border border-color--border rounded-xl p-5'>
 			<Link to={`/asset/${property.id}`}>
 				<div className='w-full'>
 					<div
@@ -18,8 +18,8 @@ export function VillaItem({ property }: IProps) {
 				<div className='w-full mt-5'>
 					<div className='flex justify-between'>
 						<div className='flex flex-col'>
-							<p className='styles_addressLine__7Wf2L'>{property.name}</p>
-							<p className='styles_city__pfuUW py-5'>Indonesia , Bali</p>
+							<p className=' text-[18px] md:text-[24px] font-bold'>{property.name}</p>
+							<p className='text-[#808a9d] pb-4 md:py-5'>{property.mainLocation}</p>
 						</div>
 						<div
 							className='styles_status__0gCRC'
@@ -28,21 +28,20 @@ export function VillaItem({ property }: IProps) {
 								className='styles_statusDot__xGtp_'
 								style={{ backgroundColor: '#228d21' }}></div>
 							<p
-								style={{ color: '#228d21' }}
-								className='styles_statusTitle__fz_3b'>
+								style={{ color: '#228d21' }}>
 								On Sale
 							</p>
 						</div>
 					</div>
-					<div className='flex justify-between pt-8'>
+					<div className='flex justify-between pt-4 md:pt-8'>
 						<div>
-							<p className='mb-4'>Price</p>
-							<p className='text-sky-40 0 py-5 font-bold text-[37px]'>
+							<p className='mb-4'>Estate Price</p>
+							<p className='text-sky-400 0 py-5 font-bold text-[37px]'>
 								$ {property.price.toLocaleString()}
 							</p>
 						</div>
 						<div>
-							<p className='mb-4'>Fraction Price</p>
+							<p className='mb-4'>Unit Price</p>
 							<p className='text-sky-400 py-5 font-bold text-[37px]'>
 								$ {property.priceToken}
 							</p>
@@ -61,10 +60,10 @@ export function VillaItem({ property }: IProps) {
 						<div className='styles_bottomElement__RparB'>
 							<div className='styles_tokenRentStart__BovuN'>
 								<div className='flex justify-start'>
-									<p className='pb-3'>Rent start date</p>
+									<p className='pb-3'>Rent per year</p>
 								</div>
 								<p className='styles_bottomValue__A3PzE styles_rentStartDate__7eaEr'>
-									2023-12-10
+									$ {property.rentPerYear.toLocaleString()}
 								</p>
 							</div>
 						</div>

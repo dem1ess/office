@@ -25,7 +25,7 @@ const landlordCards: LandlordCard[] = [
   {
     imageSrc: '/images/6548eb05e28013beaa4a7c64_step3-en-min.png',
     numberImageSrc: '3',
-    title: 'Choose a convenient payment method',
+    title: 'Choose payment method',
     link: '/',
   },
   {
@@ -45,8 +45,8 @@ const landlordCards: LandlordCard[] = [
 export const BecomeALandlord: React.FC = () => {
   return (
     <section className="section section-become_landlord">
-      <h3 id="w-node-_7f21a37f-6f21-bb8d-c3c1-41325c186397-4264e49b" className="text-6xl text-white textalign-center">
-        Become an investor and earn rental income online in five easysteps
+      <h3 id="w-node-_7f21a37f-6f21-bb8d-c3c1-41325c186397-4264e49b" className="text-3xl md:text-6xl text-white textalign-center">
+        Become an investor and earn rental income online in five easy steps
       </h3>
       <div id="w-node-f8a4bd0c-77d5-301b-f2bc-2860f6232d35-4264e49b" className="cards-landlord">
         {landlordCards.map((card, index) => (
@@ -59,7 +59,7 @@ export const BecomeALandlord: React.FC = () => {
                 className="item-landlord-image"
               />
             </a>
-            <div className="flex items-center h-full justify-center">
+            <div className="flex items-center h-full pb-10 justify-start">
               <div className='rounded-xl mx-3 bg-gray-200 '>
                 <p className='mx-3 my-2 font-bold text-xl text-gray-800'>{card.numberImageSrc}</p>
               </div>

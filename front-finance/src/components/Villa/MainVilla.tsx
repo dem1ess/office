@@ -15,13 +15,13 @@ export function MainVillaComponent({ property }: Iprops) {
 			<div className='pr-0 md:pr-10 w-full md:w-1/2'>
 				<div
 					style={{ backgroundImage: `url(/villas/${property.photoUrls[0]})` }}
-					className='bg-cover bg-center h-[348px] md:max-h-full rounded-xl'></div>
+					className='bg-cover bg-center h-full rounded-xl'></div>
 			</div>
 			<div className='w-full md:w-1/2 mt-5'>
 				<div className='flex justify-between'>
 					<div className='flex flex-col'>
 						<p className='styles_addressLine__7Wf2L'>{property.name}</p>
-						<p className='styles_city__pfuUW py-5'>Indonesia , Bali</p>
+						<p className='styles_city__pfuUW'>{property.mainLocation}</p>
 					</div>
 					<div
 						className='styles_status__0gCRC'
@@ -31,21 +31,19 @@ export function MainVillaComponent({ property }: Iprops) {
 							style={{ backgroundColor: '#228d21' }}></div>
 						<p
 							style={{ color: '#228d21' }}
-							className='styles_statusTitle__fz_3b'>
-							On Sale
-						</p>
+							className='styles_statusTitle__fz_3b'>Sale</p>
 					</div>
 				</div>
 				<div className='flex justify-between pt-8'>
 					<div>
-						<p className='mb-4'>Property price</p>
-						<p className='text-sky-400 py-5 font-bold text-[37px]'>
+						<p className='mb-4 text-2xl'>Estate price</p>
+						<p className='text-sky-400 pb-5 font-bold text-[37px]'>
 							$ {property.price.toLocaleString()}
 						</p>
 					</div>
 					<div>
-						<p className='mb-4'>Fraction Price</p>
-						<p className='text-sky-400 py-5 font-bold text-[37px]'>
+						<p className='mb-4 text-2xl'>Unit Price</p>
+						<p className='text-sky-400 font-bold text-[37px]'>
 							$ {property.priceToken}
 						</p>
 					</div>
@@ -63,19 +61,19 @@ export function MainVillaComponent({ property }: Iprops) {
 					<div className='styles_bottomElement__RparB'>
 						<div className='styles_tokenRentPerYear__gyKKv'>
 							<div className='flex justify-start'>
-								<p className='pb-3'>Rent per Year</p>
+								<p className='pb-3'>Rent per year</p>
 							</div>
 							<p className='styles_bottomValue__A3PzE'>
 								$ {property.rentPerYear.toLocaleString()} / year
 							</p>
 						</div>
 					</div>
-					<div className='styles_bottomElement__RparB'>
+					<div className='styles_bottomElement__RparB hidden md:flex'>
 						<div className='styles_tokenRentStart__BovuN'>
 							<div className='flex justify-start'>
 								<p className='pb-3'>Rent start year</p>
 							</div>
-							<p className='styles_bottomValue__A3PzE styles_rentStartDate__7eaEr'>
+							<p className='styles_bottomValue__A3PzE'>
 								{property.yearOfCompletion}
 							</p>
 						</div>

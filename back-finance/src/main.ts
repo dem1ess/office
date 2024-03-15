@@ -10,7 +10,7 @@ async function bootstrap() {
   app.setGlobalPrefix('api')
   app.enableCors({
     origin: ['http://localhost:5173'],
-    credentials: true, // Enable credentials support
+    credentials: true // Enable credentials support
   })
 
   // Serve static files from the 'images' directory
