@@ -277,11 +277,12 @@ export const AssetPage: FC = () => {
 									Have more questions about property?
 								</h4>
 							</div>
-							<div
+							<a
+								href='https://api.whatsapp.com/message/7IRLJKFEV3DJP1?autoload=1&app_absent=0'
 								className='rounded-xl flex items-center p-4 justify-center bg-green-600 border-[1px] border-green-800 cursor-pointer'>
 								<IoLogoWhatsapp className='text-green-200 text-2xl'/>
 								<p className='text-green-200 mx-3'>Call us an WhatsApp</p>
-							</div>
+							</a>
 						</div>
 					</div>
 					<div className='flex h-1/2 flex-col md:mr-3 md:w-1/3'>

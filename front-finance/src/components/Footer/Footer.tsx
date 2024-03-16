@@ -27,7 +27,7 @@ export const Footer: React.FC = () => {
 						</a>
 						<a
 							href='mailto:indo@tld-bali.com'
-							className='is--no-shape textcolor-white w-inline-block'>
+							className='text-white w-inline-block'>
 							info@tld-bali.com
 						</a>
 						<Link

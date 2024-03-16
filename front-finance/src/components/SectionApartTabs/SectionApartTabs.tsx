@@ -23,7 +23,7 @@ const SectionApartTabs: React.FC = () => {
 				{property?.map((apartment, index) => (
 					<div
 						key={apartment.id}
-						className={`flex mb-5 justify-center md:w-1/3 p-2 ${
+						className={`flex mb-5 justify-center w-full md:w-1/3 p-3 ${
 							index < 3 ? 'md:w-1/3' : 'md:w-1/2'
 						}`}>
 						<ApartmentItem

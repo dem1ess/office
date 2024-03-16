@@ -48,16 +48,14 @@ export function VillaItem({ property }: IProps) {
 						</div>
 					</div>
 					<div className='py-5 styles_bottomInfo__X25WU'>
-						<div className='styles_bottomElement__RparB'>
 							<div className='styles_tokenIrr__Gu31I'>
 								<div className='flex justify-start'>
 									<p className='pb-3'>ROI</p>
 								</div>
 								<p className='styles_bottomValue__A3PzE'>{property.roi}%</p>
 							</div>
-						</div>
 
-						<div className='styles_bottomElement__RparB'>
+
 							<div className='styles_tokenRentStart__BovuN'>
 								<div className='flex justify-start'>
 									<p className='pb-3'>Rent per year</p>
@@ -66,7 +64,6 @@ export function VillaItem({ property }: IProps) {
 									$ {property.rentPerYear.toLocaleString()}
 								</p>
 							</div>
-						</div>
 					</div>
 					<div className='mt-2 md:mt-[32px]'>
 						<div className='styles_progressBar__Xp6qx'>

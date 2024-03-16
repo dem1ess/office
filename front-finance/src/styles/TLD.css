@@ -4526,13 +4526,6 @@ strong {
 	background-size: contain;
 	position: relative;
 }
-.image-hero.ua {
-	background-image: url(https://assets-global.website-files.com/6512b085884d0caef09c7545/653a82e8b8cfe70081139c96_hero-cards-desktop_uk.png);
-	background-size: contain;
-}
-.image-hero.ru {
-	background-image: url(https://assets-global.website-files.com/6512b085884d0caef09c7545/653a82e8d035b45ab8332adb_hero-cards-desktop_ru.png);
-}
 .fs-rangeslider_form {
 	width: 100%;
 	max-width: 720px;
@@ -10367,18 +10360,15 @@ strong {
 	.image-hero {
 		width: 97.8vw;
 		height: 65vw;
-		background-image: url(https://assets-global.website-files.com/6512b085884d0caef09c7545/653a82e6436fbf349e6209ce_hero-cards-mobile_en.png);
 		background-position: 50% 100%;
 		background-size: 150%;
 		margin-bottom: 0;
 	}
 	.image-hero.ua {
-		background-image: url(https://assets-global.website-files.com/6512b085884d0caef09c7545/653a82ec88e6794f8790ebc0_hero-cards-mobile_uk.png);
 		background-position: 50% 0;
 		background-size: cover;
 	}
 	.image-hero.ru {
-		background-image: url(https://assets-global.website-files.com/6512b085884d0caef09c7545/653a82e988e6794f8790e73b_hero-cards-mobile_ru.png);
 	}
 	.table-image-desktop {
 		height: 66vw;
@@ -12525,17 +12515,14 @@ strong {
 	.image-hero {
 		width: 100%;
 		height: 72vw;
-		background-image: url(https://assets-global.website-files.com/6512b085884d0caef09c7545/653a82e6436fbf349e6209ce_hero-cards-mobile_en.png);
 		background-position: 50% 0;
 		background-size: cover;
 	}
 	.image-hero.ua {
-		background-image: url(https://assets-global.website-files.com/6512b085884d0caef09c7545/653a82ec88e6794f8790ebc0_hero-cards-mobile_uk.png);
 		background-position: 50% 0;
 		background-size: cover;
 	}
 	.image-hero.ru {
-		background-image: url(https://assets-global.website-files.com/6512b085884d0caef09c7545/653a82e988e6794f8790e73b_hero-cards-mobile_ru.png);
 		background-size: cover;
 	}
 

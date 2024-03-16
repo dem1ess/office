@@ -12,7 +12,7 @@ const FeaturedInSection: React.FC = () => {
 				<div className='partners-wrapper flex flex-wrap justify-center'>
 					<a
 						id="w-node-_644cd1f6-ebe7-dded-5e41-1fb12a7eaf09-4264e49b"
-						href="#"
+						href="https://www.baliinvestclub.com/"
 						target='_blank'
 						rel='noopener noreferrer'
 						className='inline-block p-4 w-full md:w-1/3'>
@@ -37,7 +37,7 @@ const FeaturedInSection: React.FC = () => {
 					</a>
 					<a
 						id='w-node-_644cd1f6-ebe7-dded-5e41-1fb12a7eaf09-4264e49b'
-						href='https://www.forbes.com/sites/kenrapoza/2021/07/18/chinas-bitcoin-mining-drama-is-over-why-is-bitcoin-still-a-dud/?sh=5fef58473e9e'
+						href='https://balibusinessconsulting.com/'
 						target='_blank'
 						rel='noopener noreferrer'
 						className='inline-block p-4 w-full md:w-1/3'>
