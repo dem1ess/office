@@ -14,57 +14,57 @@ export const MarketplacePage: FC = () => {
 	}, [])
 
 	return (
-		<div className="AssetsListController_root__iaV8e">
-			<div className="Container_container__nWO8i">
-					<div className="AssetsListController_pageContent__D_UK3">
-						<div className="AssetsListController_crudTopNav__LsPdX">
-							<h2 className="text-white mb-3">Marketplace</h2>
+		<div className='AssetsListController_root__iaV8e'>
+			<div className='Container_container__nWO8i'>
+				<div className='AssetsListController_pageContent__D_UK3'>
+					<div className='AssetsListController_crudTopNav__LsPdX'>
+						<h2 className='text-white mb-3'>Marketplace</h2>
+					</div>
+					<div>
+						<div className='styles_assetListMain__wC9EK'>
+							{property ? (
+								<MainVillaComponent property={property[0]} />
+							) : (
+								<div>
+									<h1>Loading</h1>
+								</div>
+							)}
 						</div>
-						<div>
-							<div className="styles_assetListMain__wC9EK">
-								{property ? (
-									<MainVillaComponent property={property[1]} />
-								) : (
-									<div>
-										<h1>Loading</h1>
-									</div>
-								)}
-							</div>
-							<div className="styles_assetListMain__wC9EK">
-								{property ? (
-									<MainVillaComponent property={property[4]} />
-								) : (
-									<div>
-										<h1>Loading</h1>
-									</div>
-								)}
-							</div>
-							<div className="flex md:flex-row mt-4 flex-col justify-between w-full">
-								{property ? (
-									<VillaItem property={property[0]} />
-								) : (
-									<div>
-										<h1>Loading</h1>
-									</div>
-								)}
-								{property ? (
-									<VillaItem property={property[2]} />
-								) : (
-									<div>
-										<h1>Loading</h1>
-									</div>
-								)}
-								{property ? (
-									<VillaItem property={property[3]} />
-								) : (
-									<div>
-										<h1>Loading</h1>
-									</div>
-								)}
-							</div>
+						<div className='styles_assetListMain__wC9EK'>
+							{property ? (
+								<MainVillaComponent property={property[1]} />
+							) : (
+								<div>
+									<h1>Loading</h1>
+								</div>
+							)}
+						</div>
+						<div className='flex md:flex-row mt-4 flex-col justify-between w-full'>
+							{property ? (
+								<VillaItem property={property[2]} />
+							) : (
+								<div>
+									<h1>Loading</h1>
+								</div>
+							)}
+							{property ? (
+								<VillaItem property={property[3]} />
+							) : (
+								<div>
+									<h1>Loading</h1>
+								</div>
+							)}
+							{property ? (
+								<VillaItem property={property[4]} />
+							) : (
+								<div>
+									<h1>Loading</h1>
+								</div>
+							)}
 						</div>
 					</div>
 				</div>
+			</div>
 		</div>
 	)
 }

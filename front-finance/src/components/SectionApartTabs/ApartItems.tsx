@@ -11,10 +11,8 @@ const ApartmentItem: React.FC<Iprops> = ({ property }) => {
 		<div
 			id={property.id}
 			role='group'
-			className='apartments-item rounded-xl shadow-small overflow-hidden border-4 border-color--border min-h-[510px] max-w-[387.333px] sm:min-w-[350.333px] sm:max-h-[900px] md:min-w-[300px] md:max-h-[800px] lg:min-w-[250px] lg:max-h-[700px] xl:min-w-[200px] xl:max-h-[600px]'>
-			<Link
-				to={`/asset/${property.id}`}
-				className='itme-link-wrapper w-inline-block'>
+			className='apartments-item rounded-xl h-max-content shadow-small overflow-hidden border-4 border-color--border'>
+			<Link to={`/asset/${property.id}`} className='flex flex-col'>
 				<div className='apart-cover'>
 					<img
 						src={`/villas/${property.photoUrls[0]}`}
