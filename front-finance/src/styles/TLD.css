@@ -4818,9 +4818,6 @@ strong {
 	padding-bottom: 0;
 	margin-left: -1vw;
 }
-/*.menu-logo-image.light {*/
-/*	background-image: url('/TLD_logo_beige.svg');*/
-/*}*/
 .lang-logo {
 	grid-column-gap: 2.6vw;
 	grid-row-gap: 2.6vw;
@@ -6810,7 +6807,7 @@ strong {
 }
 .fold.is--agent-program {
 	color: var(--white);
-	background-image: url('/villas/BALIWOOD/4.jpg');
+	background-image: url('/villas/back3Block.jpg');
 	background-position: 50%;
 	background-size: cover;
 	padding-top: 3.33333em;
@@ -9522,10 +9519,10 @@ strong {
 		background-position: 0 0;
 		background-size: 9px 100%;
 	}
-	.menu-logo-image {
-		width: 14.8vw;
-		height: 3.6vw;
-	}
+	/*.menu-logo-image {*/
+	/*	width: 14.8vw;*/
+	/*	height: 3.6vw;*/
+	/*}*/
 	.lang-logo {
 		grid-column-gap: 7.1vw;
 		grid-row-gap: 7.1vw;
@@ -10397,7 +10394,6 @@ strong {
 		height: 100%;
 		flex-direction: column;
 		justify-content: space-between;
-		margin-top: 0;
 		margin-bottom: 0;
 		padding-top: 0;
 		display: flex;
@@ -12649,11 +12645,13 @@ strong {
 		padding-right: 0;
 	}
 	.menu-logo-image {
-		height: 15.4vw;
+		height: 30.4vw;
+		width: 30.4vw;
 		background-position: 50%;
 		background-repeat: no-repeat;
 		background-size: cover;
 		align-self: center;
+		margin-top: 50px;
 		padding-bottom: 0;
 		padding-right: 0;
 	}

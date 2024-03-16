@@ -2,10 +2,9 @@ import { ChangeEvent, FC, useState } from 'react'
 import {
 	BsDownload,
 	BsFillFileEarmarkPdfFill,
-	BsFillPeopleFill,
 } from 'react-icons/bs'
 import { IoLogoWhatsapp } from 'react-icons/io5'
-import { LuHome, LuKeySquare } from 'react-icons/lu'
+import {LuHome, LuKeySquare, LuWaves} from 'react-icons/lu'
 import { useParams } from 'react-router-dom'
 import { ToastContainer, toast } from 'react-toastify'
 import { instance } from '../api/axios.ts'
@@ -66,6 +65,9 @@ export const AssetPage: FC = () => {
 	const formattedDescription = {
 		__html: property?.description,
 	}
+	const lastDocumentUrl = property?.documentUrls[property?.documentUrls.length - 1];
+	const decodedLastDocumentUrl = lastDocumentUrl ? decodeURIComponent(lastDocumentUrl).replace(/ /g, '%20') : '';
+	const fileName = lastDocumentUrl?.substring(lastDocumentUrl.lastIndexOf('/') + 1, lastDocumentUrl.lastIndexOf('.pdf'));
 
 	const purchasedTokens = property!.tokens - property!.availableTokens
 	const percentagePurchased = (purchasedTokens / property!.tokens) * 100
@@ -73,7 +75,8 @@ export const AssetPage: FC = () => {
 		<div className='md:ml-[20px] ml-0 mt-5 md:mt-0 flex flex-col-reverse md:flex-row'>
 			{property ? (
 				<>
-					<div className='w-full md:w-2/3 flex flex-col rounded-xl bg-color--primary-bg min-h-0 overflow-hidden p-5'>
+					<div
+						className='w-full md:w-2/3 flex flex-col rounded-xl bg-color--primary-bg min-h-0 overflow-hidden p-5'>
 						<p className='text-2xl text-22-bold-140'>{property.name}</p>
 						<div className='flex mt-3'>
 							<div className='rounded-xl inline-block bg-green-200 px-1 border-green-600 border-[1px]'>
@@ -81,7 +84,7 @@ export const AssetPage: FC = () => {
 							</div>
 
 							<div className='ml-2 rounded-xl flex bg-green-200 h-6 px-2 border-green-600 border-[1px]'>
-								<LuKeySquare className='w-3 text-green-600' />
+								<LuKeySquare className='w-3 text-green-600'/>
 								<p className='text-sm ml-1 text-green-600'>Rented</p>
 							</div>
 						</div>
@@ -119,7 +122,8 @@ export const AssetPage: FC = () => {
 
 						<h4 className='mt-7 text-white'>Details</h4>
 						<div className='flex mt-3 flex-col md:flex-row justify-around'>
-							<div className='bg-color--secondary-bg border border-color--border flex flex-col items-center justify-center my-2 md:my-0 rounded-xl px-16 py-2'>
+							<div
+								className='bg-color--secondary-bg border border-color--border flex flex-col items-center justify-center my-2 md:my-0 rounded-xl px-16 py-2'>
 								<svg
 									width='18'
 									className='mb-2'
@@ -150,12 +154,14 @@ export const AssetPage: FC = () => {
 								</svg>
 								<p>{property.landArea} ㎡</p>
 							</div>
-							<div className='bg-color--secondary-bg border border-color--border flex flex-col items-center my-2 md:my-0 justify-center rounded-xl px-16 py-2'>
-								<LuHome className='text-2xl text-[#00B4CC] mb-2' />
+							<div
+								className='bg-color--secondary-bg border border-color--border flex flex-col items-center my-2 md:my-0 justify-center rounded-xl px-16 py-2'>
+								<LuHome className='text-2xl text-[#00B4CC] mb-2'/>
 								<p>{property.houseArea} ㎡</p>
 							</div>
-							<div className='bg-color--secondary-bg border border-color--border flex flex-col items-center my-2 md:my-0 justify-center rounded-xl px-16 py-2'>
-								<BsFillPeopleFill className='text-2xl text-[#00B4CC] mb-2' />
+							<div
+								className='bg-color--secondary-bg border border-color--border flex flex-col items-center my-2 md:my-0 justify-center rounded-xl px-16 py-2'>
+								<LuWaves className='text-2xl text-[#00B4CC] mb-2'/>
 								<p>{property.distanceToSea}</p>
 							</div>
 						</div>
@@ -176,13 +182,25 @@ export const AssetPage: FC = () => {
 								title='Embedded youtube'
 							/>
 						</div>
-						<h4 className='my-7'>Documents</h4>
+						<h4 className='my-7 text-gray-200'>Documents</h4>
 						<div className='flex flex-col'>
-							<div className='flex mb-3 bg-color--border rounded-xl px-4 text-lg py-5 items-center justify-between'>
-								<BsFillFileEarmarkPdfFill className='text-2xl cursor-pointer transition-colors duration-300 ease-in-out hover:text-sky-600' />{' '}
-								DAO LLC Reference{' '}
-								<BsDownload className='text-2xl cursor-pointer transition-colors duration-300 ease-in-out hover:text-sky-600' />
-							</div>
+							{property.documentUrls.slice(0, -1).map((doc, index) => {
+								const decodedLastDocumentUrl = doc ? decodeURIComponent(doc).replace(/ /g, '%20') : '';
+								const fileName = doc.substring(doc.lastIndexOf('/') + 1, doc.lastIndexOf('.pdf'));
+								return (
+									<a
+										href={decodedLastDocumentUrl}
+										key={index}
+										className='flex mb-3 bg-color--border rounded-xl transition-colors duration-300 ease-in-out cursor-pointer hover:text-sky-500 px-4 text-lg py-5 items-center justify-between'
+										download>
+										<BsFillFileEarmarkPdfFill
+											className='text-2xl cursor-pointer'/>{' '}
+										{fileName}{' '}
+										<BsDownload
+											className='text-2xl cursor-pointer'/>
+									</a>
+								)
+							})}
 						</div>
 						<h4 className='my-7 text-white'>Financials</h4>
 						<div className='ml-5 flex-col flex'>
@@ -198,7 +216,7 @@ export const AssetPage: FC = () => {
 									${property.legalFees.toLocaleString()}
 								</p>
 							</div>
-							<hr />
+							<hr/>
 							<div className='flex justify-between my-4'>
 								<p className='text-white text-lg'>Base price of the asset</p>
 								<p className='text-white text-lg'>
@@ -226,6 +244,17 @@ export const AssetPage: FC = () => {
 								or down, depending on the rental of each individual property.
 							</p>
 						</div>
+						<h4 className='my-7 text-white'>Contract to sign</h4>
+						<a
+							href={decodedLastDocumentUrl}
+							className='flex mb-3 transition-colors duration-300 ease-in-out cursor-pointer hover:text-sky-500 bg-color--border rounded-xl px-4 text-lg py-5 items-center justify-between'
+						download>
+							<BsFillFileEarmarkPdfFill
+								className='text-2xl cursor-pointer transition-colors duration-300 ease-in-out hover:text-sky-600'/>{' '}
+							{fileName}{' '}
+							<BsDownload
+								className='text-2xl cursor-pointer transition-colors duration-300 ease-in-out hover:text-sky-600'/>
+						</a>
 						<h4 className='mt-7 mb-3 text-white'>Location</h4>
 						<a
 							href='#'
@@ -241,14 +270,16 @@ export const AssetPage: FC = () => {
 								src={`https://www.google.com/maps/embed/v1/place?key=AIzaSyD90dblmkKeJB699g-Iggzm4TCzr1QlGdg
 								&q=${property.location1},${property.location2}`}></iframe>
 						</div>
-						<div className='w-full flex justify-between items-center rounded-xl bg-color--secondary-bg mt-7 py-8 px-4'>
+						<div
+							className='w-full flex justify-between items-center rounded-xl bg-color--secondary-bg mt-7 py-8 px-4'>
 							<div>
 								<h4 className='text-white'>
 									Have more questions about property?
 								</h4>
 							</div>
-							<div className='rounded-xl flex items-center p-4 justify-center bg-green-600 border-[1px] border-green-800 cursor-pointer'>
-								<IoLogoWhatsapp className='text-green-200 text-2xl' />
+							<div
+								className='rounded-xl flex items-center p-4 justify-center bg-green-600 border-[1px] border-green-800 cursor-pointer'>
+								<IoLogoWhatsapp className='text-green-200 text-2xl'/>
 								<p className='text-green-200 mx-3'>Call us an WhatsApp</p>
 							</div>
 						</div>

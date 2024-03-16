@@ -10,7 +10,7 @@ export function NavBarComponent() {
 						<div className='TLDLabel_logoWrapper__u8POJ DefaultLayout_TLDLabel__1gKwY'>
 							<Link className='TLDLabel_logo__HKkd8' to='/'>
 								<img
-									className='TLDLabel_image__DuLsB'
+									className=''
 									src='/TLD_logo_beige.svg'
 									alt='TLD'
 								/>

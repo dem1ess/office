@@ -4,7 +4,7 @@ export function Hero() {
 	return (
 		<div
 			id='w-node-ce165c02-7f9c-728f-2537-0d64ec587cb2-4264e49b'
-			className='hero-text-image'>
+			className='hero-text-image mt-8 md:mt-0'>
 			<div
 				id='w-node-_5696bd84-ced8-eb2b-3118-f549358b8290-4264e49b'
 				className='hero-content z-1'>

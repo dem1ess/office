@@ -15,7 +15,7 @@ export function MainVillaComponent({ property }: Iprops) {
 			<div className='pr-0 md:pr-10 w-full md:w-1/2'>
 				<div
 					style={{ backgroundImage: `url(/villas/${property.photoUrls[0]})` }}
-					className='bg-cover bg-center h-full rounded-xl'></div>
+					className='bg-cover bg-center h-[348px] rounded-xl'></div>
 			</div>
 			<div className='w-full md:w-1/2 mt-5'>
 				<div className='flex justify-between'>

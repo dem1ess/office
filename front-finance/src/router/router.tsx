@@ -7,6 +7,8 @@ import { Withdraw } from '../pages/Wallet/Withdraw.tsx'
 import AccountPage from '../pages/account/AccountPage'
 import { KycPage } from '../pages/kyc/KycPage'
 import { Layout } from '../pages/layout'
+import {TermsOfServicePage} from "../pages/TermOfService/TermOfService.tsx";
+import {PrivacyPolicyPage} from "../pages/PrivacyPolicy/PrivacyPolicy.tsx";
 
 export const router = createBrowserRouter([
 	{
@@ -35,6 +37,14 @@ export const router = createBrowserRouter([
 			{
 				path: 'wallet/deposit',
 				element: <WalletDeposit />,
+			},
+			{
+				path: 'terms-of-service',
+				element: <TermsOfServicePage />,
+			},
+			{
+				path: 'privacy-policy',
+				element: <PrivacyPolicyPage />,
 			},
 			{
 				path: 'account',

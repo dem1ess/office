@@ -47,18 +47,7 @@ export function HeroSelections() {
 						<div>Sign up / Log in</div>
 					</Link>
 				</div>
-				{/*<Link*/}
-				{/*	id='w-node-_39a22fe0-22f0-0bcf-597e-c84a48ee7f09-48ee7eec'*/}
-				{/*	data-w-id='39a22fe0-22f0-0bcf-597e-c84a48ee7f09'*/}
-				{/*	to='/'*/}
-				{/*	className='menu-burger static-white w-inline-block'>*/}
-				{/*	<img*/}
-				{/*		src='/images/652d75e69ee95c1bd641b09d_List.svg'*/}
-				{/*		loading='lazy'*/}
-				{/*		alt='Menu Burger Icon'*/}
-				{/*		className='icon-burger'*/}
-				{/*	/>*/}
-				{/*</Link>*/}
+
 			</div>
 		</div>
 	)

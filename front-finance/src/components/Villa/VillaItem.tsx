@@ -29,7 +29,7 @@ export function VillaItem({ property }: IProps) {
 								style={{ backgroundColor: '#228d21' }}></div>
 							<p
 								style={{ color: '#228d21' }}>
-								On Sale
+								Sale
 							</p>
 						</div>
 					</div>

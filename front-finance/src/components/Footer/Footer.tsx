@@ -45,7 +45,7 @@ export const Footer: React.FC = () => {
                             <MdDownload className='text-lg'/>
                         </a>
                         <Link
-                            to="/terms-of-use"
+                            to="/terms-of-service"
                             target="_blank"
                             className="footer-link-bottom">
                             Terms of Service
