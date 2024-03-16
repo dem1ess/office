@@ -2,13 +2,13 @@ import { createBrowserRouter } from 'react-router-dom'
 import { AssetPage } from '../pages/AssetPage'
 import { HomePage } from '../pages/HomePage'
 import { MarketplacePage } from '../pages/Marketplace'
+import { PrivacyPolicyPage } from '../pages/PrivacyPolicy/PrivacyPolicy.tsx'
 import { WalletDeposit } from '../pages/Wallet/Deposit.tsx'
 import { Withdraw } from '../pages/Wallet/Withdraw.tsx'
 import AccountPage from '../pages/account/AccountPage'
 import { KycPage } from '../pages/kyc/KycPage'
 import { Layout } from '../pages/layout'
-import {TermsOfServicePage} from "../pages/TermOfService/TermOfService.tsx";
-import {PrivacyPolicyPage} from "../pages/PrivacyPolicy/PrivacyPolicy.tsx";
+import TermsOfService from '../pages/TermOfService/TermOfService.tsx'
 
 export const router = createBrowserRouter([
 	{
@@ -40,7 +40,7 @@ export const router = createBrowserRouter([
 			},
 			{
 				path: 'terms-of-service',
-				element: <TermsOfServicePage />,
+				element: <TermsOfService />,
 			},
 			{
 				path: 'privacy-policy',
