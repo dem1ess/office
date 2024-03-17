@@ -17,9 +17,7 @@ export function Withdraw() {
 		console.log(transaction)
 	}, []) // Запускаем загрузку транзакций только при первом рендере
 
-	if (!user) return <UnauthorizedPage />
-
-	return (
+	return user ? (
 		<div className='DefaultLayout_contentChildren__UAU26 pt-12 md:pt-16 flex justify-center w-full'>
 			<div className='styles_root__1igZZ flex justify-center items-center flex-col w-full'>
 				<div className='mb-8'>
@@ -91,5 +89,7 @@ export function Withdraw() {
 				</div>
 			</div>
 		</div>
+	) : (
+		<UnauthorizedPage />
 	)
 }
