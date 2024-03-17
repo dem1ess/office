@@ -12,13 +12,6 @@ import { Layout } from '../pages/layout'
 
 export const router = createBrowserRouter([
 	{
-		path: '/fk-verify.html',
-		element: (
-			<body className='text-white'>0a23da6d0a6f9540e2992840c6435baa</body>
-		),
-		errorElement: <HomePage />,
-	},
-	{
 		path: '/welcome',
 		element: <HomePage />,
 	},
