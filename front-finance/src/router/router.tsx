@@ -3,18 +3,24 @@ import { AssetPage } from '../pages/AssetPage'
 import { HomePage } from '../pages/HomePage'
 import { MarketplacePage } from '../pages/Marketplace'
 import { PrivacyPolicyPage } from '../pages/PrivacyPolicy/PrivacyPolicy.tsx'
+import TermsOfService from '../pages/TermOfService/TermOfService.tsx'
 import { WalletDeposit } from '../pages/Wallet/Deposit.tsx'
 import { Withdraw } from '../pages/Wallet/Withdraw.tsx'
 import AccountPage from '../pages/account/AccountPage'
 import { KycPage } from '../pages/kyc/KycPage'
 import { Layout } from '../pages/layout'
-import TermsOfService from '../pages/TermOfService/TermOfService.tsx'
 
 export const router = createBrowserRouter([
 	{
+		path: '/fk-verify.html',
+		element: (
+			<body className='text-white'>0a23da6d0a6f9540e2992840c6435baa</body>
+		),
+		errorElement: <HomePage />,
+	},
+	{
 		path: '/welcome',
 		element: <HomePage />,
-		errorElement: <HomePage />,
 	},
 	{
 		path: '/',
