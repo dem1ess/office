@@ -8,18 +8,14 @@ export function NavBarComponent() {
 				<ul className='styles_navList__BfiL6'>
 					<div className='TLDLabel_box__GpJen'>
 						<div className='TLDLabel_logoWrapper__u8POJ DefaultLayout_TLDLabel__1gKwY'>
-							<Link className='TLDLabel_logo__HKkd8' to='/'>
-								<img
-									className=''
-									src='/TLD_logo_beige.svg'
-									alt='TLD'
-								/>
+							<Link className='TLDLabel_logo__HKkd8' to='/app'>
+								<img className='' src='/TLD_logo_beige.svg' alt='TLD' />
 							</Link>
 							<LanguageSelector />
 						</div>
 					</div>
 					<li className='styles_sideMenuNavItem__fij19 DefaultLayout_menuItem__H1jbg'>
-						<Link className='styles_link__V9uY8' to='/account'>
+						<Link className='styles_link__V9uY8' to='account'>
 							<div className='styles_iconWrap__rlIw7'>
 								<svg
 									width='20'
@@ -41,7 +37,7 @@ export function NavBarComponent() {
 						</Link>
 					</li>
 					<li className='styles_sideMenuNavItem__fij19 DefaultLayout_menuItem__H1jbg'>
-						<Link className='styles_link__V9uY8' to='/'>
+						<Link className='styles_link__V9uY8' to='/app'>
 							<div className='styles_iconWrap__rlIw7'>
 								<svg
 									width='20'
@@ -63,7 +59,7 @@ export function NavBarComponent() {
 						</Link>
 					</li>
 					<li className='styles_sideMenuNavItem__fij19'>
-						<Link className='styles_link__V9uY8' to='/wallet'>
+						<Link className='styles_link__V9uY8' to='wallet'>
 							<div className='styles_iconWrap__rlIw7'>
 								<svg
 									className=''
@@ -91,7 +87,7 @@ export function NavBarComponent() {
 						</Link>
 					</li>
 					<li className='styles_sideMenuNavItem__fij19 DefaultLayout_menuItem__H1jbg'>
-						<Link className='styles_link__V9uY8' to='/kyc'>
+						<Link className='styles_link__V9uY8' to='kyc'>
 							<div className='styles_iconWrap__rlIw7'>
 								<svg
 									className=''

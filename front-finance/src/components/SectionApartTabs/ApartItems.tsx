@@ -12,7 +12,7 @@ const ApartmentItem: React.FC<Iprops> = ({ property }) => {
 			id={property.id}
 			role='group'
 			className='apartments-item rounded-xl h-max-content shadow-small overflow-hidden border-4 border-color--border'>
-			<Link to={`/asset/${property.id}`} className='flex flex-col'>
+			<Link to={`app/asset/${property.id}`} className='flex flex-col'>
 				<div className='apart-cover'>
 					<img
 						src={`/villas/${property.photoUrls[0]}`}

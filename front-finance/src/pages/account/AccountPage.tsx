@@ -4,6 +4,7 @@ import { MainVillaComponent } from '../../components/Villa/MainVilla.tsx'
 import { useAppSelector } from '../../hooks/redux.ts'
 import { IPurchase } from '../../models/IPurchase.ts'
 import { fetchUserPurchase } from '../../store/reducers/ActionsCreator.ts'
+import UnauthorizedPage from '../Unauthorized/UnauthorizedPage.tsx'
 import s from './styles.module.scss'
 
 export default function AccountPage() {
@@ -22,7 +23,7 @@ export default function AccountPage() {
 	// Обработка загрузки, ошибок и получения данных
 	if (isLoading) return <div>Loading...</div>
 	if (error) return <div>Error: {error}</div>
-	if (!purchases || !properties || !user) return <div>No data</div>
+	if (!purchases || !properties || !user) return <UnauthorizedPage />
 
 	const propertiesWithShare = properties.filter(property => {
 		return purchases.some(
@@ -31,22 +32,24 @@ export default function AccountPage() {
 		)
 	})
 
-
 	const incomes = purchases.map(purchase => {
 		// Находим свойство с соответствующим propertyId
-		const property = properties.find(property => property.id === purchase.propertyId);
+		const property = properties.find(
+			property => property.id === purchase.propertyId
+		)
 
 		if (property) {
-			const income = purchase.tokens * (((property.rentPerYear - (0.3 * property.rentPerYear)) / 1000)/365);
-			return income;
+			const income =
+				purchase.tokens *
+				((property.rentPerYear - 0.3 * property.rentPerYear) / 1000 / 365)
+			return income
 		} else {
 			// Если свойство не найдено, возвращаем 0 дохода
-			return 0;
+			return 0
 		}
-	});
+	})
 
-	const totalIncome = incomes.reduce((acc, income) => acc + income, 0);
-
+	const totalIncome = incomes.reduce((acc, income) => acc + income, 0)
 
 	const propertiesWithTokens = propertiesWithShare.map(property => {
 		const totalTokens = purchases.reduce((acc, purchase) => {
@@ -78,6 +81,7 @@ export default function AccountPage() {
 		}, 0)
 		return acc + propertyTokens
 	}, 0)
+
 	return (
 		<div className={s.root}>
 			<div>
@@ -93,7 +97,7 @@ export default function AccountPage() {
 							<div className={`${s.balanceGraphic} py-5`}>
 								<div className={s.rentBalanceClaim}>
 									<p className='text-6xl font-bold text-green-400 pb-5'>
-										${(totalIncome).toLocaleString()}
+										${totalIncome.toLocaleString()}
 									</p>
 								</div>
 							</div>
@@ -263,10 +267,12 @@ export default function AccountPage() {
 						</div>
 						<div className='flex flex-col mt-3 w-full'>
 							<div className='md:p-5 border flex flex-col border-color--border rounded-b-xl'>
-								<p className='styles_headerTitle__6d1cy ml-5 mt-3'>Order History</p>
+								<p className='styles_headerTitle__6d1cy ml-5 mt-3'>
+									Order History
+								</p>
 								<div className='md: px-7 flex justify-between'>
 									<p>ID</p>
-									<div className="flex">
+									<div className='flex'>
 										<p className='mr-9'>Unit</p>
 										<p>Total</p>
 									</div>

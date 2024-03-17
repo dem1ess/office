@@ -9,7 +9,7 @@ export function VillaItem({ property }: IProps) {
 	const percentagePurchased = (purchasedTokens / property.tokens) * 100
 	return (
 		<div className='flex w-full mb-5 md:m-0 md:mr-5 bg-color--primary-bg flex-col border border-color--border rounded-xl p-5'>
-			<Link to={`/asset/${property.id}`}>
+			<Link to={`asset/${property.id}`}>
 				<div className='w-full'>
 					<div
 						style={{ backgroundImage: `url(villas/${property.photoUrls[0]})` }}
@@ -18,8 +18,12 @@ export function VillaItem({ property }: IProps) {
 				<div className='w-full mt-5'>
 					<div className='flex justify-between'>
 						<div className='flex flex-col'>
-							<p className=' text-[18px] md:text-[24px] font-bold'>{property.name}</p>
-							<p className='text-[#808a9d] pb-4 md:py-5'>{property.mainLocation}</p>
+							<p className=' text-[18px] md:text-[24px] font-bold'>
+								{property.name}
+							</p>
+							<p className='text-[#808a9d] pb-4 md:py-5'>
+								{property.mainLocation}
+							</p>
 						</div>
 						<div
 							className='styles_status__0gCRC'
@@ -27,10 +31,7 @@ export function VillaItem({ property }: IProps) {
 							<div
 								className='styles_statusDot__xGtp_'
 								style={{ backgroundColor: '#228d21' }}></div>
-							<p
-								style={{ color: '#228d21' }}>
-								Sale
-							</p>
+							<p style={{ color: '#228d21' }}>Sale</p>
 						</div>
 					</div>
 					<div className='flex justify-between pt-4 md:pt-8'>
@@ -48,22 +49,21 @@ export function VillaItem({ property }: IProps) {
 						</div>
 					</div>
 					<div className='py-5 styles_bottomInfo__X25WU'>
-							<div className='styles_tokenIrr__Gu31I'>
-								<div className='flex justify-start'>
-									<p className='pb-3'>ROI</p>
-								</div>
-								<p className='styles_bottomValue__A3PzE'>{property.roi}%</p>
+						<div className='styles_tokenIrr__Gu31I'>
+							<div className='flex justify-start'>
+								<p className='pb-3'>ROI</p>
 							</div>
+							<p className='styles_bottomValue__A3PzE'>{property.roi}%</p>
+						</div>
 
-
-							<div className='styles_tokenRentStart__BovuN'>
-								<div className='flex justify-start'>
-									<p className='pb-3'>Rent per year</p>
-								</div>
-								<p className='styles_bottomValue__A3PzE styles_rentStartDate__7eaEr'>
-									$ {property.rentPerYear.toLocaleString()}
-								</p>
+						<div className='styles_tokenRentStart__BovuN'>
+							<div className='flex justify-start'>
+								<p className='pb-3'>Rent per year</p>
 							</div>
+							<p className='styles_bottomValue__A3PzE styles_rentStartDate__7eaEr'>
+								$ {property.rentPerYear.toLocaleString()}
+							</p>
+						</div>
 					</div>
 					<div className='mt-2 md:mt-[32px]'>
 						<div className='styles_progressBar__Xp6qx'>

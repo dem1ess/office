@@ -12,11 +12,11 @@ import { Layout } from '../pages/layout'
 
 export const router = createBrowserRouter([
 	{
-		path: '/welcome',
+		path: '/',
 		element: <HomePage />,
 	},
 	{
-		path: '/',
+		path: '/app',
 		element: <Layout />,
 		errorElement: <Layout />,
 		children: [

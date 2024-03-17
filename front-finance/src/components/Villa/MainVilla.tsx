@@ -10,7 +10,7 @@ export function MainVillaComponent({ property }: Iprops) {
 
 	return (
 		<Link
-			to={`/asset/${property.id}`}
+			to={`asset/${property.id}`}
 			className='flex md:flex-row flex-col border border-color--border bg-color--primary-bg rounded-xl p-5'>
 			<div className='pr-0 md:pr-10 w-full md:w-1/2'>
 				<div
@@ -31,7 +31,9 @@ export function MainVillaComponent({ property }: Iprops) {
 							style={{ backgroundColor: '#228d21' }}></div>
 						<p
 							style={{ color: '#228d21' }}
-							className='styles_statusTitle__fz_3b'>Sale</p>
+							className='styles_statusTitle__fz_3b'>
+							Sale
+						</p>
 					</div>
 				</div>
 				<div className='flex justify-between pt-8'>
@@ -49,34 +51,20 @@ export function MainVillaComponent({ property }: Iprops) {
 					</div>
 				</div>
 				<div className='py-5 styles_bottomInfo__X25WU'>
-					<div className='styles_bottomElement__RparB'>
-						<div className='styles_tokenIrr__Gu31I'>
-							<div className='flex justify-start'>
-								<p className='pb-3'>ROI</p>
-							</div>
-							<p className='styles_bottomValue__A3PzE'>{property.roi} %</p>
+					<div className='styles_tokenIrr__Gu31I'>
+						<div className='flex justify-start'>
+							<p className='pb-3'>ROI</p>
 						</div>
+						<p className='styles_bottomValue__A3PzE'>{property.roi}%</p>
 					</div>
 
-					<div className='styles_bottomElement__RparB'>
-						<div className='styles_tokenRentPerYear__gyKKv'>
-							<div className='flex justify-start'>
-								<p className='pb-3'>Rent per year</p>
-							</div>
-							<p className='styles_bottomValue__A3PzE'>
-								$ {property.rentPerYear.toLocaleString()} / year
-							</p>
+					<div className='styles_tokenRentStart__BovuN'>
+						<div className='flex justify-start'>
+							<p className='pb-3'>Rent per year</p>
 						</div>
-					</div>
-					<div className='styles_bottomElement__RparB hidden md:flex'>
-						<div className='styles_tokenRentStart__BovuN'>
-							<div className='flex justify-start'>
-								<p className='pb-3'>Rent start year</p>
-							</div>
-							<p className='styles_bottomValue__A3PzE'>
-								{property.yearOfCompletion}
-							</p>
-						</div>
+						<p className='styles_bottomValue__A3PzE styles_rentStartDate__7eaEr'>
+							$ {property.rentPerYear.toLocaleString()}
+						</p>
 					</div>
 				</div>
 				<div className='mt-2 md:mt-[32px]'>

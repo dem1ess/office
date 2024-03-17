@@ -1,5 +1,7 @@
 // components/hero/Hero.jsx или .tsx
 
+import { Link } from 'react-router-dom'
+
 export function Hero() {
 	return (
 		<div
@@ -8,17 +10,15 @@ export function Hero() {
 			<div
 				id='w-node-_5696bd84-ced8-eb2b-3118-f549358b8290-4264e49b'
 				className='hero-content z-1'>
-				<h1
-					id='second-block'
-					className='text-[42px] text-white pb-4'>
+				<h1 id='second-block' className='text-[42px] text-white pb-4'>
 					Get passive income from rental real estate with investments from 470$
 				</h1>
 				<h2 className='text-4xl text-white mob-pad-l-r'>
 					Investments in real estate
 				</h2>
 				<div className='hero-content-buttons '>
-					<a
-						href='/'
+					<Link
+						to='/app'
 						target='_blank'
 						className='button whity icon w-inline-block'>
 						<img
@@ -30,7 +30,7 @@ export function Hero() {
 							className='icon-24 text-sky-500'
 						/>
 						<div>Browse properties</div>
-					</a>
+					</Link>
 				</div>
 			</div>
 			<div
