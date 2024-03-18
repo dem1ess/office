@@ -80,8 +80,13 @@ export const AssetPage: FC = () => {
 		lastDocumentUrl.lastIndexOf('.pdf')
 	)
 
-	const purchasedTokens = property?.tokens - property?.availableTokens
-	const percentagePurchased = (purchasedTokens / property?.tokens) * 100
+	const purchasedTokens = property
+		? property.tokens - (property.availableTokens || 0)
+		: 0
+	const percentagePurchased = property
+		? (purchasedTokens / (property.tokens || 1)) * 100
+		: 0
+
 	return (
 		<div className='md:ml-[20px] ml-0 mt-5 md:mt-0 flex flex-col-reverse md:flex-row'>
 			{property ? (
