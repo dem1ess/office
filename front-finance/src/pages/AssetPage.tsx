@@ -1,4 +1,4 @@
-import { ChangeEvent, FC, useState } from 'react'
+import {ChangeEvent, FC, useEffect, useState} from 'react'
 import { BsDownload, BsFillFileEarmarkPdfFill } from 'react-icons/bs'
 import { IoLogoWhatsapp } from 'react-icons/io5'
 import { LuHome, LuKeySquare, LuWaves } from 'react-icons/lu'
@@ -58,6 +58,10 @@ export const AssetPage: FC = () => {
 		)
 		setInputValue(maxTokens)
 	}
+
+	useEffect(() => {
+		window.scrollTo(0, 0); // Прокручиваем страницу вверх при монтировании компонента
+	}, []);
 
 	const formattedDescription = {
 		__html: property?.description,
@@ -357,11 +361,11 @@ export const AssetPage: FC = () => {
 									<button
 										onClick={() => createPurchase(inputValue!)}
 										className='bg-sky-400 w-full h-12 rounded-xl font-bold text-white mt-4'>
-										Buy Tokens
+										Buy Units
 									</button>
 								) : (
 									<button
-										disabled
+										onClick={()=>toast.error('In order to make a purchase you need to log in. ')}
 										type='submit'
 										className='bg-sky-400 disabled:bg-gray-400 w-full h-12 rounded-xl font-bold text-white mt-4'>
 										Buy Units

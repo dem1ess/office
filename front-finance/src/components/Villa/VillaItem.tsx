@@ -3,16 +3,19 @@ import { IProperty } from '../../models/IProperty.ts'
 
 interface IProps {
 	property: IProperty
+	class1: string
 }
-export function VillaItem({ property }: IProps) {
+export function VillaItem({ property, class1 }: IProps) {
 	const purchasedTokens = property.tokens - property.availableTokens
 	const percentagePurchased = (purchasedTokens / property.tokens) * 100
 	return (
-		<div className='flex w-full mb-5 md:m-0 md:mr-5 bg-color--primary-bg flex-col border border-color--border rounded-xl p-5'>
+		<div
+			className={`flex w-full mb-5 md:m-0 md:${class1} bg-color--primary-bg flex-col border border-color--border rounded-xl p-5`}>
+
 			<Link to={`asset/${property.id}`}>
 				<div className='w-full'>
 					<div
-						style={{ backgroundImage: `url(villas/${property.photoUrls[0]})` }}
+						style={{backgroundImage: `url(villas/${property.photoUrls[0]})`}}
 						className='bg-cover bg-center h-[348px] rounded-xl'></div>
 				</div>
 				<div className='w-full mt-5'>
@@ -27,11 +30,11 @@ export function VillaItem({ property }: IProps) {
 						</div>
 						<div
 							className='styles_status__0gCRC'
-							style={{ backgroundColor: '#e6f9e5', padding: '4px 16px' }}>
+							style={{backgroundColor: '#e6f9e5', padding: '4px 16px'}}>
 							<div
 								className='styles_statusDot__xGtp_'
-								style={{ backgroundColor: '#228d21' }}></div>
-							<p style={{ color: '#228d21' }}>Sale</p>
+								style={{backgroundColor: '#228d21'}}></div>
+							<p style={{color: '#228d21'}}>Sale</p>
 						</div>
 					</div>
 					<div className='flex justify-between pt-4 md:pt-8'>
@@ -70,7 +73,7 @@ export function VillaItem({ property }: IProps) {
 							<div className='styles_fillerWrapper__5cKm8'>
 								<div
 									className='styles_filler__fITGx'
-									style={{ width: `${percentagePurchased}%` }}>
+									style={{width: `${percentagePurchased}%`}}>
 									<span className='styles_collectedText__p6_dr'>
 										Collected :
 									</span>

@@ -13,11 +13,16 @@ export function Withdraw() {
 	const user = useAppSelector(state => state.user.user)
 
 	useEffect(() => {
-		dispatch(fetchUserTransactions(user!.id))
-		console.log(transaction)
-	}, []) // Запускаем загрузку транзакций только при первом рендере
+		if (user) {
+			dispatch(fetchUserTransactions(user.id))
+			console.log(transaction)
+		}
+	}, [user]) // Запускаем загрузку транзакций только при изменении пользователя
 
-	return user ? (
+	if (!user) {
+		return <UnauthorizedPage /> // Если пользователь не существует, отрендерить UnauthorizedPage
+	}
+	return (
 		<div className='DefaultLayout_contentChildren__UAU26 pt-12 md:pt-16 flex justify-center w-full'>
 			<div className='styles_root__1igZZ flex justify-center items-center flex-col w-full'>
 				<div className='mb-8'>
@@ -54,7 +59,7 @@ export function Withdraw() {
 					<div className='styles_balancesWrapper__BIGba'>
 						<div className='flex justify-between mx-5'>
 							<p>Transaction History</p>
-							<p className='pl-8'>Status</p>
+							<p className='pr-0 md:pr-6'>Status</p>
 							<p>Amount</p>
 						</div>
 						<div className='styles_balances__0nTGG'>
@@ -71,7 +76,7 @@ export function Withdraw() {
 												<div className='Tooltip_detailsIcon__0Np2G Tooltip_tooltip__m_96l'></div>
 											</div>
 										</div>
-										<div>
+										<div className='pr-8 md:pr-14'>
 											<p className='styles_upperText__JgZ7V'>
 												{transaction.transactionStatus}
 											</p>
@@ -89,7 +94,5 @@ export function Withdraw() {
 				</div>
 			</div>
 		</div>
-	) : (
-		<UnauthorizedPage />
 	)
 }

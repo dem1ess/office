@@ -122,7 +122,7 @@ export default function AccountPage() {
 												</div>
 												<div>
 													<p className='DetailsTable_details_text_grey__nTKdr'>
-														Current Account Value
+														Current ballance
 													</p>
 													<p className='DetailsTable_details_text_purple__SEzmS'>
 														${user.balance}
@@ -154,7 +154,7 @@ export default function AccountPage() {
 												</div>
 												<div>
 													<p className='DetailsTable_details_text_grey__nTKdr'>
-														Properties Owned
+														Estates Owned
 													</p>
 													<p className='DetailsTable_details_text_purple__SEzmS'>
 														{propertiesWithTokens.length}
@@ -253,7 +253,7 @@ export default function AccountPage() {
 												</div>
 												<div>
 													<p className='DetailsTable_details_text_grey__nTKdr'>
-														Total Property Value
+														Total Estates Value
 													</p>
 													<p className='DetailsTable_details_text_purple__SEzmS'>
 														${totalSpent.toLocaleString()}
@@ -296,7 +296,7 @@ export default function AccountPage() {
 					<div className='mt-5 md:mt-0 w-full'>
 						<div className={s.headerWrapper}>
 							<div className='text-xl text-white font-bold mb-4'>
-								Your Properties
+								Your Estates
 							</div>
 						</div>
 						<div>
