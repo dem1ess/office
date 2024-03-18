@@ -6,13 +6,13 @@ import { TbBrandBooking } from 'react-icons/tb'
 import { Link, useParams } from 'react-router-dom'
 import { ToastContainer, toast } from 'react-toastify'
 import { instance } from '../api/axios.ts'
-import { useAppSelector } from '../hooks/redux.ts'
+import { useAppDispatch, useAppSelector } from '../hooks/redux.ts'
 import { IProperty } from '../models/IProperty.ts'
 import { checkAuth, fetchProperty } from '../store/reducers/ActionsCreator.ts'
 
 export const AssetPage: FC = () => {
 	const [inputValue, setInputValue] = useState<number>()
-
+	const dispatch = useAppDispatch()
 	const { id } = useParams<{ id: string }>() // Ensure the id is a string
 	const properties = useAppSelector(state => state.property.property)
 
@@ -31,7 +31,6 @@ export const AssetPage: FC = () => {
 
 			await instance.post(`/purchase`, data)
 			// If you need to do something after the request, you can put it here
-			fetchProperty()
 			checkAuth()
 			toast.success(`You buy ${tokens} pieces`)
 		} catch (error) {
@@ -61,7 +60,11 @@ export const AssetPage: FC = () => {
 	}
 
 	useEffect(() => {
-		window.scrollTo(0, 0) // Прокручиваем страницу вверх при монтировании компонента
+		dispatch(fetchProperty())
+	}, [property])
+
+	useEffect(() => {
+		window.scrollTo(0, 0)
 	}, [])
 
 	const formattedDescription = {
@@ -77,8 +80,8 @@ export const AssetPage: FC = () => {
 		lastDocumentUrl.lastIndexOf('.pdf')
 	)
 
-	const purchasedTokens = property!.tokens - property!.availableTokens
-	const percentagePurchased = (purchasedTokens / property!.tokens) * 100
+	const purchasedTokens = property?.tokens - property?.availableTokens
+	const percentagePurchased = (purchasedTokens / property?.tokens) * 100
 	return (
 		<div className='md:ml-[20px] ml-0 mt-5 md:mt-0 flex flex-col-reverse md:flex-row'>
 			{property ? (
