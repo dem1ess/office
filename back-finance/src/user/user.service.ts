@@ -39,28 +39,24 @@ export class UserService {
     return user
   }
 
-  async createGoogle(dto: AuthDto, firstName: string, lastName: string) {
-    // Хешируйте пароль перед сохранением в базу данных
-    const hashedPassword = await hash(dto.password)
-
-    // Создайте пользователя с хешированным паролем и другими полями
-    const user = await this.prisma.user.create({
+  async updateVerif(id: string, updateUserDto: UpdateUserDto): Promise<User> {
+    // Обновляем пользователя в базе данных
+    const user = await this.prisma.user.update({
+      where: { id },
       data: {
-        email: dto.email,
-        password: hashedPassword,
-        balance: 0,
-        role: Role.USER,
-        googleId: null,
-        firstName: firstName, // Используйте данные из параметра
-        lastName: lastName, // Используйте данные из параметра
-        documentType: null,
-        country: null,
-        documentPhoto1Url: null,
-        documentPhoto2Url: null,
-        selfieUrl: null,
-        isVerif: false
+        documentType: updateUserDto.documentType,
+        country: updateUserDto.country,
+        documentPhoto1Url: updateUserDto.documentPhoto1Url,
+        documentPhoto2Url: updateUserDto.documentPhoto2Url,
+        firstName: updateUserDto.firstName,
+        lastName: updateUserDto.lastName,
+        selfieUrl: updateUserDto.selfieUrl
       }
     })
+
+    if (!user) {
+      throw new Error('User not found')
+    }
 
     return user
   }
@@ -114,6 +110,32 @@ export class UserService {
       },
       data
     })
+    return user
+  }
+
+  async createGoogle(dto: AuthDto, firstName: string, lastName: string) {
+    // Хешируйте пароль перед сохранением в базу данных
+    const hashedPassword = await hash(dto.password)
+
+    // Создайте пользователя с хешированным паролем и другими полями
+    const user = await this.prisma.user.create({
+      data: {
+        email: dto.email,
+        password: hashedPassword,
+        balance: 0,
+        role: Role.USER,
+        googleId: null,
+        firstName: firstName, // Используйте данные из параметра
+        lastName: lastName, // Используйте данные из параметра
+        documentType: null,
+        country: null,
+        documentPhoto1Url: null,
+        documentPhoto2Url: null,
+        selfieUrl: null,
+        isVerif: false
+      }
+    })
+
     return user
   }
 

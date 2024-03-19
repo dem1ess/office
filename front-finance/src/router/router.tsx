@@ -7,7 +7,7 @@ import TermsOfService from '../pages/TermOfService/TermOfService.tsx'
 import { WalletDeposit } from '../pages/Wallet/Deposit.tsx'
 import { Withdraw } from '../pages/Wallet/Withdraw.tsx'
 import AccountPage from '../pages/account/AccountPage'
-import { KycPage } from '../pages/kyc/KycPage'
+import KycPage from '../pages/kyc/KycPage.tsx'
 import { Layout } from '../pages/layout'
 
 export const router = createBrowserRouter([

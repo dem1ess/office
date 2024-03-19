@@ -39,7 +39,7 @@ export function WalletDeposit() {
 	return (
 		<div className='DefaultLayout_contentChildren__UAU26 m0 md:m-5 pt-12 md:pt-16 flex justify-center w-full'>
 			<div className='bg-color--primary-bg flex flex-col  rounded-xl p-12 w-1/2'>
-				<Link to='/wallet'>
+				<Link to=' wallet'>
 					<div className='flex items-center'>
 						<IoArrowBack className='text-3xl text-sky-500' />
 						<p className='text-sky-500 text-lg'>Back to Wallet</p>
