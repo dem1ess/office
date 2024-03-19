@@ -11,7 +11,6 @@ import {
 } from '@nestjs/common'
 import { Transaction, TransactionStatus } from '@prisma/client'
 import { CreateTransactionDto } from './dto/create-transaction.dto'
-import { PrMoneyCallbackDto } from './dto/prmoney-callback.dto'
 import { UpdateTransactionStatusDto } from './dto/update-transaction-status.dto'
 import { TransactionService } from './transaction.service'
 
@@ -40,20 +39,19 @@ export class TransactionController {
 
   @HttpCode(200)
   @Post('callbackStatus')
-  @UsePipes(ValidationPipe)
-  async handleCallback(@Body() callbackDto: PrMoneyCallbackDto) {
+  async handleCallback(@Body() callbackData: any) {
     // Извлекаем идентификатор транзакции из description
-    const transactionId = callbackDto.description
+    const transactionId = callbackData.description
 
-    // Определяем статус транзакции на основе callbackDto.status
+    // Определяем статус транзакции на основе callbackData.status
     let transactionStatus: TransactionStatus
-    if (callbackDto.status === 'success') {
+    if (callbackData.status === 'success') {
       transactionStatus = TransactionStatus.COMPLETE
-    } else if (callbackDto.status === 'fail') {
+    } else if (callbackData.status === 'fail') {
       transactionStatus = TransactionStatus.CANCELLED
     } else {
-      // Если статус не распознан, вы можете вернуть ошибку или обработать его по-другому
-      throw new Error(`Неизвестный статус: ${callbackDto.status}`)
+      // Если статус не распознан, выбрасываем ошибку
+      throw new Error(`Неизвестный статус: ${callbackData.status}`)
     }
 
     // Обновляем статус транзакции
