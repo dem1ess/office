@@ -1,8 +1,8 @@
 import { TransactionStatus } from '@prisma/client'
-import { IsEnum, IsString } from 'class-validator'
+import { IsEnum, IsUUID } from 'class-validator'
 
 export class UpdateTransactionStatusDto {
-  @IsString()
+  @IsUUID()
   transactionId: string
 
   @IsEnum(TransactionStatus)

@@ -4,13 +4,14 @@ import {
   Get,
   HttpCode,
   Param,
+  Patch,
   Post,
-  Put,
   UsePipes,
   ValidationPipe
 } from '@nestjs/common'
 import { Transaction } from '@prisma/client'
 import { CreateTransactionDto } from './dto/create-transaction.dto'
+import { PrMoneyCallbackDto } from './dto/prmoney-callback.dto'
 import { UpdateTransactionStatusDto } from './dto/update-transaction-status.dto'
 import { TransactionService } from './transaction.service'
 
@@ -27,7 +28,7 @@ export class TransactionController {
   }
 
   @HttpCode(200)
-  @Put()
+  @Patch()
   @UsePipes(ValidationPipe) // Используем ValidationPipe для валидации DTO
   async updateTransactionStatus(
     @Body() updateTransactionStatusDto: UpdateTransactionStatusDto
@@ -35,6 +36,34 @@ export class TransactionController {
     return this.transactionService.updateTransactionStatus(
       updateTransactionStatusDto
     )
+  }
+
+  @HttpCode(200)
+  @Post('success')
+  @UsePipes(ValidationPipe)
+  async handleSuccessCallback(@Body() callbackDto: PrMoneyCallbackDto) {
+    // Извлекаем идентификатор транзакции из description
+    const transactionId = callbackDto.description
+
+    // Обновляем статус транзакции на COMPLETE и обновляем баланс пользователя
+    return this.transactionService.updateTransactionStatus({
+      transactionId,
+      transactionStatus: 'COMPLETE'
+    })
+  }
+
+  @HttpCode(200)
+  @Post('fail')
+  @UsePipes(ValidationPipe)
+  async handleFailCallback(@Body() callbackDto: PrMoneyCallbackDto) {
+    // Извлекаем идентификатор транзакции из description
+    const transactionId = callbackDto.description
+
+    // Обновляем статус транзакции на ERROR
+    return this.transactionService.updateTransactionStatus({
+      transactionId,
+      transactionStatus: 'ERROR'
+    })
   }
 
   @HttpCode(200)

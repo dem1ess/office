@@ -61,7 +61,8 @@ export const AssetPage: FC = () => {
 
 	useEffect(() => {
 		dispatch(fetchProperty())
-	}, [property])
+		console.log(property)
+	}, [])
 
 	useEffect(() => {
 		window.scrollTo(0, 0)
