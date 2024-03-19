@@ -4,13 +4,14 @@ import { IUser } from '../../models/IUser'
 import UnauthorizedPage from '../Unauthorized/UnauthorizedPage'
 import { COUNTRIES } from './selector/countries'
 import CountrySelector from './selector/selector'
+import { SelectMenuOption } from './selector/types'
 
 const KycPage = () => {
 	const [documentPhoto1, setDocumentPhoto1] = useState<File | null>(null)
 	const [documentPhoto2, setDocumentPhoto2] = useState<File | null>(null)
 	const [documentType, setDocumentType] = useState<string>('')
 	const [isOpen, setIsOpen] = useState(false)
-	const [country, setCountry] = useState<SelectMenuOption['value']>('PL')
+	const [country, setCountry] = useState<SelectMenuOption['title']>('Poland')
 	const [selfie, setSelfie] = useState<File | null>(null) // Добавляем инициализацию состояния для selfie
 	const user = useAppSelector(state => state.user.user) as IUser | null
 	const handleFileUpload = (
@@ -100,13 +101,6 @@ const KycPage = () => {
 		"Driver's license",
 	]
 
-	const countries = [
-		'Country 1',
-		'Country 2',
-		'Country 3',
-		// Добавьте другие страны по вашему выбору
-	]
-
 	return (
 		<>
 			{!user && <UnauthorizedPage />}
@@ -132,7 +126,7 @@ const KycPage = () => {
 										onChange={setCountry}
 										//@ts-ignore
 										selectedValue={COUNTRIES?.find(
-											option => option.value === country
+											option => option.title === country
 										)}
 									/>
 								</div>
