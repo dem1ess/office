@@ -1,6 +1,6 @@
+import { IsString } from 'class-validator'
 // dto/prmoney-callback.dto.ts
-import { TransactionStatus } from '@prisma/client'
-import { IsEnum, IsNumber, IsString } from 'class-validator'
+import { IsNumber } from 'class-validator'
 
 export class PrMoneyCallbackDto {
   @IsString()
@@ -9,8 +9,8 @@ export class PrMoneyCallbackDto {
   @IsString()
   id: string
 
-  @IsEnum(TransactionStatus)
-  status: TransactionStatus
+  @IsString()
+  status: string
 
   @IsNumber()
   amount: number
