@@ -31,7 +31,7 @@ const BurgerMenu: React.FC<BurgerMenuProps> = ({
 							<div className='BurgerMenu_logoWrapper__yY0fY mt-5'>
 								<div className='BinaryxLabel_box__GpJen'>
 									<div className='BinaryxLabel_logoWrapper__u8POJ BurgerMenu_binaryxLabel__eL71P'>
-										<Link className='BinaryxLabel_logo__HKkd8' to='/app'>
+										<Link className='BinaryxLabel_logo__HKkd8' to='/'>
 											<img
 												className='BinaryxLabel_image__DuLsB'
 												src='/TLD_logo_beige.svg'

@@ -20,25 +20,18 @@ export function HeroSelections() {
 					<div
 						id='w-node-_39a22fe0-22f0-0bcf-597e-c84a48ee7efd-48ee7eec'
 						className='menu-links'>
-						<Link to='/appapp' className='static_menu-link hidden'>
-							Partners
-						</Link>
-						<Link to='/app' target='_blank' className='static_menu-link'>
+						<a href='#about_platform' className='static_menu-link'>
 							About platform
-						</Link>
-						<Link to='/app' target='_blank' className='static_menu-link'>
+						</a>
+						<a href='#how-invest' className='static_menu-link'>
 							How to invest
-						</Link>
-						<Link to='/app' target='_blank' className='static_menu-link'>
-							Get Started
-						</Link>
+						</a>
 					</div>
 					<Link
 						id='w-node-_39a22fe0-22f0-0bcf-597e-c84a48ee7f06-48ee7eec'
 						to='/app'
-						target='_blank'
 						className='button whity small_sign static-light w-inline-block'>
-						<div>Sign up / Log in</div>
+						<div>Get Started</div>
 					</Link>
 				</div>
 			</div>

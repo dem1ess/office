@@ -8,7 +8,7 @@ export function NavBarComponent() {
 				<ul className='styles_navList__BfiL6'>
 					<div className='TLDLabel_box__GpJen'>
 						<div className='TLDLabel_logoWrapper__u8POJ DefaultLayout_TLDLabel__1gKwY'>
-							<Link className='TLDLabel_logo__HKkd8' to='/app'>
+							<Link className='TLDLabel_logo__HKkd8' to='/'>
 								<img className='' src='/TLD_logo_beige.svg' alt='TLD' />
 							</Link>
 							<LanguageSelector />
