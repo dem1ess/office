@@ -1,4 +1,5 @@
 import {
+  BadRequestException,
   Body,
   Controller,
   Get,
@@ -11,6 +12,7 @@ import {
 } from '@nestjs/common'
 import { Transaction, TransactionStatus } from '@prisma/client'
 import { CreateTransactionDto } from './dto/create-transaction.dto'
+import { CallbackDto } from './dto/prmoney-callback.dto'
 import { UpdateTransactionStatusDto } from './dto/update-transaction-status.dto'
 import { TransactionService } from './transaction.service'
 
@@ -37,21 +39,33 @@ export class TransactionController {
     )
   }
 
-  @HttpCode(200)
   @Post('callbackStatus')
-  async handleCallback(@Body() callbackData: any) {
-    // Извлекаем идентификатор транзакции из description
-    const transactionId = callbackData.description
+  async handleCallback(@Body() callbackDto: CallbackDto) {
+    // Десериализуем payment из строки в объект
+    let paymentData
+    try {
+      paymentData = JSON.parse(callbackDto.payment)
+    } catch (error) {
+      throw new BadRequestException('Некорректные данные платежа')
+    }
 
-    // Определяем статус транзакции на основе callbackData.status
+    // Извлекаем идентификатор транзакции из description
+    const transactionId = paymentData.description
+
+    // Проверяем, что paymentData.status определен и не пустой
+    if (paymentData.status === undefined || paymentData.status === '') {
+      throw new BadRequestException('Не указан статус транзакции')
+    }
+
+    // Определяем статус транзакции на основе paymentData.status
     let transactionStatus: TransactionStatus
-    if (callbackData.status === 'success') {
+    if (paymentData.status === 'success') {
       transactionStatus = TransactionStatus.COMPLETE
-    } else if (callbackData.status === 'fail') {
+    } else if (paymentData.status === 'fail') {
       transactionStatus = TransactionStatus.CANCELLED
     } else {
       // Если статус не распознан, выбрасываем ошибку
-      throw new Error(`Неизвестный статус: ${callbackData.status}`)
+      throw new BadRequestException(`Неизвестный статус: ${paymentData.status}`)
     }
 
     // Обновляем статус транзакции
