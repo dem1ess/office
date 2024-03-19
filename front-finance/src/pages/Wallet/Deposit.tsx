@@ -3,30 +3,34 @@ import { IoArrowBack } from 'react-icons/io5'
 import { Link } from 'react-router-dom'
 import { instance } from '../../api/axios.ts'
 import { useAppSelector } from '../../hooks/redux.ts'
+import { IUser } from '../../models/IUser.ts'
 
 export function WalletDeposit() {
-	const user = useAppSelector(state => state.user.user)
+	const user = useAppSelector(state => state.user.user) as IUser | null
 	const [amount, setAmount] = useState('')
 
-	const handleSubmit = async e => {
+	const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
 		e.preventDefault()
 
 		try {
-			console.log(user?.id, amount)
-			// Создаем транзакцию
-			const response = await instance.post('/transactions', {
-				userId: user.id,
-				amount: parseFloat(amount),
-			})
+			if (user) {
+				console.log(user.id, amount)
+				// Создаем транзакцию
+				const response = await instance.post('/transactions', {
+					userId: user.id,
+					amount: parseFloat(amount),
+				})
 
-			// Получаем transactionId из ответ
-			// Получаем transactionId из ответа
-			const transactionId = response.data.id
+				// Получаем transactionId из ответ
+				const transactionId = response.data.id
 
-			// Перенаправляем пользователя на страницу оплаты
-			const clientId = '1oYwaDHU0j6bIVymaldsNW7icpYn2vBRmzFSuQvE' // Замените на ваш client_id
-			const paymentUrl = `https://new.prmoney.com/payments/create?client_id=${clientId}&amount=${amount}&currency=840&description=${transactionId}`
-			window.location.href = paymentUrl
+				// Перенаправляем пользователя на страницу оплаты
+				const clientId = '1oYwaDHU0j6bIVymaldsNW7icpYn2vBRmzFSuQvE' // Замените на ваш client_id
+				const paymentUrl = `https://new.prmoney.com/payments/create?client_id=${clientId}&amount=${amount}&currency=840&description=${transactionId}`
+				window.location.href = paymentUrl
+			} else {
+				console.error('User is not logged in')
+			}
 		} catch (error) {
 			console.error('Ошибка при создании транзакции:', error)
 		}
