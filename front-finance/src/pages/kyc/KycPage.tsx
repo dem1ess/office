@@ -123,6 +123,7 @@ const KycPage = () => {
 										id={'country-selector'}
 										open={isOpen}
 										onToggle={() => setIsOpen(!isOpen)}
+										//@ts-ignore
 										onChange={setCountry}
 										//@ts-ignore
 										selectedValue={COUNTRIES?.find(
