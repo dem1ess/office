@@ -47,7 +47,7 @@ export function WalletDeposit() {
 						<p className='text-sky-500 text-lg'>{t('BacktoWallet')}</p>
 					</div>
 				</Link>
-				<p className='text-lg my-3'>{t('Enteramount')}</p>
+				<p className='text-lg my-3'>{t('Enteramount')} USD</p>
 				<form onSubmit={handleSubmit}>
 					<input
 						type='number'
