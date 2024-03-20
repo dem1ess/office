@@ -144,5 +144,61 @@
 	"t9": "Wir werden alle Informationen, die wir sammeln, verwenden oder erhalten, offenlegen, wenn dies gesetzlich vorgeschrieben oder zulässig ist, wie z. B. im Rahmen einer Vorladung oder eines ähnlichen rechtlichen Verfahrens, und wenn wir in gutem Glauben davon ausgehen, dass eine Offenlegung erforderlich ist, um unsere Rechte, Ihre Sicherheit oder die Sicherheit anderer zu schützen, Betrug zu untersuchen oder auf eine behördliche Anfrage zu reagieren.",
 	"ContactInformation": "Kontaktinformationen",
 	"t10": "Wenn Sie weitere Informationen zu dieser Richtlinie erhalten möchten oder uns zu Fragen im Zusammenhang mit individuellen Rechten und Ihren persönlichen Informationen kontaktieren möchten, können Sie eine E-Mail an support@tld-bali.com senden.",
-	"Enteramount": "Menge eingeben"
+	"Enteramount": "Menge eingeben",
+	"termsOfService": {
+		"title": "Nutzungsbedingungen",
+		"content": "Willkommen bei TLD INVESTIMENTS! Diese Nutzungsbedingungen (\"Bedingungen\") regeln die Nutzung unserer Website unter tld-bali.com (die \"Website\") und aller von TLD INVESTIMENTS (nachfolgend \"wir\", \"uns\" oder \"unser\") über die Website bereitgestellten Dienste. Durch den Zugriff auf oder die Nutzung der Website erklären Sie sich mit diesen Bedingungen und unserer Datenschutzrichtlinie einverstanden. Wenn Sie diesen Bedingungen oder unserer Datenschutzrichtlinie nicht zustimmen, dürfen Sie die Website nicht nutzen."
+	},
+	"agreeToTerms": {
+		"content": "1. Nutzung der Website\n\n1.1. Sie müssen mindestens 18 Jahre alt sein, um die Website nutzen zu können.\n1.2. Sie erklären sich damit einverstanden, die Website nur für rechtmäßige Zwecke zu nutzen und nicht die Rechte Dritter zu verletzen oder die Nutzung und den Genuss der Website durch Dritte einzuschränken oder zu beeinträchtigen.\n1.3. Sie sind allein verantwortlich für alle Aktivitäten, die unter Ihrem Konto auf der Website stattfinden."
+	},
+	"useOfTheSite": {
+		"title": "Nutzung der Website",
+		"content": [
+			"1. Nutzung der Website",
+			"1.1. Sie müssen mindestens 18 Jahre alt sein, um die Website nutzen zu können.",
+			"1.2. Sie erklären sich damit einverstanden, die Website nur für rechtmäßige Zwecke zu nutzen und nicht die Rechte Dritter zu verletzen oder die Nutzung und den Genuss der Website durch Dritte einzuschränken oder zu beeinträchtigen.",
+			"1.3. Sie sind allein verantwortlich für alle Aktivitäten, die unter Ihrem Konto auf der Website stattfinden."
+		]
+	},
+	"investmentDisclaimer": {
+		"title": "Haftungsausschluss für Investitionen",
+		"content": [
+			"2. Haftungsausschluss für Investitionen",
+			"2.1. Die auf der Website bereitgestellten Informationen dienen nur zu allgemeinen Informationszwecken und stellen keine Finanzberatung dar.",
+			"2.2. Wir garantieren nicht die Richtigkeit, Vollständigkeit oder Nützlichkeit der auf der Website bereitgestellten Informationen. Sie sollten Ihre eigenen Recherchen durchführen und professionellen Rat einholen, bevor Sie Investitionsentscheidungen treffen.",
+			"2.3. Investitionen in Immobilien sind mit Risiken verbunden, und die frühere Wertentwicklung ist kein Indikator für zukünftige Ergebnisse. Wir haften nicht für Verluste oder Schäden, die sich aus der Nutzung der auf der Website bereitgestellten Informationen ergeben."
+		]
+	},
+	"intellectualProperty": {
+		"title": "Geistiges Eigentum",
+		"content": [
+			"3. Geistiges Eigentum",
+			"3.1. Der Inhalt der Website, einschließlich Text, Grafiken, Logos, Bilder und Software, ist Eigentum von oder lizenziert an TLD INVESTMENTS und durch Urheberrechte und andere geistige Eigentumsrechte geschützt.",
+			"3.2. Sie dürfen keinen Inhalt der Website reproduzieren, modifizieren, verteilen, anzeigen oder anderweitig verwenden, ohne unsere vorherige schriftliche Zustimmung."
+		]
+	},
+	"linksToThirdPartyWebsites": {
+		"title": "Links zu Websites Dritter",
+		"content": [
+			"4. Links zu Websites Dritter",
+			"4.1. Die Website kann Links zu Websites oder Ressourcen Dritter enthalten. Wir sind nicht verantwortlich für Inhalte, Produkte oder Dienstleistungen, die auf oder über Websites oder Ressourcen Dritter angeboten werden.",
+			"4.2. Alle Links zu Websites Dritter werden ausschließlich zu Ihrer Bequemlichkeit bereitgestellt und implizieren keine Billigung oder Zugehörigkeit zu diesen Dritten."
+		]
+	},
+	"termination": {
+		"title": "Beendigung",
+		"content": "5. Beendigung\n\n5.1. Wir behalten uns das Recht vor, Ihren Zugang zur Website jederzeit ohne vorherige Ankündigung oder Haftung aus irgendeinem Grund, einschließlich, aber nicht beschränkt auf Verletzung dieser Bedingungen, auszusetzen oder zu beenden."
+	},
+	"changesToTerms": {
+		"title": "Änderungen dieser Bedingungen",
+		"content": "6. Änderungen dieser Bedingungen\n\n6.1. Wir können diese Bedingungen jederzeit durch Aktualisierung dieser Seite überarbeiten. Durch die fortgesetzte Nutzung der Website nach solchen Überarbeitungen erklären Sie sich mit den geänderten Bedingungen einverstanden."
+	},
+	"contactUs": {
+		"title": "Kontaktiere uns",
+		"content": "7. Kontaktiere uns\n\n7.1. Bei Fragen zu diesen Bedingungen kontaktieren Sie uns bitte unter info@tld-bali.com. Durch die Nutzung der Website erkennen Sie an, dass Sie diese Bedingungen gelesen, verstanden und akzeptiert haben."
+	},
+	"acknowledgement": {
+		"content": "Durch die Nutzung der Website erkennen Sie an, dass Sie diese Bedingungen gelesen, verstanden und akzeptiert haben."
+	}
 }
