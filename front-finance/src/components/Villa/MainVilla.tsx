@@ -40,13 +40,13 @@ export function MainVillaComponent({ property }: Iprops) {
 				</div>
 				<div className='flex justify-between pt-8'>
 					<div>
-						<p className='mb-4 text-2xl'>{t('estatePrice')}</p>
+						<p className='mb-4 text-xl'>{t('estatePrice')}</p>
 						<p className='text-sky-400 pb-5 font-bold text-[37px]'>
 							$ {property.price.toLocaleString()}
 						</p>
 					</div>
 					<div>
-						<p className='mb-4 text-2xl'>{t('unitPrice')}</p>
+						<p className='mb-4 text-xl'>{t('unitPrice')}</p>
 						<p className='text-sky-400 font-bold text-[37px]'>
 							$ {property.priceToken}
 						</p>

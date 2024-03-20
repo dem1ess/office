@@ -40,13 +40,13 @@ export function VillaItem({ property, class1 }: IProps) {
 					</div>
 					<div className='flex justify-between pt-4 md:pt-8'>
 						<div>
-							<p className='mb-4'>{t('estatePrice')}</p>
+							<p className='mb-4 text-xl'>{t('estatePrice')}</p>
 							<p className='text-sky-400 0 py-5 font-bold text-[37px]'>
 								$ {property.price.toLocaleString()}
 							</p>
 						</div>
 						<div>
-							<p className='mb-4'>{t('unitPrice')}</p>
+							<p className='mb-4 text-xl'>{t('unitPrice')}</p>
 							<p className='text-sky-400 py-5 font-bold text-[37px]'>
 								$ {property.priceToken}
 							</p>
