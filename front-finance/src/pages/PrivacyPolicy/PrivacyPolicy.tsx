@@ -3,6 +3,10 @@ import { useTranslation } from 'react-i18next'
 
 export const PrivacyPolicyPage: FC = () => {
 	const { t } = useTranslation()
+	const rightsList = t('RightsList', { returnObjects: true })
+
+	// Type assertion to tell TypeScript that rightsList is an array
+	const rightsListArray = rightsList as Array<string>
 
 	return (
 		<div className='min-h-screen py-6 flex flex-col justify-center sm:py-12'>
@@ -34,11 +38,9 @@ export const PrivacyPolicyPage: FC = () => {
 								{t('YourRights')}
 								<br />
 								<ul>
-									{t('RightsList', { returnObjects: true }).map(
-										(item: string, index: number) => (
-											<li key={index}>{item}</li>
-										)
-									)}
+									{rightsListArray.map((item, index) => (
+										<li key={index}>{item}</li>
+									))}
 								</ul>
 								{t('t6')}
 							</p>

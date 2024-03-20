@@ -90,35 +90,35 @@ export const AssetPage: FC = () => {
 	}
 
 	const lastDocumentUrlsByVillaAndLanguage: LastDocumentUrlsByVilla = {
-		cltufyb5h000d9z40kpt7flsy: {
+		cltzua8ic000cdzkdtbdnml68: {
 			en: 'https://tld-bali.com/villas/LYVIN_BINGIN_VILLA/Villa Lyvin Bingin Investment Contract.pdf',
 			pl: 'https://tld-bali.com/villas/LYVIN_BINGIN_VILLA/Umowa inwestycyjna LYVIN BINGIN VILLAS.pdf',
 			it: 'https://tld-bali.com/villas/LYVIN_BINGIN_VILLA/Contratto Di Investimento Villa Lyvin Bingin.pdf',
 			de: 'https://tld-bali.com/villas/LYVIN_BINGIN_VILLA/Villa Lyvin Bingin Investitionsvertrag.pdf',
 			// Добавьте URL-адреса для других языков по мере необходимости
 		},
-		cltufyl1k000e9z409fa04n7j: {
+		cltzu9duu000bdzkdbip9w5yz: {
 			en: 'https://tld-bali.com/villas/LOFT_VILLA/Loft Villa Investment Contract.pdf',
 			pl: 'https://tld-bali.com/villas/LOFT_VILLA/Umowa inwestycyjna LOFT VILLA.pdf',
 			it: 'https://tld-bali.com/villas/LOFT_VILLA/Contratto Di Investimento Loft Villa.pdf',
 			de: 'https://tld-bali.com/villas/LOFT_VILLA/Loft Villa  Investitionsvertrag.pdf',
 			// Добавьте URL-адреса для других языков по мере необходимости
 		},
-		cltufxy51000c9z40z3rhadup: {
+		cltzu7efb000adzkd27mvfmaf: {
 			en: 'https://tld-bali.com/villas/RED_SUNSET_VILLA/Villa Red Sunset Investment Contract.pdf',
 			pl: 'https://tld-bali.com/villas/RED_SUNSET_VILLA/Umowa inwestycyjna Villa Red Sunset.pdf',
 			it: 'https://tld-bali.com/villas/RED_SUNSET_VILLA/Contratto Di Investimento Villa Red Sunset.pdf',
 			de: 'https://tld-bali.com/villas/RED_SUNSET_VILLA/Villa Red Sunset Investitionsvertrag.pdf',
 			// Добавьте URL-адреса для других языков по мере необходимости
 		},
-		cltufxess000b9z4024c8q4v7: {
+		cltzu6mgd0009dzkdjg5iu0s1: {
 			en: 'https://tld-bali.com/villas/BALIWOOD/Baliwood Villa Investment Contract.pdf',
 			pl: 'https://tld-bali.com/villas/BALIWOOD/Umowa inwestycyjna Baliwood Villa.pdf',
 			it: 'https://tld-bali.com/villas/BALIWOOD/Contratto Di Investimento Baliwood Villa.pdf',
 			de: 'https://tld-bali.com/villas/BALIWOOD/Baliwood Villa Investitionsvertrag.pdf',
 			// Добавьте URL-адреса для других языков по мере необходимости
 		},
-		cltufwzam000a9z40rjq04q2l: {
+		cltzu616x0008dzkdh7be2hiz: {
 			en: 'https://tld-bali.com/villas/VILLA_MILA/Villa Mila Investment Contract.pdf',
 			pl: 'https://tld-bali.com/villas/VILLA_MILA/Umowa inwestycyjna Villa MILA.pdf',
 			it: 'https://tld-bali.com/villas/VILLA_MILA/Contratto Di Investimento Villa Mila.pdf',
