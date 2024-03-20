@@ -90,14 +90,14 @@ export const AssetPage: FC = () => {
 	}
 
 	const lastDocumentUrlsByVillaAndLanguage: LastDocumentUrlsByVilla = {
-		cltzua8ic000cdzkdtbdnml68: {
+		cltzu9duu000bdzkdbip9w5yz: {
 			en: 'https://tld-bali.com/villas/LYVIN_BINGIN_VILLA/Villa Lyvin Bingin Investment Contract.pdf',
 			pl: 'https://tld-bali.com/villas/LYVIN_BINGIN_VILLA/Umowa inwestycyjna LYVIN BINGIN VILLAS.pdf',
 			it: 'https://tld-bali.com/villas/LYVIN_BINGIN_VILLA/Contratto Di Investimento Villa Lyvin Bingin.pdf',
 			de: 'https://tld-bali.com/villas/LYVIN_BINGIN_VILLA/Villa Lyvin Bingin Investitionsvertrag.pdf',
 			// Добавьте URL-адреса для других языков по мере необходимости
 		},
-		cltzu9duu000bdzkdbip9w5yz: {
+		cltzua8ic000cdzkdtbdnml68: {
 			en: 'https://tld-bali.com/villas/LOFT_VILLA/Loft Villa Investment Contract.pdf',
 			pl: 'https://tld-bali.com/villas/LOFT_VILLA/Umowa inwestycyjna LOFT VILLA.pdf',
 			it: 'https://tld-bali.com/villas/LOFT_VILLA/Contratto Di Investimento Loft Villa.pdf',
@@ -129,7 +129,7 @@ export const AssetPage: FC = () => {
 	}
 
 	// Получаем имя виллы для текущей
-	const villaName = property?.id || 'cltu5b8qh000611qp6zcxwuq4' // Если имя виллы не определено, используем 'defaultVilla'
+	const villaName = property?.id || 'cltzu616x0008dzkdh7be2hiz' // Если имя виллы не определено, используем 'defaultVilla'
 	const currentLanguage = i18n.language
 	// Получаем URL-адрес для последнего документа в зависимости от текущего языка и имени виллы
 	const lastDocumentUrl =
