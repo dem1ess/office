@@ -119,9 +119,9 @@ export const AssetPage: FC = () => {
 		},
 		cltufwzam000a9z40rjq04q2l: {
 			en: 'https://tld-bali.com/villas/VILLA_MILA/Villa Mila Investment Contract.pdf',
-			pl: 'https://tld-bali.com/villas/BALIWOOD/Umowa inwestycyjna Villa MILA.pdf',
-			it: 'https://tld-bali.com/villas/BALIWOOD/Contratto Di Investimento Villa Mila.pdf',
-			de: 'https://tld-bali.com/villas/BALIWOOD/Villa Mila Investitionsvertrag.pdf',
+			pl: 'https://tld-bali.com/villas/VILLA_MILA/Umowa inwestycyjna Villa MILA.pdf',
+			it: 'https://tld-bali.com/villas/VILLA_MILA/Contratto Di Investimento Villa Mila.pdf',
+			de: 'https://tld-bali.com/villas/VILLA_MILA/Villa Mila Investitionsvertrag.pdf',
 			// Добавьте URL-адреса для других языков по мере необходимости
 		},
 		// Добавьте сочетания id и последнего документа для других вилл по мере необходимости
