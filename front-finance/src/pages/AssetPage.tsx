@@ -8,6 +8,7 @@ import { ToastContainer, toast } from 'react-toastify'
 import { instance } from '../api/axios.ts'
 import { useAppDispatch, useAppSelector } from '../hooks/redux.ts'
 import { IProperty } from '../models/IProperty.ts'
+import i18n from '../service/i18n.ts'
 import { checkAuth, fetchProperty } from '../store/reducers/ActionsCreator.ts'
 
 export const AssetPage: FC = () => {
@@ -15,6 +16,20 @@ export const AssetPage: FC = () => {
 	const dispatch = useAppDispatch()
 	const { id } = useParams<{ id: string }>() // Ensure the id is a string
 	const properties = useAppSelector(state => state.property.property)
+
+	const villaDocuments = {
+		villa1: {
+			en: ['document1_en.pdf', 'document2_en.pdf'],
+			fr: ['document1_fr.pdf', 'document2_fr.pdf'],
+			// Другие языки и документы для villa1
+		},
+		villa2: {
+			en: ['document1_en.pdf', 'document2_en.pdf'],
+			fr: ['document1_fr.pdf', 'document2_fr.pdf'],
+			// Другие языки и документы для villa2
+		},
+		// Другие виллы
+	}
 
 	// Find the property by id
 	const property = properties?.find((item: IProperty) => item.id === id)
@@ -71,8 +86,68 @@ export const AssetPage: FC = () => {
 	const formattedDescription = {
 		__html: property?.description,
 	}
+	interface LastDocumentUrls {
+		en: string
+		pl: string
+		it: string
+		de: string
+		// Добавьте URL-адреса для других языков по мере необходимости
+	}
+
+	interface LastDocumentUrls {
+		[language: string]: string
+	}
+
+	interface LastDocumentUrlsByVilla {
+		[villaId: string]: LastDocumentUrls
+	}
+
+	const lastDocumentUrlsByVillaAndLanguage: LastDocumentUrlsByVilla = {
+		cltufyb5h000d9z40kpt7flsy: {
+			en: 'https://tld-bali.com/villas/LYVIN_BINGIN_VILLA/Villa Lyvin Bingin Investment Contract.pdf',
+			pl: 'https://tld-bali.com/villas/LYVIN_BINGIN_VILLA/Umowa inwestycyjna LYVIN BINGIN VILLAS.pdf',
+			it: 'https://tld-bali.com/villas/LYVIN_BINGIN_VILLA/Contratto Di Investimento Villa Lyvin Bingin.pdf',
+			de: 'https://tld-bali.com/villas/LYVIN_BINGIN_VILLA/Villa Lyvin Bingin Investitionsvertrag.pdf',
+			// Добавьте URL-адреса для других языков по мере необходимости
+		},
+		cltufyl1k000e9z409fa04n7j: {
+			en: 'https://tld-bali.com/villas/LOFT_VILLA/Loft Villa Investment Contract.pdf',
+			pl: 'https://tld-bali.com/villas/LOFT_VILLA/Umowa inwestycyjna LOFT VILLA.pdf',
+			it: 'https://tld-bali.com/villas/LOFT_VILLA/Contratto Di Investimento Loft Villa.pdf',
+			de: 'https://tld-bali.com/villas/LOFT_VILLA/Loft Villa  Investitionsvertrag.pdf',
+			// Добавьте URL-адреса для других языков по мере необходимости
+		},
+		cltufxy51000c9z40z3rhadup: {
+			en: 'https://tld-bali.com/villas/RED_SUNSET_VILLA/Villa Red Sunset Investment Contract.pdf',
+			pl: 'https://tld-bali.com/villas/RED_SUNSET_VILLA/Umowa inwestycyjna Villa Red Sunset.pdf',
+			it: 'https://tld-bali.com/villas/RED_SUNSET_VILLA/Contratto Di Investimento Villa Red Sunset.pdf',
+			de: 'https://tld-bali.com/villas/RED_SUNSET_VILLA/Villa Red Sunset Investitionsvertrag.pdf',
+			// Добавьте URL-адреса для других языков по мере необходимости
+		},
+		cltufxess000b9z4024c8q4v7: {
+			en: 'https://tld-bali.com/villas/BALIWOOD/Baliwood Villa Investment Contract.pdf',
+			pl: 'https://tld-bali.com/villas/BALIWOOD/Umowa inwestycyjna Baliwood Villa.pdf',
+			it: 'https://tld-bali.com/villas/BALIWOOD/Contratto Di Investimento Baliwood Villa.pdf',
+			de: 'https://tld-bali.com/villas/BALIWOOD/Baliwood Villa Investitionsvertrag.pdf',
+			// Добавьте URL-адреса для других языков по мере необходимости
+		},
+		cltufwzam000a9z40rjq04q2l: {
+			en: 'https://tld-bali.com/villas/VILLA_MILA/Villa Mila Investment Contract.pdf',
+			pl: 'https://tld-bali.com/villas/BALIWOOD/Umowa inwestycyjna Villa MILA.pdf',
+			it: 'https://tld-bali.com/villas/BALIWOOD/Contratto Di Investimento Villa Mila.pdf',
+			de: 'https://tld-bali.com/villas/BALIWOOD/Villa Mila Investitionsvertrag.pdf',
+			// Добавьте URL-адреса для других языков по мере необходимости
+		},
+		// Добавьте сочетания id и последнего документа для других вилл по мере необходимости
+	}
+
+	// Получаем имя виллы для текущей
+	const villaName = property?.id || 'cltu5b8qh000611qp6zcxwuq4' // Если имя виллы не определено, используем 'defaultVilla'
+	const currentLanguage = i18n.language
+	// Получаем URL-адрес для последнего документа в зависимости от текущего языка и имени виллы
 	const lastDocumentUrl =
-		property?.documentUrls[property?.documentUrls.length - 1]
+		lastDocumentUrlsByVillaAndLanguage[villaName]?.[currentLanguage] || ''
+
 	const decodedLastDocumentUrl = lastDocumentUrl
 		? decodeURIComponent(lastDocumentUrl).replace(/ /g, '%20')
 		: ''

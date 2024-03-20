@@ -1,8 +1,10 @@
 // components/hero/Hero.jsx или .tsx
 
+import { useTranslation } from 'react-i18next'
 import { Link } from 'react-router-dom'
 
 export function Hero() {
+	const { t } = useTranslation()
 	return (
 		<div
 			id='w-node-ce165c02-7f9c-728f-2537-0d64ec587cb2-4264e49b'
@@ -11,10 +13,10 @@ export function Hero() {
 				id='w-node-_5696bd84-ced8-eb2b-3118-f549358b8290-4264e49b'
 				className='hero-content z-1'>
 				<h1 id='second-block' className='text-[42px] text-white pb-4'>
-					Get passive income from rental real estate with investments from 470$
+					{t('heroTextMain')}
 				</h1>
 				<h2 className='text-4xl text-white mob-pad-l-r'>
-					Investments in real estate
+					{t('heroTextSecond')}
 				</h2>
 				<div className='hero-content-buttons '>
 					<Link
@@ -29,7 +31,7 @@ export function Hero() {
 							alt=''
 							className='icon-24 text-sky-500'
 						/>
-						<div>Browse properties</div>
+						<div>{t('heroBtn')}</div>
 					</Link>
 				</div>
 			</div>
@@ -39,7 +41,7 @@ export function Hero() {
 				<iframe
 					width='100%'
 					height='100%'
-					src='https://www.youtube.com/embed/TdCwgf70gNI?si=J6LoDzhhakXjZ13c'
+					src={t('heroYoutubeLink')}
 					allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture'
 					allowFullScreen
 					title='Embedded youtube'

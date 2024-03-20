@@ -1,25 +1,49 @@
-import React, { ChangeEvent } from 'react'
-import { useTranslation } from 'react-i18next'
+import React, { useEffect, useState } from 'react'
+import i18n from '../service/i18n'
+const languages = [
+	{ value: 'en', label: 'ENG' },
+	{ value: 'pl', label: 'PL' },
+	{ value: 'it', label: 'IT' },
+	{ value: 'de', label: 'DE' },
+]
 
-interface LanguageSelectorProps {}
+const LanguageSelector: React.FC = () => {
+	const [language, setLanguage] = useState(i18n.language)
 
-const LanguageSelector: React.FC<LanguageSelectorProps> = () => {
-	const { i18n } = useTranslation()
+	useEffect(() => {
+		const handleChangeLanguage = () => {
+			setLanguage(i18n.language)
+		}
+		i18n.on('languageChanged', handleChangeLanguage)
+		return () => {
+			i18n.off('languageChanged', handleChangeLanguage)
+		}
+	}, [])
 
-	const changeLanguage = (event: ChangeEvent<HTMLSelectElement>) => {
-		i18n.changeLanguage(event.target.value)
+	const changeLanguage = (lng: string) => {
+		i18n.changeLanguage(lng)
+	}
+
+	const handleLanguageChange = (
+		event: React.ChangeEvent<HTMLSelectElement>
+	) => {
+		const selectedLanguage = event.target.value
+		setLanguage(selectedLanguage)
+		changeLanguage(selectedLanguage)
 	}
 
 	return (
 		<div className='my-2'>
 			<select
 				id='language'
-				onChange={changeLanguage}
+				value={language}
+				onChange={handleLanguageChange}
 				className='mt-1 block w-full border-color--secondary-bg rounded-xl font-bold text-white shadow-sm py-1 px-2 bg-color--secondary-bg text-sm'>
-				<option className="font-bold" value='en'>Eng</option>
-				<option className="font-bold" value='pl'>PL</option>
-				<option className="font-bold" value='it'>IT</option>
-				<option className="font-bold" value='de'>DE</option>
+				{languages.map(({ value, label }) => (
+					<option key={value} value={value} className='font-bold'>
+						{label}
+					</option>
+				))}
 			</select>
 		</div>
 	)

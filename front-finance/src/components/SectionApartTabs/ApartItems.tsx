@@ -1,4 +1,5 @@
 import React from 'react'
+import { useTranslation } from 'react-i18next'
 import { Link } from 'react-router-dom'
 import { IProperty } from '../../models/IProperty.ts'
 
@@ -7,6 +8,7 @@ interface Iprops {
 }
 
 const ApartmentItem: React.FC<Iprops> = ({ property }) => {
+	const { t } = useTranslation()
 	return (
 		<div
 			id={property.id}
@@ -36,7 +38,7 @@ const ApartmentItem: React.FC<Iprops> = ({ property }) => {
 
 				<div className='apart-percents'>
 					<div className='apart-percents-growth'>
-						<div className='text-xl text-gray-100'>Year of commissioning</div>
+						<div className='text-xl text-gray-100'>{t('apartItemYear')}</div>
 						<div className='newtext-16-regular-150 text-gray-200'>
 							{property.yearOfCompletion}
 						</div>
@@ -49,7 +51,7 @@ const ApartmentItem: React.FC<Iprops> = ({ property }) => {
 					</div>
 					<div className='apart-percents-growth'>
 						<div className='text-xl text-gray-100'>
-							Number of particles purchased
+							{t('apartItemPurchased')}
 						</div>
 						<div className='newtext-16-regular-150 text-gray-200'>
 							{property.tokens}
@@ -57,7 +59,7 @@ const ApartmentItem: React.FC<Iprops> = ({ property }) => {
 					</div>
 				</div>
 				<div className='button mt-auto apartments'>
-					<div>Invest</div>
+					<div>{t('apartItemBtn')}</div>
 				</div>
 			</Link>
 		</div>
