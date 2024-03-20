@@ -43,14 +43,14 @@ export const MarketplacePage: FC = () => {
 						</div>
 						<div className='flex md:flex-row mt-4 flex-col justify-between w-full'>
 							{property ? (
-								<VillaItem class1='mr-5' property={property[2]} />
+								<VillaItem class1='mr-4' property={property[2]} />
 							) : (
 								<div>
 									<h1>Loading</h1>
 								</div>
 							)}
 							{property ? (
-								<VillaItem class1='mr-5' property={property[3]} />
+								<VillaItem class1='mr-4' property={property[3]} />
 							) : (
 								<div>
 									<h1>Loading</h1>

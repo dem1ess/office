@@ -27,7 +27,7 @@ export function WalletDeposit() {
 
 				// Перенаправляем пользователя на страницу оплаты
 				const clientId = '1oYwaDHU0j6bIVymaldsNW7icpYn2vBRmzFSuQvE' // Замените на ваш client_id
-				const paymentUrl = `https://new.prmoney.com/payments/create?client_id=${clientId}&amount=${amount}&currency=840&description=${transactionId}`
+				const paymentUrl = `https://new.prmoney.com/payments/create?client_id=${clientId}&amount=${amount}&description=${transactionId}`
 				window.location.href = paymentUrl
 			} else {
 				console.error('User is not logged in')

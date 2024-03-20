@@ -57,7 +57,7 @@
 	"basePrice": "Basispreis des Vermögenswerts",
 	"rentPerYear": "Miete pro Jahr (erwartet)",
 	"RentPerYear": "Miete pro Jahr",
-	"facilityManagement": "Anlagenverwaltung (30%)",
+	"facilityManagement": "Anlagenverwaltung ",
 	"approximateValues": "Die aktuellen berechneten Werte sind ungefähre Werte, sie können nach oben oder unten variieren, abhängig von der Vermietung jeder einzelnen Immobilie.",
 	"contractToSign": "Vertrag zum Unterschreiben",
 	"location": "Standort",

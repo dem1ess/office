@@ -53,11 +53,11 @@
 	"details": "Details",
 	"aboutProperty": "About the property",
 	"totalInvestmentValue": "Total Investment Value",
-	"legalFees": "Legal fees (1.35%)",
+	"legalFees": "Legal fees ",
 	"basePrice": "Base price of the asset",
 	"rentPerYear": "Rent per year (expected)",
 	"RentPerYear": "Rent per year",
-	"facilityManagement": "Facility management (30%)",
+	"facilityManagement": "Facility management ",
 	"approximateValues": "The current calculated values are approximate, they may vary up or down, depending on the rental of each individual property.",
 	"contractToSign": "Contract to sign",
 	"location": "Location",
@@ -77,6 +77,8 @@
 	"threesteps": "Three steps to buy units",
 	"signup": "Sign up",
 	"signuplogin": "Sign up / Log in",
+	"logout": "Logout",
+	"YourEstates": "Your estates",
 	"Unauthorized": "Unauthorized Access",
 	"Unauthorizedp": "You are not authorized to access this page. Please login to continue.",
 	"login": "Login",
@@ -147,5 +149,63 @@
 	"Enteramount": "Enter amount",
 	"BacktoWallet": "Back to Wallet",
 	"Continue": "Continue",
-	"transfer": "Expect transfer of funds"
+	"transfer": "Expect transfer of funds",
+	"vAmmount": "Amount",
+	"vFirst": "First Name",
+	"vLast": "Last Name",
+	"vCountry": "Country",
+	"vAddress": "Address",
+	"vPostalCode": "Postal Code",
+	"termsOfService": {
+		"title": "Terms of Service",
+		"content": "Welcome to TLD INVESTMENTS! These Terms of Service (\"Terms\") govern your use of our website located at tld-bali.com (the \"Site\") and any services provided by TLD INVESTMENTS (referred to as \"us\", \"we\", or \"our\") through the Site."
+	},
+	"agreeToTerms": {
+		"content": "By accessing or using the Site, you agree to be bound by these Terms and our Privacy Policy. If you do not agree to these Terms or our Privacy Policy, you may not use the Site."
+	},
+	"useOfTheSite": {
+		"title": "1. Use of the Site",
+		"content": [
+			"1.1. You must be at least 18 years old to use the Site.",
+			"1.2. You agree to use the Site only for lawful purposes and in a manner that does not infringe the rights of, or restrict or inhibit the use and enjoyment of, the Site by any third party.",
+			"1.3. You are solely responsible for all activity that occurs under your account on the Site."
+		]
+	},
+	"investmentDisclaimer": {
+		"title": "2. Investment Disclaimer",
+		"content": [
+			"2.1. The information provided on the Site is for general informational purposes only and does not constitute financial advice.",
+			"2.2. We do not guarantee the accuracy, completeness, or usefulness of any information provided on the Site. You should conduct your own research and seek professional advice before making any investment decisions.",
+			"2.3. Investments in real estate involve risks, and past performance is not indicative of future results. We are not liable for any losses or damages resulting from your reliance on information provided on the Site."
+		]
+	},
+	"intellectualProperty": {
+		"title": "3. Intellectual Property",
+		"content": [
+			"3.1. The content on the Site, including text, graphics, logos, images, and software, is owned by or licensed to TLD INVESTMENTS and is protected by copyright and other intellectual property laws.",
+			"3.2. You may not reproduce, modify, distribute, display, or otherwise use any content from the Site without our prior written consent."
+		]
+	},
+	"linksToThirdPartyWebsites": {
+		"title": "4. Links to Third-Party Websites",
+		"content": [
+			"4.1. The Site may contain links to third-party websites or resources. We are not responsible for the content, products, or services offered on or through any third-party websites or resources.",
+			"4.2. Any links to third-party websites are provided solely for your convenience and do not imply any endorsement or affiliation with the third party."
+		]
+	},
+	"termination": {
+		"title": "5. Termination",
+		"content": "5.1. We reserve the right to suspend or terminate your access to the Site at any time, without prior notice or liability, for any reason whatsoever, including without limitation if you breach these Terms."
+	},
+	"changesToTerms": {
+		"title": "6. Changes to These Terms",
+		"content": "6.1. We may revise these Terms at any time by updating this page. By continuing to use the Site after any such revisions, you agree to be bound by the revised Terms."
+	},
+	"contactUs": {
+		"title": "7. Contact Us",
+		"content": "7.1. If you have any questions about these Terms, please contact us at info@tld-bali.com."
+	},
+	"acknowledgement": {
+		"content": "By using the Site, you acknowledge that you have read, understood, and agree to be bound by these Terms."
+	}
 }

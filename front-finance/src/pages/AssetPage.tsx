@@ -349,7 +349,7 @@ export const AssetPage: FC = () => {
 								<h4 className='text-white'>{t('moreQuestions')}</h4>
 							</div>
 							<a
-								href='https://api.whatsapp.com/message/7IRLJKFEV3DJP1?autoload=1&app_absent=0'
+								href={t('callUser')}
 								className='rounded-xl flex items-center p-4 justify-center bg-green-600 border-[1px] border-green-800 cursor-pointer'>
 								<IoLogoWhatsapp className='text-green-200 text-2xl' />
 								<p className='text-green-200 mx-3'>{t('callUs')}</p>

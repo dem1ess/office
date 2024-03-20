@@ -19,13 +19,15 @@ export const HomePage: FC = () => {
 					loading='lazy'
 					id='w-node-_36e62274-ba85-a93c-58fc-8469f1eeaa91-4264e49b'
 					alt=''
-					className='bg-patteren-blur_hero'/>
+					className='bg-patteren-blur_hero'
+				/>
 				<img
 					src='/villas/BALIWOOD/1.jpg'
 					loading='lazy'
 					id='w-node-a3fc9d2e-03d4-7058-1e04-c5cd662cfced-4264e49b'
 					alt=''
-					className='bg-patteren-city'/>
+					className='bg-patteren-city'
+				/>
 			</div>
 			<BecomeALandlord />
 			<WeChoose />

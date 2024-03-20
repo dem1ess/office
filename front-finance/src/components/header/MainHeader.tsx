@@ -133,7 +133,7 @@ export function MainHeaderComponent() {
 										<button
 											onClick={logoutHandler}
 											className='DesktopBar_walletConnectButton__YSbTf hidden md:flex Button_root__0ygym'>
-											<p>Logout</p>
+											<p>{t('logout')}</p>
 										</button>
 									</div>
 								) : (

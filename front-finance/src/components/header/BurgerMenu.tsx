@@ -1,5 +1,5 @@
 import React from 'react'
-import { FaUserAlt } from 'react-icons/fa'
+import { useTranslation } from 'react-i18next'
 import { FaPowerOff } from 'react-icons/fa6'
 import { useSelector } from 'react-redux'
 import { Link } from 'react-router-dom'
@@ -18,6 +18,8 @@ const BurgerMenu: React.FC<BurgerMenuProps> = ({
 	logoutHandler,
 }) => {
 	const user = useSelector((state: RootState) => state.user.user)
+
+	const { t } = useTranslation()
 
 	if (!show) {
 		return null
@@ -83,7 +85,7 @@ const BurgerMenu: React.FC<BurgerMenuProps> = ({
 												strokeLinejoin='round'></path>
 										</svg>
 									</div>
-									<span className='text-white text-xl'>Marketplace</span>
+									<span className='text-white text-xl'>{t('marketplace')}</span>
 								</Link>
 							</li>
 							<li onClick={onClose} className='flex items-center p-3'>
@@ -108,7 +110,7 @@ const BurgerMenu: React.FC<BurgerMenuProps> = ({
 												opacity='0.2'></path>
 										</svg>
 									</div>
-									<span className='text-white text-xl'>Dashboard</span>
+									<span className='text-white text-xl'>{t('dashboard')}</span>
 								</Link>
 							</li>
 							<li onClick={onClose} className='flex items-center p-3'>
@@ -135,7 +137,7 @@ const BurgerMenu: React.FC<BurgerMenuProps> = ({
 												fill='#58667E'></path>
 										</svg>
 									</div>
-									<span className='text-white text-xl'>Wallet</span>
+									<span className='text-white text-xl'>{t('wallet')}</span>
 								</Link>
 							</li>
 							<li onClick={onClose} className='flex items-center p-3'>
@@ -154,7 +156,9 @@ const BurgerMenu: React.FC<BurgerMenuProps> = ({
 												strokeWidth='0.5'></path>
 										</svg>
 									</div>
-									<span className='text-white text-xl'>Verification</span>
+									<span className='text-white text-xl'>
+										{t('verification')}
+									</span>
 								</Link>
 							</li>
 							<hr className='BurgerMenu_horizontalLine__yEV_t' />
@@ -175,7 +179,7 @@ const BurgerMenu: React.FC<BurgerMenuProps> = ({
 												fill='#58667E'></path>
 										</svg>
 									</div>
-									<span className='text-white text-xl'>Ask a question</span>
+									<span className='text-white text-xl'>{t('ask')}</span>
 								</Link>
 							</li>
 						</ul>
@@ -186,14 +190,14 @@ const BurgerMenu: React.FC<BurgerMenuProps> = ({
 								onClick={logoutHandler}
 								className='flex ml-2 px-7 flex-col bg-gray-500 justify-start items-center rounded-xl font-bold py-2'>
 								<FaPowerOff className='text-2xl text-white' />
-								<p className='text-white'>Log Out</p>
+								<p className='text-white'>{t('logout')}</p>
 							</div>
-							<Link
+							{/* <Link
 								to='account-settings'
 								className='flex ml-2 px-3 flex-col bg-cyan-400 justify-start items-center rounded-xl font-bold py-2'>
 								<FaUserAlt className='text-cyan-600 text-2xl' />
 								<p className='text-cyan-600'>{user.email}</p>
-							</Link>
+							</Link> */}
 						</div>
 					) : (
 						<div></div>

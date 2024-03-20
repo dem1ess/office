@@ -1,27 +1,28 @@
 {
-	"link1": "O platformie",
+	"link1": "O nas",
 	"link2": "Jak inwestować",
-	"link3": "Zacznij",
-	"heroTextMain": "Zarabiają pasywnie z inwestycji w nieruchomościach z dochodem od 470$",
+	"link3": "Rozpoczni teraz",
+	"heroTextMain": "Zarabiaj pasywnie z inwestycji w nieruchomości z dochodem od 470$",
 	"heroTextSecond": "Inwestycje w nieruchomości",
-	"heroBtn": "Zbadaj nieruchomości",
+	"heroBtn": "Przegląd nieruchomości",
 	"heroYoutubeLink": "https://www.youtube.com/embed/dB2nV8JCFDk?si=rQovgS5t-QA_vMnp",
 	"becomeMain": "Zostań inwestorem i zarabiaj pasywnie online w pięciu prostych krokach",
-	"become1": "Zarejestrowany i weryfikacja",
-	"become2": "Wybierz nieruchomość",
+	"become1": "Rejestracja i weryfikacja",
+	"become2": "Wybierz obiekt nieruchomość",
 	"become3": "Wybierz metodę płatności",
 	"become4": "Potwierdź płatność",
 	"become5": "Ciesz się pasywnym dochodem",
-	"aboutTextMain": "Willa są w naszej posiadaniu już 20 lat, my badajemy rynek nieruchomości i nasze eksperci wybierają najlepsze oferty o wysokiej płynności, po czym nasze prawnicy biorą udział i dokładnie sprawdzają wszystkie dokumenty i pozwolenia.",
+	"aboutTextMain": "Willi są w naszej własności już 20 lat, my badamy rynek nieruchomości i nasze eksperci wybierają najlepsze oferty o wysokiej płynności, po czym nasze prawnicy biorą udział i dokładnie sprawdzają wszystkie dokumenty i pozwolenia.",
 	"about3Mill": "3,7 > milion",
-	"about3MillSecond": "$ 3,7 milion naszych własnych funduszy zostało już zainwestowanych w villi na Bali",
+	"about3MillSecond": "$ 3,7 milion wlasnych funduszy juz zostalo zainwestowano w Willi na Bali",
 	"about10Vill": "10>",
-	"about10VillSecond": "Więcej niż 10 Vill's będzie w naszej posiadaniu do końca 2024",
+	"about10VillSecond": "Więcej niż 10 Will będzie w naszej własności do końca 2024",
 	"whyBaliH1": "Dlaczego Bali",
 	"whyBaliH1Span": "i jak to działa?",
 	"whyBaliSpan": "Bali to atrakcyjna turystyczna stolica,",
 	"whyBali2span": "jedną z najpopularniejszych",
-	"whyBaliSpan2": " miejsca docelowe dla podróżnych przez 365 dni w roku.",
+	"whyBaliSpan1": "Bali to jest raj turystyczny i ",
+	"whyBaliSpan2": " miejsc docelowe dla turystów przez 365 dni w roku.",
 	"whyBali1item1h1": "Wzrost indeksu cen nieruchomości w Bali",
 	"whyBali1item1h2": "Średnia wartość najmu w",
 	"whyBali1item1h2Span": "Bali",
@@ -29,7 +30,7 @@
 	"whyBali1item5Span": "Po udanej transakcji stajesz się udziałowcem",
 	"whyBali1item6Span": "funduszu i otrzymujesz swój aktyw w postaci nieruchomości,",
 	"whyBali1item7Span": " co daje ci stabilny dochód,",
-	"apartItemYear": "Rok montażu",
+	"apartItemYear": "Wybudowano",
 	"apartItemPurchased": "Liczba zakupionych części",
 	"apartItemBtn": "Inwestuj",
 	"ourPartners": "NASI PARTNERZY",
@@ -39,9 +40,9 @@
 	"footerPrivacy": "Polityka prywatności",
 	"footerLicense": "Licencja na firmę",
 	"footerTerms": "Warunki usługi",
-	"estatePrice": "Cena jednostki",
+	"estatePrice": "Cena nieruchomości",
 	"roi": "ROI",
-	"unitPrice": "Cena jednostkowa",
+	"unitPrice": "Cena Willi",
 	"collected": "Zebrane",
 	"buyAmount": "Wpisz kwotę",
 	"yourBalance": "Twój stan konta",
@@ -52,13 +53,13 @@
 	"aboutProperty": "O nieruchomości",
 	"documents": "Dokumenty",
 	"totalInvestmentValue": "Całkowita wartość inwestycji",
-	"legalFees": "Opłaty prawne (1,35%)",
+	"legalFees": "Opłaty prawne ",
 	"basePrice": "Podstawowa cena aktywów",
 	"financials": "Dane finansowe",
 	"details": "Szczegóły",
 	"rentPerYear": "Wynajem rocznie (oczekiwany)",
 	"RentPerYear": "Wynajem rocznie",
-	"facilityManagement": "Zarządzanie obiektami (30%)",
+	"facilityManagement": "Zarządzanie obiektami ",
 	"approximateValues": "Obecnie obliczone wartości są przybliżone, mogą się one zmieniać w górę lub w dół, w zależności od wynajmu każdej poszczególnej nieruchomości.",
 	"contractToSign": "Umowa do podpisania",
 	"location": "Lokalizacja",
@@ -84,7 +85,7 @@
 	"SwitchTO": "Przejście do rejestracji",
 	"SwitchTo": "Przejście do logowania",
 	"password": "Hasło",
-	"TotalRent": "Całkowite saldo czynszu",
+	"TotalRent": "Saldo",
 	"AssetOverview": "Przegląd aktywów",
 	"YourEstates": "Twoje nieruchomości",
 	"OrderHistory": "Historia zamówień",
@@ -95,8 +96,8 @@
 	"EstatesOwned": "Posiadane nieruchomości",
 	"TotalEstatesValue": "Całkowita wartość nieruchomości",
 	"TLDWallet": "Portfel TLD",
-	"Overallbalance": "Ogólny bilans",
-	"Withdraw": "Wycofać się",
+	"Overallbalance": "Saldo",
+	"Withdraw": "Wypłata",
 	"Deposit": "Depozyt",
 	"TransactionHistory": "Historia transakcji",
 	"Status": "Status",
@@ -146,5 +147,69 @@
 	"Enteramount": "Wprowadź kwotę",
 	"BacktoWallet": "Powrót do portfela",
 	"Continue": "Kontynuuj",
-	"transfer": "Oczekiwanie na przelew środków"
+	"transfer": "Oczekiwanie na przelew środków",
+	"callUser": "https://wa.me/message/7IRLJKFEV3DJP1",
+	"logout": "Wylogowanie",
+	"vAmmount": "Wprowadź kwotę",
+	"vFirst": "Imię",
+	"vLast": "Nazwisko",
+	"vCountry": "Kraj",
+	"vAddress": "Adres",
+	"vPostalCode": "Kod pocztowy",
+	"termsOfService": {
+		"title": "Warunki świadczenia usług",
+		"content": "Witamy w TLD INVESTMENTS! Niniejszy Regulamin (\"Regulamin\") reguluje korzystanie przez użytkownika z naszej witryny internetowej znajdującej się pod adresem tld-bali.com (\"Witryna\") oraz wszelkich usług świadczonych przez TLD INVESTMENTS (określanych jako \"my\", \"nas\" lub \"nasze\") za pośrednictwem Witryny. Uzyskując dostęp do Witryny lub korzystając z niej, użytkownik wyraża zgodę na przestrzeganie niniejszych Warunków i naszej Polityki prywatności. Jeśli użytkownik nie wyraża zgody na niniejsze Warunki lub naszą Politykę Prywatności, nie może korzystać z Witryny."
+	},
+	"agreeToTerms": {
+		"content": "1. Korzystanie z Witryny\n\n1.1. Aby korzystać z Witryny, użytkownik musi mieć ukończone 18 lat.\n1.2. Użytkownik zgadza się korzystać z Witryny wyłącznie w celach zgodnych z prawem i w sposób, który nie narusza praw osób trzecich, nie ogranicza ani nie utrudnia korzystania z Witryny przez osoby trzecie.\n1.3. Użytkownik ponosi wyłączną odpowiedzialność za wszelkie działania podejmowane w ramach jego konta w Witrynie."
+	},
+	"useOfTheSite": {
+		"title": "Korzystanie z Witryny",
+		"content": [
+			"1. Korzystanie z Witryny",
+			"1.1. Aby korzystać z Witryny, użytkownik musi mieć ukończone 18 lat.",
+			"1.2. Użytkownik zgadza się korzystać z Witryny wyłącznie w celach zgodnych z prawem i w sposób, który nie narusza praw osób trzecich, nie ogranicza ani nie utrudnia korzystania z Witryny przez osoby trzecie.",
+			"1.3. Użytkownik ponosi wyłączną odpowiedzialność za wszelkie działania podejmowane w ramach jego konta w Witrynie."
+		]
+	},
+	"investmentDisclaimer": {
+		"title": "Zastrzeżenie inwestycyjne",
+		"content": [
+			"2. Zastrzeżenie inwestycyjne",
+			"2.1. Informacje zawarte w Witrynie służą wyłącznie ogólnym celom informacyjnym i nie stanowią porady finansowej.",
+			"2.2. Nie gwarantujemy dokładności, kompletności ani przydatności jakichkolwiek informacji udostępnianych w Witrynie. Użytkownik powinien przeprowadzić własne badania i zasięgnąć profesjonalnej porady przed podjęciem jakichkolwiek decyzji inwestycyjnych.",
+			"2.3. Inwestycje w nieruchomości wiążą się z ryzykiem, a wyniki osiągnięte w przeszłości nie są wyznacznikiem przyszłych wyników. Nie ponosimy odpowiedzialności za jakiekolwiek straty lub szkody wynikające z polegania na informacjach zamieszczonych w Witrynie."
+		]
+	},
+	"intellectualProperty": {
+		"title": "Własność intelektualna",
+		"content": [
+			"3. Własność intelektualna",
+			"3.1. Zawartość Witryny, w tym tekst, grafika, logo, obrazy i oprogramowanie, jest własnością lub jest licencjonowana przez TLD INVESTMENTS i jest chroniona prawami autorskimi i innymi prawami własności intelektualnej.",
+			"3.2. Użytkownik nie może powielać, modyfikować, rozpowszechniać, wyświetlać ani w inny sposób wykorzystywać jakichkolwiek treści z Witryny bez uprzedniej pisemnej zgody TLD INVESTMENTS."
+		]
+	},
+	"linksToThirdPartyWebsites": {
+		"title": "Łącza do stron internetowych osób trzecich",
+		"content": [
+			"4. Łącza do stron internetowych osób trzecich",
+			"4.1. Witryna może zawierać łącza do witryn lub zasobów stron trzecich. Nie ponosimy odpowiedzialności za treści, produkty lub usługi oferowane w witrynach lub zasobach stron trzecich lub za ich pośrednictwem.",
+			"4.2. Wszelkie łącza do witryn internetowych stron trzecich są udostępniane wyłącznie dla wygody użytkownika i nie oznaczają żadnego poparcia ani powiązania ze stroną trzecią."
+		]
+	},
+	"termination": {
+		"title": "Rozwiązanie umowy",
+		"content": "5. Rozwiązanie umowy\n\n5.1. Zastrzegamy sobie prawo do zawieszenia lub zakończenia dostępu użytkownika do Witryny w dowolnym momencie, bez wcześniejszego powiadomienia lub ponoszenia odpowiedzialności, z dowolnego powodu, w tym między innymi w przypadku naruszenia przez użytkownika niniejszych Warunków."
+	},
+	"changesToTerms": {
+		"title": "Zmiany niniejszych Warunków",
+		"content": "6. Zmiany niniejszych Warunków\n\n6.1. Możemy zmienić niniejsze Warunki w dowolnym momencie, aktualizując tę stronę. Kontynuując korzystanie z Witryny po wprowadzeniu takich zmian, użytkownik wyrażazgodę na przestrzeganie zmienionych Warunków."
+	},
+	"contactUs": {
+		"title": "Kontakt z nami",
+		"content": "7. Kontakt z nami\n\n7.1. W przypadku jakichkolwiek pytań dotyczących niniejszych Warunków prosimy o kontakt pod adresem info@tld-bali.com. Korzystając z Witryny, użytkownik potwierdza, że przeczytał, zrozumiał i zgadza się przestrzegać niniejszych Warunków."
+	},
+	"acknowledgement": {
+		"content": "Korzystając z Witryny, użytkownik potwierdza, że przeczytał, zrozumiał i zgadza się przestrzegać niniejszych Warunków."
+	}
 }

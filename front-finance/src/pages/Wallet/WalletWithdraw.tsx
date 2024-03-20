@@ -58,21 +58,21 @@ export function WalletWithdraw() {
 							type='number'
 							value={amount}
 							onChange={e => setAmount(e.target.value)}
-							placeholder='Amount'
+							placeholder={t('vAmmount')}
 							className='w-full p-2 bg-gray-200 text-gray-600 font-bold text-lg rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500'
 						/>
 						<input
 							type='text'
 							value={firstName}
 							onChange={e => setFirstName(e.target.value)}
-							placeholder='First Name'
+							placeholder={t('vFirst')}
 							className='w-full p-2 bg-gray-200 text-gray-600 font-bold text-lg rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500'
 						/>
 						<input
 							type='text'
 							value={lastName}
 							onChange={e => setLastName(e.target.value)}
-							placeholder='Last Name'
+							placeholder={t('vLast')}
 							className='w-full p-2 bg-gray-200 text-gray-600 font-bold text-lg rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500'
 						/>
 						<input
@@ -93,21 +93,21 @@ export function WalletWithdraw() {
 							type='text'
 							value={country}
 							onChange={e => setCountry(e.target.value)}
-							placeholder='Country'
+							placeholder={t('vCountry')}
 							className='w-full p-2 bg-gray-200 text-gray-600 font-bold text-lg rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500'
 						/>
 						<input
 							type='text'
 							value={address}
 							onChange={e => setAddress(e.target.value)}
-							placeholder='Address'
+							placeholder={t('vAddress')}
 							className='w-full p-2 bg-gray-200 text-gray-600 font-bold text-lg rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500'
 						/>
 						<input
 							type='text'
 							value={postalCode}
 							onChange={e => setPostalCode(e.target.value)}
-							placeholder='Postal Code'
+							placeholder={t('vPostalCode')}
 							className='w-full p-2 bg-gray-200 text-gray-600 font-bold text-lg rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500'
 						/>
 						<select

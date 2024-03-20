@@ -1,36 +1,36 @@
 {
-	"link1": "Informazioni sulla piattaforma",
-	"link2": "Come investire",
-	"link3": "Inizia",
-	"heroTextMain": "Ottieni un reddito passivo dagli affitti immobiliari con investimenti a partire da 470$",
+	"link1": "INFO SULLA PIATTAFORMA",
+	"link2": "COME INIZIARE",
+	"link3": "INIZIARE",
+	"heroTextMain": "Ricevi reddito passivo da immobili in affitto con investimenti a partire da 470$",
 	"heroTextSecond": "Investimenti immobiliari",
-	"heroBtn": "Sfoglia le proprietà",
+	"heroBtn": "Visualizza immobili",
 	"heroYoutubeLink": "https://www.youtube.com/embed/msyAhcUbH9g?si=vmcn1vgGBycKql2y",
-	"becomeMain": "Diventa un investitore e guadagna reddito dagli affitti online in cinque semplici passaggi",
-	"become1": "Registrazione e verifica",
-	"become2": "Scegli una proprietà",
-	"become3": "Scegli il metodo di pagamento",
+	"becomeMain": "Diventa investitore e guadagna redditi da locazione online in cinque semplici passaggi",
+	"become1": "Registrati e passa la verifica",
+	"become2": "Seleziona l'oggetto immobiliare",
+	"become3": "Scegli la più comoda modalità di pagamento",
 	"become4": "Conferma il pagamento",
-	"become5": "Goditi i tuoi redditi passivi",
-	"aboutTextMain": "Le ville sono di nostra proprietà da 20 anni, facciamo ricerche sul mercato immobiliare e i nostri esperti scelgono le migliori offerte altamente liquide, dopodiché entrano in gioco i nostri avvocati che controllano attentamente tutti i documenti e le autorizzazioni.",
+	"become5": "Goditi il ​​reddito passivo",
+	"aboutTextMain": "Le ville sono di nostra proprietà per 20 anni. Prima studiamo a lungo il mercato immobiliare e i nostri esperti selezionano le migliori offerte altamente liquide. Dopodiché entrano in gioco i nostri avvocati e controllano attentamente tutti i documenti e le autorizzazioni.",
 	"about3Mill": "3,7 > milioni",
-	"about3MillSecond": "$ 3,7 milioni dei nostri fondi sono già stati investiti in ville a Bali",
+	"about3MillSecond": "3,7 milioni di dollari di fondi propri sono già stati investiti in ville a Bali",
 	"about10Vill": "10 >",
-	"about10VillSecond": "Oltre dieci ville saranno di nostra proprietà entro la fine del 2024",
+	"about10VillSecond": "Entro la fine del 2024 più di dieci oggetti saranno di nostra proprietà",
 	"whyBaliH1": "Perché Bali",
 	"whyBaliH1Span": "e come funziona?",
-	"whyBaliSpan1": "Bali è un paradiso per i turisti e",
-	"whyBali2span": "una delle destinazioni più popolari",
-	"whyBaliSpan2": " per i viaggiatori 365 giorni all'anno.",
-	"whyBali1item1h1": "Aumento dell'indice dei prezzi delle proprietà a Bali",
-	"whyBali1item1h2": "Valore medio dell'affitto a",
+	"whyBaliSpan1": "Bali è un paradiso turistico ed è ",
+	"whyBali2span": "una delle destinazioni ",
+	"whyBaliSpan2": "più popolari per i viaggiatori 365 giorni all’anno",
+	"whyBali1item1h1": "Crescita dell'indice dei prezzi immobiliari a Bali",
+	"whyBali1item1h2": "Costo medio di affitto a ",
 	"whyBali1item1h2Span": "Bali",
-	"whyBali1item4Span": "Tutte le ville sono divise in parti in cui puoi investire",
-	"whyBali1item5Span": "Dopo una transazione riuscita, diventi azionista del",
-	"whyBali1item6Span": "fondo e ricevi il tuo bene sotto forma di proprietà immobiliare,",
-	"whyBali1item7Span": " che ti porta un reddito stabile,",
+	"whyBali1item4Span": "Tutti gli oggetti sono divisi in parti in cui puoi investire",
+	"whyBali1item5Span": "Dopo la transazione andata a buon fine diventi",
+	"whyBali1item6Span": " azionista del fondo e ricevi il tuo patrimonio sotto forma di una parte del patrimonio immobiliare",
+	"whyBali1item7Span": " che ti garantisce un reddito stabile",
 	"apartItemYear": "Anno di messa in servizio",
-	"apartItemPurchased": "Numero di parti acquistate",
+	"apartItemPurchased": "Numero di particelle acquistate",
 	"apartItemBtn": "Investire",
 	"ourPartners": "I NOSTRI PARTNER",
 	"footer2024": "2024 © Piattaforma TLD. Tutti i diritti riservati",
@@ -42,22 +42,24 @@
 	"estatePrice": "Prezzo dell'immobile",
 	"roi": "ROI",
 	"unitPrice": "Prezzo unitario",
-	"collected": "Collezionato",
+	"collected": "Venduto",
 	"buyAmount": "Quantità da acquistare",
 	"yourBalance": "Il tuo saldo",
 	"max": "MAX",
+	"logout": "Disconnettersi",
+	"YourEstates": "I tuoi immobili",
 	"buyUnits": "Acquista Unità",
 	"booking": "Prenotazione",
 	"loading": "Caricamento",
 	"documents": "Documenti",
 	"details": "Dettagli",
 	"aboutProperty": "Informazioni sulla proprietà",
-	"totalInvestmentValue": "Valore totale dell'investimento",
-	"legalFees": "Spese legali (1.35%)",
-	"basePrice": "Prezzo base dell'attivo",
+	"totalInvestmentValue": "Totale investito",
+	"legalFees": "Spese legali ",
+	"basePrice": "Prezzo base dell’immobile",
 	"rentPerYear": "Affitto annuale (previsto)",
 	"RentPerYear": "Affitto annuale",
-	"facilityManagement": "Gestione delle strutture (30%)",
+	"facilityManagement": "Spese di gestione",
 	"approximateValues": "I valori calcolati attuali sono approssimativi, possono variare al rialzo o al ribasso, a seconda dell'affitto di ciascuna proprietà individuale.",
 	"contractToSign": "Contratto da firmare",
 	"location": "Posizione",
@@ -65,7 +67,7 @@
 	"moreQuestions": "Hai altre domande sulla proprietà?",
 	"callUs": "Chiamaci su WhatsApp",
 	"BALIWOODDescription": "BALIWOOD VILLAS è una casa vacanze fronte spiaggia a Changu, a 300 metri da attrazioni come Seseh Beach. I servizi includono una piscina all'aperto, un giardino e una terrazza. È disponibile il WiFi gratuito. Tra i servizi figurano una piscina privata e un parcheggio privato gratuito.<br/><br/>Questa casa vacanze climatizzata dispone di camere da letto multiple (4), una cucina e bagni multipli (4).<br/><br/>BALIWOOD VILLAS - OCEAN VIEW si trova rispettivamente a 300 metri e 1,7 km da attrazioni come Pererenan Beach e Echo Beach. L'Aeroporto Internazionale Ngurah Rai dista 20 km.",
-	"MILADescription": "Villa Mila è una villa situata a Bingin Beach. Dispone di una piscina all'aperto, di un giardino e di una terrazza, e offre il WiFi gratuito. Dalle finestre si possono ammirare le viste sulla piscina. Tra i servizi figurano una piscina privata e un parcheggio privato gratuito.<br/><br/>Questa villa dispone di camere da letto multiple (3), una cucina con frigorifero e forno a microonde, una zona salotto e bagni multipli (3) con doccia. A disposizione degli ospiti una TV a schermo piatto. Asciugamani e lenzuola sono forniti agli ospiti di questa villa.<br/><br/>Villa Mila, nuova è situata rispettivamente a 2,4 km e 2,4 km da attrazioni come Bingin Beache Chemongkak Beach. L'Aeroporto Internazionale Ngurah Rai dista 14 km.",
+	"MILADescription": "Villa Mila è una villa situata a Bingin Beach. Dispone di una piscina all'aperto, di un giardino e di una terrazza, e offre il WiFi gratuito. Dalle finestre si possono ammirare le viste sulla piscina. Tra i servizi figurano una piscina privata e un parcheggio privato gratuito.<br/><br/>Questa villa dispone di camere da letto multiple (3), una cucina con frigorifero e forno a microonde, una zona salotto e bagni multipli (3) con doccia. A disposizione degli ospiti una TV a schermo piatto. Asciugamani e lenzuola sono forniti agli ospiti di questa villa.<br/><br/>Villa Mila è nuova, dista rispettivamente 2,4 km e 2,4 km dalle spiagge di Bingin e Chemongkak. L'aeroporto Ngurah Rai dista 14 km.",
 	"LOFTDescription": "Situate nel cuore di Jimbaran, a pochi passi dalla spiaggia, le ASAI Village offrono 20 ville con una o due camere da letto progettate in modo unico.<br/><br/>Ogni villa dispone di un parcheggio assegnato, aria condizionata, internet ad alta velocità, una cucina completamente attrezzata con area pranzo e Smart TV.<br/><br/>Gli ospiti possono godersi il relax in piscina nella privacy della propria villa o prendere il sole e gustare rinfreschi con gli altri ospiti ASAI presso la magnifica piscina a sfioro di 25 metri.",
 	"REDDescription": "Red Sunset Villa by Hombali è una villa situata rispettivamente a 600 metri e 600 metri da attrazioni come Batu Bolong Beach e Echo Beach. Tra i servizi figurano una piscina all'aperto e il WiFi gratuito. Questa villa dispone di un parcheggio privato gratuito, di una piscina privata e di un giardino.<br/><br/>Con accesso a una terrazza con vista sul giardino, questa villa climatizzata dispone di camere da letto multiple (4) e di una cucina completamente attrezzata. Tra i servizi figurano una TV a schermo piatto.<br/><br/>Red Sunset Villa by Hombali si trova rispettivamente a meno di 1 km e a 10 km da attrazioni come Changu Beach e Petitenget Temple. L'Aeroporto Internazionale Ngurah Rai dista 19 chilometri.",
 	"LYVINDescription": "Lyvin Bingin Villas è un hotel a Bingin Beach, a 300 metri rispettivamente da attrazioni come Chemongkak Beach e Dreamland Beach. Dispone di una piscina all'aperto, WiFi gratuito in tutta la struttura e parcheggio privato gratuito. La struttura a 5 stelle offre viste sul giardino. Gli ospiti possono utilizzare le attrezzature per barbecue. È disponibile una reception aperta 24 ore su 24, servizi di concierge e un servizio di cambio valuta.<br/><br/>Le camere climatizzate di Lyvin Bingin Villas dispongono di cassaforte e TV a schermo piatto. Tra gli altri servizi figurano una scrivania, una macchina da caffè, un frigorifero e un forno a microonde, e un bagno privato con doccia. Il bagno in comune è dotato di vasca, set di cortesia e asciugacapelli. Gli ospiti di Lyvin Bingin Villas ricevono biancheria da letto e asciugamani.<br/><br/>Lyvin Bingin Villas si trova rispettivamente a 500 metri e a 6,9 km da attrazioni come Bingin Beach e Uluwatu Temple. L'Aeroporto Internazionale Ngurah Rai dista 17 km. È disponibile un servizio di navetta aeroportuale a pagamento.",
@@ -84,7 +86,7 @@
 	"SwitchTO": "Passa alla registrazione",
 	"SwitchTo": "Passa all'accesso",
 	"password": "Password",
-	"TotalRent": "Bilancio affitti totale",
+	"TotalRent": "Saldo totale",
 	"AssetOverview": "Panoramica attività",
 	"Your Estates": "Le tue proprietà",
 	"OrderHistory": "Cronologia ordini",
@@ -92,7 +94,7 @@
 	"Total": "Totale",
 	"Currentballance": "Saldo attuale",
 	"TotalUnits": "Unità totali",
-	"EstatesOwned": "Proprietà possedute",
+	"EstatesOwned": "Quantità ville",
 	"TotalEstatesValue": "Valore totale delle proprietà",
 	"TLDWallet": "Portafoglio TLD",
 	"Overallbalance": "Saldo complessivo",
@@ -147,5 +149,68 @@
 	"Enteramount": "Inserire l'importo",
 	"BacktoWallet": "Torna al portafoglio",
 	"Continue": "Continua",
-	"transfer": "In attesa del trasferimento dei fondi"
+	"transfer": "In attesa del trasferimento dei fondi",
+	"callUser": "https://wa.me/message/TJZBMYYXCKZKI1",
+	"vAmmount": "Importo",
+	"vFirst": "Nome",
+	"vLast": "Cognome",
+	"vCountry": "Paese",
+	"vAddress": "Indirizzo",
+	"vPostalCode": "Codice Postale",
+	"termsOfService": {
+		"title": "Termini di servizio",
+		"content": "Benvenuti in TLD INVESTIMENTS! I presenti Termini di servizio (\"Termini\") regolano l'utilizzo del nostro sito web situato all'indirizzo tld-bali.com (il \"Sito\") e tutti i servizi forniti da TLD INVESTMENTS (di seguito \"noi\", \"noi\" o \"nostro \") attraverso il Sito. Accedendo o utilizzando il Sito, accetti di essere vincolato dai presenti Termini e dalla nostra Informativa sulla privacy. Se non accetti i presenti Termini o la nostra Informativa sulla privacy, non puoi utilizzare il Sito."
+	},
+	"agreeToTerms": {
+		"content": "1. Utilizzo del Sito\n\n1.1. Devi avere almeno 18 anni per utilizzare il Sito.\n1.2. L'utente accetta di utilizzare il Sito solo per scopi legittimi e in modo tale da non violare i diritti o limitare o inibire l'uso e il godimento del Sito da parte di terzi.\n1.3. Sei l'unico responsabile per tutte le attività che si verificano sotto il tuo account sul Sito."
+	},
+	"useOfTheSite": {
+		"title": "Utilizzo del Sito",
+		"content": [
+			"1. Utilizzo del Sito",
+			"1.1. Devi avere almeno 18 anni per utilizzare il Sito.",
+			"1.2. L'utente accetta di utilizzare il Sito solo per scopi legittimi e in modo tale da non violare i diritti o limitare o inibire l'uso e il godimento del Sito da parte di terzi.",
+			"1.3. Sei l'unico responsabile per tutte le attività che si verificano sotto il tuo account sul Sito."
+		]
+	},
+	"investmentDisclaimer": {
+		"title": "Dichiarazione di non responsabilità sugli investimenti",
+		"content": [
+			"2. Dichiarazione di non responsabilità sugli investimenti",
+			"2.1. Le informazioni fornite sul Sito sono solo a scopo informativo generale e non costituiscono consulenza finanziaria.",
+			"2.2. Non garantiamo l'accuratezza, la completezza o l'utilità delle informazioni fornite sul Sito. Dovresti condurre le tue ricerche e chiedere una consulenza professionale prima di prendere qualsiasi decisione di investimento.",
+			"2.3. Gli investimenti nel settore immobiliare comportano rischi e le performance passate non sono indicative dei risultati futuri. Non siamo responsabili per eventuali perdite o danni derivanti dal fare affidamento sulle informazioni fornite sul Sito."
+		]
+	},
+	"intellectualProperty": {
+		"title": "Proprietà intellettuale",
+		"content": [
+			"3. Proprietà intellettuale",
+			"3.1. Il contenuto del Sito, inclusi testo, grafica, loghi, immagini e software, è di proprietà o concesso in licenza a TLD INVESTMENTS ed è protetto da copyright e altre leggi sulla proprietà intellettuale.",
+			"3.2. Non è possibile riprodurre, modificare, distribuire, visualizzare o utilizzare in altro modo alcun contenuto del Sito senza il nostro previo consenso scritto."
+		]
+	},
+	"linksToThirdPartyWebsites": {
+		"title": "Collegamenti a siti Web di terzi",
+		"content": [
+			"4. Collegamenti a siti Web di terzi",
+			"4.1. Il Sito può contenere collegamenti a siti Web o risorse di terze parti. Non siamo responsabili per i contenuti, i prodotti o i servizi offerti su o attraverso siti Web o risorse di terze parti.",
+			"4.2. Eventuali collegamenti a siti Web di terzi sono forniti esclusivamente per comodità dell'utente e non implicano alcuna approvazione o affiliazione con tali terzi."
+		]
+	},
+	"termination": {
+		"title": "Risoluzione",
+		"content": "5. Risoluzione\n\n5.1. Ci riserviamo il diritto di sospendere o interrompere l'accesso al Sito in qualsiasi momento, senza preavviso o responsabilità, per qualsiasi motivo, incluso, senza limitazioni, in caso di violazione dei presenti Termini."
+	},
+	"changesToTerms": {
+		"title": "Modifiche alle presenti Condizioni",
+		"content": "6. Modifiche alle presenti Condizioni\n\n6.1. Potremo rivedere i presenti Termini in qualsiasi momento aggiornando questa pagina. Continuando a utilizzare il Sito dopo tali revisioni, accetti di essere vincolato dai Termini modificati."
+	},
+	"contactUs": {
+		"title": "Contattaci",
+		"content": "7. Contattaci\n\n7.1. In caso di domande sui presenti Termini, contattaci all'indirizzo info@tld-bali.com. Utilizzando il Sito, l'utente riconosce di aver letto, compreso e accettato di essere vincolato dai presenti Termini."
+	},
+	"acknowledgement": {
+		"content": "Utilizzando il Sito, l'utente riconosce di aver letto, compreso e accettato di essere vincolato dai presenti Termini."
+	}
 }

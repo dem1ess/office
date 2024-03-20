@@ -21,13 +21,18 @@ const resources = {
 	},
 }
 
+// Определение языка на основе заголовка Accept-Language
+const detectedLanguage = window.navigator.language.slice(0, 2) // Получаем первые два символа языка
+
 i18n.use(initReactI18next).init({
 	resources,
-	lng: 'pl',
-	fallbackLng: 'pl',
+	lng: detectedLanguage, // Установка определенного языка
+	fallbackLng: 'en', // Резервный язык по умолчанию
 	interpolation: {
 		escapeValue: false,
 	},
 })
+
+console.log(detectedLanguage)
 
 export default i18n

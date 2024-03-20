@@ -32,23 +32,16 @@ export const Footer: React.FC = () => {
 							className='text-white w-inline-block'>
 							{t('footerEmail')}
 						</a>
-						<Link
-							to='app/privacy-policy'
-							target='_blank'
-							className='footer-link-bottom'>
+						<Link to='app/privacy-policy' className='footer-link-bottom'>
 							{t('footerPrivacy')}
 						</Link>
 						<a
 							href='https://find-and-update.company-information.service.gov.uk/company/14791588/filing-history/MzM3NTM4OTAxOWFkaXF6a2N4/document?format=pdf&download=0'
-							target='_blank'
 							className='flex mt-0.5 footer-link-bottom'>
 							{t('footerLicense')}
 							<MdDownload className='text-lg' />
 						</a>
-						<Link
-							to='app/terms-of-service'
-							target='_blank'
-							className='footer-link-bottom'>
+						<Link to='app/terms-of-service' className='footer-link-bottom'>
 							{t('footerTerms')}
 						</Link>
 					</div>
