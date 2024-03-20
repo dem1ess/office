@@ -1,4 +1,5 @@
 import { useRef, useState } from 'react'
+import { useTranslation } from 'react-i18next'
 import { useAppSelector } from '../../hooks/redux'
 import { IUser } from '../../models/IUser'
 import UnauthorizedPage from '../Unauthorized/UnauthorizedPage'
@@ -99,12 +100,13 @@ const KycPage = () => {
 			ref.current.click()
 		}
 	}
+	const { t } = useTranslation()
 
 	const documentTypes = [
-		'ID card',
-		'Passport',
-		'Residence permit',
-		"Driver's license",
+		t('IDcard'),
+		t('Passport'),
+		t('Residencepermit'),
+		t("Driver'slicense"),
 	]
 
 	return (
@@ -117,14 +119,14 @@ const KycPage = () => {
 						<div className='relative px-4 py-10 bg-color--primary-bg border-color--border border shadow-lg sm:rounded-3xl sm:p-20'>
 							<form className='max-w-md mx-auto' onSubmit={handleSubmit}>
 								<h1 className='text-2xl text-white font-semibold text-center'>
-									Verification Form
+									{t('VerificationForm')}
 								</h1>
 								<div className='space-y-6 py-8'>
 									<div>
 										<label
 											htmlFor='country'
 											className='text-sm font-bold mb-4 text-white block'>
-											Select issuing country
+											{t('Selectissuingcountry')}
 										</label>
 										<CountrySelector
 											id={'country-selector'}
@@ -140,7 +142,7 @@ const KycPage = () => {
 									</div>
 									<div>
 										<label className='text-sm font-bold mb-3 text-white block'>
-											Choose your document type
+											{t('Chooseyourdocumenttype')}
 										</label>
 										<div className='space-y-2'>
 											{documentTypes.map((type, index) => (
@@ -169,7 +171,7 @@ const KycPage = () => {
 										<label
 											htmlFor='full-name'
 											className='text-sm font-bold mb-2 text-white block'>
-											Full Name
+											{t('FullName')}
 										</label>
 										<input
 											type='text'
@@ -184,7 +186,7 @@ const KycPage = () => {
 										<label
 											htmlFor='selfie'
 											className='text-sm font-bold mb-2 text-white block'>
-											Take a selfie
+											{t('Takeselfie')}
 										</label>
 										<div className='relative'>
 											<input
@@ -202,7 +204,7 @@ const KycPage = () => {
 													captureImage(selfieInputRef)
 												}}
 												className='cursor-pointer block w-full py-8 px-4 bg-gradient-to-b from-cyan-400 to-light-blue-500 text-white font-semibold rounded-md hover:bg-blue-600 focus:outline-none focus:border-blue-700 focus:ring focus:ring-blue-200 active:bg-blue-800'>
-												Take a Selfie
+												{t('Takeselfie')}
 											</label>
 										</div>
 									</div>
@@ -210,8 +212,8 @@ const KycPage = () => {
 										<div>
 											<label
 												htmlFor='document-photo1'
-												className='text-sm font-bold mb-2 text-white block'>
-												Upload a first photo
+												className='text-sm text-center font-bold mb-2 text-white block'>
+												{t('Uploadafirstphoto')}
 											</label>
 											<div className='relative'>
 												<input
@@ -229,15 +231,15 @@ const KycPage = () => {
 														captureImage(fileInputRef1)
 													}}
 													className='cursor-pointer block w-full py-8 px-4 bg-gradient-to-b from-cyan-400 to-light-blue-500 text-white font-semibold rounded-md hover:bg-blue-600 focus:outline-none focus:border-blue-700 focus:ring focus:ring-blue-200 active:bg-blue-800'>
-													Choose a File
+													{t('ChooseaFile')}
 												</label>
 											</div>
 										</div>
 										<div>
 											<label
 												htmlFor='document-photo2'
-												className='text-sm font-bold mb-2 text-white block'>
-												Upload a second photo
+												className='text-sm text-center font-bold mb-2 text-white block'>
+												{t('Uploadasecondphoto')}
 											</label>
 											<div className='relative'>
 												<input
@@ -255,7 +257,7 @@ const KycPage = () => {
 														captureImage(fileInputRef2)
 													}}
 													className='cursor-pointer block w-full py-8 px-4 bg-gradient-to-b from-cyan-400 to-light-blue-500 text-white font-semibold rounded-md hover:bg-blue-600 focus:outline-none focus:border-blue-700 focus:ring focus:ring-blue border-gray-300 rounded mt-1'>
-													Choose a File
+													{t('ChooseaFile')}
 												</label>
 											</div>
 										</div>
@@ -264,7 +266,7 @@ const KycPage = () => {
 										<button
 											type='submit'
 											className='w-full p-2.5 text-white bg-cyan-500 rounded hover:bg-cyan-700 focus:outline-none'>
-											Submit
+											{t('Submit')}
 										</button>
 									</div>
 								</div>

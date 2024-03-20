@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import { useTranslation } from 'react-i18next'
 import { IoArrowBack } from 'react-icons/io5'
 import { Link } from 'react-router-dom'
 import { instance } from '../../api/axios.ts'
@@ -35,17 +36,18 @@ export function WalletDeposit() {
 			console.error('Ошибка при создании транзакции:', error)
 		}
 	}
+	const { t } = useTranslation()
 
 	return (
 		<div className='DefaultLayout_contentChildren__UAU26 m0 md:m-5 pt-12 md:pt-16 flex justify-center w-full'>
 			<div className='bg-color--primary-bg flex flex-col  rounded-xl p-12 w-1/2'>
-				<Link to=' wallet'>
+				<Link to='/app/wallet'>
 					<div className='flex items-center'>
 						<IoArrowBack className='text-3xl text-sky-500' />
-						<p className='text-sky-500 text-lg'>Back to Wallet</p>
+						<p className='text-sky-500 text-lg'>{t('BacktoWallet')}</p>
 					</div>
 				</Link>
-				<p className='text-lg my-3'>Enter amount</p>
+				<p className='text-lg my-3'>{t('Enteramount')}</p>
 				<form onSubmit={handleSubmit}>
 					<input
 						type='number'
@@ -57,7 +59,7 @@ export function WalletDeposit() {
 						<button
 							type='submit'
 							className='bg-sky-400 mt-5 text-white px-4 rounded-xl py-5'>
-							Continue
+							{t('Continue')}
 						</button>
 					</div>
 				</form>

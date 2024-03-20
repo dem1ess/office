@@ -1,14 +1,15 @@
 import { createBrowserRouter } from 'react-router-dom'
+import AccountPage from '../pages/account/AccountPage'
 import { AssetPage } from '../pages/AssetPage'
 import { HomePage } from '../pages/HomePage'
+import KycPage from '../pages/kyc/KycPage.tsx'
+import { Layout } from '../pages/layout'
 import { MarketplacePage } from '../pages/Marketplace'
 import { PrivacyPolicyPage } from '../pages/PrivacyPolicy/PrivacyPolicy.tsx'
 import TermsOfService from '../pages/TermOfService/TermOfService.tsx'
 import { WalletDeposit } from '../pages/Wallet/Deposit.tsx'
+import { WalletWithdraw } from '../pages/Wallet/WalletWithdraw.tsx'
 import { Withdraw } from '../pages/Wallet/Withdraw.tsx'
-import AccountPage from '../pages/account/AccountPage'
-import KycPage from '../pages/kyc/KycPage.tsx'
-import { Layout } from '../pages/layout'
 
 export const router = createBrowserRouter([
 	{
@@ -36,6 +37,10 @@ export const router = createBrowserRouter([
 			{
 				path: 'wallet/deposit',
 				element: <WalletDeposit />,
+			},
+			{
+				path: 'wallet/withdraw',
+				element: <WalletWithdraw />,
 			},
 			{
 				path: 'terms-of-service',

@@ -1,3 +1,4 @@
+import { useTranslation } from 'react-i18next'
 import { Link } from 'react-router-dom'
 import { IProperty } from '../../models/IProperty.ts'
 
@@ -5,6 +6,7 @@ interface Iprops {
 	property: IProperty
 }
 export function MainVillaComponent({ property }: Iprops) {
+	const { t } = useTranslation()
 	const purchasedTokens = property.tokens - property.availableTokens
 	const percentagePurchased = (purchasedTokens / property.tokens) * 100
 
@@ -38,13 +40,13 @@ export function MainVillaComponent({ property }: Iprops) {
 				</div>
 				<div className='flex justify-between pt-8'>
 					<div>
-						<p className='mb-4 text-2xl'>Estate price</p>
+						<p className='mb-4 text-2xl'>{t('estatePrice')}</p>
 						<p className='text-sky-400 pb-5 font-bold text-[37px]'>
 							$ {property.price.toLocaleString()}
 						</p>
 					</div>
 					<div>
-						<p className='mb-4 text-2xl'>Unit Price</p>
+						<p className='mb-4 text-2xl'>{t('unitPrice')}</p>
 						<p className='text-sky-400 font-bold text-[37px]'>
 							$ {property.priceToken}
 						</p>
@@ -60,7 +62,7 @@ export function MainVillaComponent({ property }: Iprops) {
 
 					<div className='styles_tokenRentStart__BovuN'>
 						<div className='flex justify-start'>
-							<p className='pb-3'>Rent per year</p>
+							<p className='pb-3'>{t('RentPerYear')}</p>
 						</div>
 						<p className='styles_bottomValue__A3PzE styles_rentStartDate__7eaEr'>
 							$ {property.rentPerYear.toLocaleString()}
@@ -73,9 +75,11 @@ export function MainVillaComponent({ property }: Iprops) {
 							<div
 								className='styles_filler__fITGx'
 								style={{ width: `${percentagePurchased}%` }}>
-								<span className='styles_collectedText__p6_dr'>Collected :</span>
+								<span className='styles_collectedText__p6_dr'>
+									{t('collected')} :
+								</span>
 							</div>
-							<div className='styles_collected__ZFp3q'>Collected :</div>
+							<div className='styles_collected__ZFp3q'>{t('collected')} :</div>
 							<div className='styles_progress__YVFzC'>
 								{percentagePurchased.toFixed(2)}%
 							</div>

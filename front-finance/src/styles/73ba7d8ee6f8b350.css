@@ -1192,12 +1192,14 @@
 .DetailsTable_accountDetails__kPaIH {
 	display: flex;
 	flex-direction: row;
+	align-items: start;
 }
 .DetailsTable_details_text_grey__nTKdr {
 	font-size: 12px;
 	font-weight: 600;
 	color: var(--color-text-secondary);
 	margin: 0;
+	text-align: left;
 }
 .DetailsTable_details_text_purple__SEzmS {
 	font-size: 16px;

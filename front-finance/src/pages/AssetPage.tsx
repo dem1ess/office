@@ -1,4 +1,5 @@
 import { ChangeEvent, FC, useEffect, useState } from 'react'
+import { useTranslation } from 'react-i18next'
 import { BsDownload, BsFillFileEarmarkPdfFill } from 'react-icons/bs'
 import { IoLogoWhatsapp } from 'react-icons/io5'
 import { LuHome, LuKeySquare, LuWaves } from 'react-icons/lu'
@@ -16,6 +17,7 @@ export const AssetPage: FC = () => {
 	const dispatch = useAppDispatch()
 	const { id } = useParams<{ id: string }>() // Ensure the id is a string
 	const properties = useAppSelector(state => state.property.property)
+	const { t } = useTranslation()
 
 	// Find the property by id
 	const property = properties?.find((item: IProperty) => item.id === id)
@@ -69,9 +71,8 @@ export const AssetPage: FC = () => {
 		window.scrollTo(0, 0)
 	}, [])
 
-	const formattedDescription = {
-		__html: property?.description,
-	}
+	const propertyDescription = t(property?.description || '')
+
 	interface LastDocumentUrls {
 		en: string
 		pl: string
@@ -197,7 +198,7 @@ export const AssetPage: FC = () => {
 							</div>
 						</div>
 
-						<h4 className='mt-7 text-white'>Details</h4>
+						<h4 className='mt-7 text-white'>{t('details')}</h4>
 						<div className='flex mt-3 flex-col md:flex-row justify-around'>
 							<div className='bg-color--secondary-bg border border-color--border flex flex-col items-center justify-center my-2 md:my-0 rounded-xl px-16 py-2'>
 								<svg
@@ -240,11 +241,8 @@ export const AssetPage: FC = () => {
 							</div>
 						</div>
 						<div>
-							<p className='text-gray-300 text-xl my-5'>About the property</p>
-							<p
-								//@ts-ignore
-								dangerouslySetInnerHTML={formattedDescription}
-							/>
+							<p className='text-gray-300 text-xl my-5'>{t('aboutProperty')}</p>
+							<p dangerouslySetInnerHTML={{ __html: propertyDescription }} />
 						</div>
 						<div className='mt-5'>
 							<iframe
@@ -256,7 +254,7 @@ export const AssetPage: FC = () => {
 								title='Embedded youtube'
 							/>
 						</div>
-						<h4 className='my-7 text-gray-200'>Documents</h4>
+						<h4 className='my-7 text-gray-200'>{t('documents')}</h4>
 						<div className='flex flex-col'>
 							{property.documentUrls.slice(0, -1).map((doc, index) => {
 								const decodedLastDocumentUrl = doc
@@ -279,23 +277,25 @@ export const AssetPage: FC = () => {
 								)
 							})}
 						</div>
-						<h4 className='my-7 text-white'>Financials</h4>
+						<h4 className='my-7 text-white'>{t('financials')}</h4>
 						<div className='ml-5 flex-col flex'>
 							<div className='flex justify-between mb-5'>
-								<p className='text-white text-lg'>Total Investment Value</p>
+								<p className='text-white text-lg'>
+									{t('totalInvestmentValue')}
+								</p>
 								<p className='text-white text-lg'>
 									${property.price.toLocaleString()}
 								</p>
 							</div>
 							<div className='flex justify-between mb-3'>
-								<p className='text-gray-200'>Legal fees (1.35%)</p>
+								<p className='text-gray-200'>{t('legalFees')} (1.35%)</p>
 								<p className='text-gray-200'>
 									${property.legalFees.toLocaleString()}
 								</p>
 							</div>
 							<hr />
 							<div className='flex justify-between my-4'>
-								<p className='text-white text-lg'>Base price of the asset</p>
+								<p className='text-white text-lg'>{t('basePrice')}</p>
 								<p className='text-white text-lg'>
 									${(property.price - property.legalFees).toLocaleString()}
 								</p>
@@ -305,23 +305,22 @@ export const AssetPage: FC = () => {
 								<p className='text-gray-200'>{property.roi}%</p>
 							</div>
 							<div className='flex justify-between mb-3'>
-								<p className='text-gray-200'>Rent per year (expected)</p>
+								<p className='text-gray-200'>{t('rentPerYear')}</p>
 								<p className='text-gray-200'>
 									${property.rentPerYear.toLocaleString()}
 								</p>
 							</div>
 							<div className='flex justify-between mb-3'>
-								<p className='text-white text-lg'>Facility management (30%)</p>
+								<p className='text-white text-lg'>
+									{t('facilityManagement')} (30%)
+								</p>
 								<p className='text-white text-lg'>
 									${property.facilityManagement.toLocaleString()}
 								</p>
 							</div>
-							<p className='text-xs'>
-								The current calculated values are approximate, they may vary up
-								or down, depending on the rental of each individual property.
-							</p>
+							<p className='text-xs'>{t('approximateValues')}</p>
 						</div>
-						<h4 className='my-7 text-white'>Contract to sign</h4>
+						<h4 className='my-7 text-white'>{t('contractToSign')}</h4>
 						<a
 							href={decodedLastDocumentUrl}
 							className='flex mb-3 transition-colors duration-300 ease-in-out cursor-pointer hover:text-sky-500 bg-color--border rounded-xl px-4 text-lg py-5 items-center justify-between'
@@ -330,7 +329,7 @@ export const AssetPage: FC = () => {
 							{fileName}{' '}
 							<BsDownload className='text-2xl cursor-pointer transition-colors duration-300 ease-in-out hover:text-sky-600' />
 						</a>
-						<h4 className='mt-7 mb-3 text-white'>Location</h4>
+						<h4 className='mt-7 mb-3 text-white'>{t('location')}</h4>
 						<a
 							href='#'
 							className='font-bold cursor-pointer pl-5 pb-2 text-white transition-colors duration-300 ease-in-out hover:text-sky-600'>
@@ -347,15 +346,13 @@ export const AssetPage: FC = () => {
 						</div>
 						<div className='w-full flex justify-between items-center rounded-xl bg-color--secondary-bg mt-7 py-8 px-4'>
 							<div>
-								<h4 className='text-white'>
-									Have more questions about property?
-								</h4>
+								<h4 className='text-white'>{t('moreQuestions')}</h4>
 							</div>
 							<a
 								href='https://api.whatsapp.com/message/7IRLJKFEV3DJP1?autoload=1&app_absent=0'
 								className='rounded-xl flex items-center p-4 justify-center bg-green-600 border-[1px] border-green-800 cursor-pointer'>
 								<IoLogoWhatsapp className='text-green-200 text-2xl' />
-								<p className='text-green-200 mx-3'>Call us an WhatsApp</p>
+								<p className='text-green-200 mx-3'>{t('callUs')}</p>
 							</a>
 						</div>
 					</div>
@@ -363,7 +360,7 @@ export const AssetPage: FC = () => {
 						<div className='ml-0 md:ml-[10px] my-5 md:my-0 h-1/2 bg-color--primary-bg rounded-xl w-full '>
 							<div className='bg-color--secondary-bg p-5 items-center flex rounded-t-xl justify-between'>
 								<div className='py-5'>
-									<p className='pb-4'>Estate price</p>
+									<p className='pb-4'>{t('estatePrice')}</p>
 									<p className='text-sky-500 font-bold text-[37px]'>
 										${property.price.toLocaleString()}
 									</p>
@@ -377,13 +374,13 @@ export const AssetPage: FC = () => {
 							<div className='p-5'>
 								<div className='flex text-sm items-center justify-between'>
 									<p>
-										Unit Price:{' '}
+										{t('unitPrice')}:{' '}
 										<span className='text-sky-500 text-lg font-bold'>
 											${property.priceToken}
 										</span>
 									</p>
 									<p>
-										Collected:{' '}
+										{t('collected')}:{' '}
 										<span className='font-bold'>
 											{percentagePurchased.toFixed(2)}%
 										</span>
@@ -396,10 +393,12 @@ export const AssetPage: FC = () => {
 												className='styles_filler__fITGx'
 												style={{ width: `${percentagePurchased.toFixed(2)}%` }}>
 												<span className='styles_collectedText__p6_dr'>
-													Collected :
+													{t('collected')} :
 												</span>
 											</div>
-											<div className='styles_collected__ZFp3q'>Collected :</div>
+											<div className='styles_collected__ZFp3q'>
+												{t('collected')} :
+											</div>
 											<div className='styles_progress__YVFzC'>
 												{percentagePurchased.toFixed(2)}%
 											</div>
@@ -407,11 +406,13 @@ export const AssetPage: FC = () => {
 									</div>
 								</div>
 								<div className='flex mt-4 justify-between'>
-									<p>Buy amount</p>
+									<p>{t('buyAmount')}</p>
 									{user ? (
-										<p>Your balance: {user.balance.toLocaleString()} $</p>
+										<p>
+											{t('yourBalance')}: {user.balance.toLocaleString()} $
+										</p>
 									) : (
-										<p>Your balance: 0</p>
+										<p>{t('yourBalance')}: 0</p>
 									)}
 								</div>
 								<div className='flex items-center mt-2 bg-gray-200 border rounded-xl p-1'>
@@ -432,7 +433,7 @@ export const AssetPage: FC = () => {
 									<button
 										onClick={() => createPurchase(inputValue!)}
 										className='bg-sky-400 w-full h-12 rounded-xl font-bold text-white mt-4'>
-										Buy Units
+										{t('buyUnits')}
 									</button>
 								) : (
 									<button
@@ -443,7 +444,7 @@ export const AssetPage: FC = () => {
 										}
 										type='submit'
 										className='bg-sky-400 disabled:bg-gray-400 w-full h-12 rounded-xl font-bold text-white mt-4'>
-										Buy Units
+										{t('buyUnits')}
 									</button>
 								)}
 								<Link to={property.bookingLink}>

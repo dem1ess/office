@@ -23,17 +23,17 @@ export const Footer: React.FC = () => {
 					<div> {t('footer2024')}</div>
 					<div className='footer-bottom-box'>
 						<a
-							href='tel:+1234567890'
+							href={`tel:${t('footerNumber')}`}
 							className='button-with-icon is--no-shape textcolor-white w-inline-block'>
 							<div>{t('footerNumber')}</div>
 						</a>
 						<a
-							href='mailto:info@tld-bali.com'
+							href={`mailto:${t('footerEmail')}`}
 							className='text-white w-inline-block'>
 							{t('footerEmail')}
 						</a>
 						<Link
-							to='/privacy-policy'
+							to='app/privacy-policy'
 							target='_blank'
 							className='footer-link-bottom'>
 							{t('footerPrivacy')}
@@ -46,7 +46,7 @@ export const Footer: React.FC = () => {
 							<MdDownload className='text-lg' />
 						</a>
 						<Link
-							to='/terms-of-service'
+							to='app/terms-of-service'
 							target='_blank'
 							className='footer-link-bottom'>
 							{t('footerTerms')}

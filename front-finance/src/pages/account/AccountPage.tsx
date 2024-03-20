@@ -1,4 +1,5 @@
 import { useEffect } from 'react'
+import { useTranslation } from 'react-i18next'
 import { useDispatch } from 'react-redux'
 import { MainVillaComponent } from '../../components/Villa/MainVilla.tsx'
 import { useAppSelector } from '../../hooks/redux.ts'
@@ -14,6 +15,7 @@ export default function AccountPage() {
 	const purchases = useAppSelector(state => state.purchase.purchase)
 	const isLoading = useAppSelector(state => state.purchase.isLoading)
 	const error = useAppSelector(state => state.purchase.error)
+	const { t } = useTranslation()
 
 	useEffect(() => {
 		// @ts-ignore
@@ -89,11 +91,11 @@ export default function AccountPage() {
 					<div className='w-full md:w-1/3 mx-0 md:mx-5'>
 						<div className='flex w-full md:w-2/3'>
 							<div className='text-xl text-white font-bold mb-0 mt-4 md:mt-0 md:mb-4'>
-								Asset Overview
+								{t('AssetOverview')}
 							</div>
 						</div>
 						<div className={s.totalRentInfo}>
-							<p className='text-xl mt-4'>Total Rent Balance</p>
+							<p className='text-xl mt-4'>{t('TotalRent')}</p>
 							<div className={`${s.balanceGraphic} py-5`}>
 								<div className={s.rentBalanceClaim}>
 									<p className='text-6xl font-bold text-green-400 pb-5'>
@@ -122,7 +124,7 @@ export default function AccountPage() {
 												</div>
 												<div>
 													<p className='DetailsTable_details_text_grey__nTKdr'>
-														Current ballance
+														{t('Currentballance')}
 													</p>
 													<p className='DetailsTable_details_text_purple__SEzmS'>
 														${user.balance}
@@ -154,7 +156,7 @@ export default function AccountPage() {
 												</div>
 												<div>
 													<p className='DetailsTable_details_text_grey__nTKdr'>
-														Estates Owned
+														{t('EstatesOwned')}
 													</p>
 													<p className='DetailsTable_details_text_purple__SEzmS'>
 														{propertiesWithTokens.length}
@@ -229,7 +231,7 @@ export default function AccountPage() {
 												</div>
 												<div>
 													<p className='DetailsTable_details_text_grey__nTKdr'>
-														Total Units
+														{t('TotalUnits')}
 													</p>
 													<p className='DetailsTable_details_text_purple__SEzmS'>
 														+ {totalTokens}
@@ -253,7 +255,7 @@ export default function AccountPage() {
 												</div>
 												<div>
 													<p className='DetailsTable_details_text_grey__nTKdr'>
-														Total Estates Value
+														{t('TotalEstatesValue')}
 													</p>
 													<p className='DetailsTable_details_text_purple__SEzmS'>
 														${totalSpent.toLocaleString()}
@@ -268,13 +270,13 @@ export default function AccountPage() {
 						<div className='flex flex-col mt-3 w-full'>
 							<div className='md:p-5 border flex flex-col border-color--border rounded-b-xl'>
 								<p className='styles_headerTitle__6d1cy ml-5 mt-3'>
-									Order History
+									{t('OrderHistory')}
 								</p>
 								<div className='md: px-7 flex justify-between'>
 									<p>ID</p>
 									<div className='flex'>
-										<p className='mr-9'>Unit</p>
-										<p>Total</p>
+										<p className='mr-9'>{t('Unit')}</p>
+										<p>{t('Total')}</p>
 									</div>
 								</div>
 								{purchases.map(p => (
@@ -296,7 +298,7 @@ export default function AccountPage() {
 					<div className='mt-5 md:mt-0 w-full'>
 						<div className={s.headerWrapper}>
 							<div className='text-xl text-white font-bold mb-4'>
-								Your Estates
+								{t('YourEstates')}
 							</div>
 						</div>
 						<div>
