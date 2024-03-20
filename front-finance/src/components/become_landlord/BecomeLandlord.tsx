@@ -4,13 +4,6 @@ import React from 'react'
 import { useTranslation } from 'react-i18next'
 import i18n from '../../service/i18n'
 
-interface LandlordCard {
-	imageSrc: string
-	numberImageSrc: string
-	title: string
-	link: string
-}
-
 export const BecomeALandlord: React.FC = () => {
 	const landlordCards = [
 		{

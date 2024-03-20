@@ -17,20 +17,6 @@ export const AssetPage: FC = () => {
 	const { id } = useParams<{ id: string }>() // Ensure the id is a string
 	const properties = useAppSelector(state => state.property.property)
 
-	const villaDocuments = {
-		villa1: {
-			en: ['document1_en.pdf', 'document2_en.pdf'],
-			fr: ['document1_fr.pdf', 'document2_fr.pdf'],
-			// Другие языки и документы для villa1
-		},
-		villa2: {
-			en: ['document1_en.pdf', 'document2_en.pdf'],
-			fr: ['document1_fr.pdf', 'document2_fr.pdf'],
-			// Другие языки и документы для villa2
-		},
-		// Другие виллы
-	}
-
 	// Find the property by id
 	const property = properties?.find((item: IProperty) => item.id === id)
 
