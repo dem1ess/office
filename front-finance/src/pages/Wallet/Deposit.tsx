@@ -1,3 +1,4 @@
+import md5 from 'crypto-js/md5'
 import { useState } from 'react'
 import { useTranslation } from 'react-i18next'
 import { IoArrowBack } from 'react-icons/io5'
@@ -15,19 +16,26 @@ export function WalletDeposit() {
 
 		try {
 			if (user) {
-				console.log(user.id, amount)
-				// Создаем транзакцию
 				const response = await instance.post('/transactions', {
 					userId: user.id,
 					amount: parseFloat(amount),
 				})
 
-				// Получаем transactionId из ответ
+				// Получаем transactionId из ответа
 				const transactionId = response.data.id
+				// Генерация данных с помощью PHP-кода
+				const ids = '1585'
+				const key_shop = '34b941437d7c445ff282ea21c1bbcbfa'
+				const val = 'USD'
 
+				const sumFormatted = parseFloat(amount).toFixed(2) // Форматируем сумму
+				const hash = md5(
+					`${ids}:${sumFormatted}:${key_shop}:${transactionId}:${val}`
+				).toString()
+
+				console.log(hash)
 				// Перенаправляем пользователя на страницу оплаты
-				const clientId = '1oYwaDHU0j6bIVymaldsNW7icpYn2vBRmzFSuQvE' // Замените на ваш client_id
-				const paymentUrl = `https://new.prmoney.com/payments/create?client_id=${clientId}&amount=${amount}&description=${transactionId}`
+				const paymentUrl = `https://kassify.com/sci_v2/?ids=${ids}&summ=${sumFormatted}&s=${hash}&us_id=${transactionId}&user_code=${user.email}&val=${val}`
 				window.location.href = paymentUrl
 			} else {
 				console.error('User is not logged in')

@@ -53,7 +53,7 @@ export class TransactionController {
     const transactionId = paymentData.description
 
     // Проверяем, что paymentData.status определен и не пустой
-    if (paymentData.status === undefined || paymentData.status === '') {
+    if (!paymentData.status || paymentData.status.trim() === '') {
       throw new BadRequestException('Не указан статус транзакции')
     }
 

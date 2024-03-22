@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import { useTranslation } from 'react-i18next'
+import { IoLogoWhatsapp } from 'react-icons/io5'
 import { useSelector } from 'react-redux'
 import { toast, ToastContainer } from 'react-toastify'
 import { removeTokenFromLocalStorage } from '../../helpers/localstorage.helper'
@@ -127,6 +128,13 @@ export function MainHeaderComponent() {
 					<div className='DesktopBar_buttons__YhcZx'>
 						<div className='DesktopBar_buttonsContainer__oNNAt'>
 							<div className='DesktopBar_center__glZ2G'>
+								<a
+									href={t('callUser')}
+									className='rounded-2xl hidden md:flex px-2 items-center justify-center bg-green-600 border-[1px] border-green-800 cursor-pointer'>
+									<IoLogoWhatsapp className='text-green-200 text-3xl' />
+									<p className='text-green-200 mx-3'>{t('callUs')}</p>
+								</a>
+
 								{user ? (
 									<div className='text-white mx-3 flex justify-center text-lg items-center'>
 										{user.email}{' '}
@@ -143,6 +151,12 @@ export function MainHeaderComponent() {
 										<p>{t('signuplogin')}</p>
 									</button>
 								)}
+								<a
+									href={t('callUser')}
+									className='rounded-2xl flex md:hidden px-2 items-center justify-center bg-green-600 border-[1px] border-green-800 cursor-pointer'>
+									<IoLogoWhatsapp className='text-green-200 text-3xl' />
+									<p className='text-green-200 mx-3'>WhatsApp</p>
+								</a>
 							</div>
 						</div>
 						<div onClick={handleBurger} className='DesktopBar_burger__DmAsn'>

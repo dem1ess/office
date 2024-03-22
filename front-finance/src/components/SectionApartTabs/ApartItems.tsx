@@ -9,6 +9,8 @@ interface Iprops {
 
 const ApartmentItem: React.FC<Iprops> = ({ property }) => {
 	const { t } = useTranslation()
+	const purchasedTokens = property.tokens - property.availableTokens
+	const percentagePurchased = (purchasedTokens / property.tokens) * 100
 	return (
 		<div
 			id={property.id}
@@ -55,6 +57,23 @@ const ApartmentItem: React.FC<Iprops> = ({ property }) => {
 						</div>
 						<div className='newtext-16-regular-150 text-gray-200'>
 							{property.tokens}
+						</div>
+					</div>
+				</div>
+				<div className='mt-2 mx-5'>
+					<div className='styles_progressBar__Xp6qx'>
+						<div className='styles_fillerWrapper__5cKm8'>
+							<div
+								className='styles_filler__fITGx'
+								style={{ width: `${percentagePurchased}%` }}>
+								<span className='styles_collectedText__p6_dr'>
+									{t('collected')} :
+								</span>
+							</div>
+							<div className='styles_collected__ZFp3q'>{t('collected')} :</div>
+							<div className='styles_progress__YVFzC'>
+								{percentagePurchased.toFixed(2)}%
+							</div>
 						</div>
 					</div>
 				</div>
