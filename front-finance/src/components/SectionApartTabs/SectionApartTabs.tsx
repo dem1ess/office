@@ -9,6 +9,14 @@ const SectionApartTabs: React.FC = () => {
 	const dispatch = useAppDispatch()
 	const { property } = useAppSelector(state => state.property)
 
+	const orderedIds = [
+		'cltzu616x0008dzkdh7be2hiz',
+		'cltzu6mgd0009dzkdjg5iu0s1',
+		'cltzu7efb000adzkd27mvfmaf',
+		'cltzu9duu000bdzkdbip9w5yz',
+		'cltzua8ic000cdzkdtbdnml68',
+	]
+
 	useEffect(() => {
 		dispatch(fetchProperty())
 		console.log(property)
@@ -18,15 +26,18 @@ const SectionApartTabs: React.FC = () => {
 	return (
 		<section className='section section-apart_tabs flex flex-col items-center justify-center'>
 			<div className='flex flex-wrap justify-center m-auto max-w-[1400px]'>
-				{property?.map((apartment, index) => (
-					<div
-						key={apartment.id}
-						className={`flex mb-5 justify-center w-full md:w-1/3 p-3 ${
-							index < 3 ? 'md:w-1/3' : 'md:w-1/2'
-						}`}>
-						<ApartmentItem property={apartment} />
-					</div>
-				))}
+				{property
+					?.filter(apartment => typeof apartment.id === 'string') // Отфильтровать неверные значения id
+					.sort((a, b) => orderedIds.indexOf(a.id!) - orderedIds.indexOf(b.id!))
+					.map((apartment, index) => (
+						<div
+							key={apartment.id}
+							className={`flex mb-5 justify-center w-full md:w-1/3 p-3 ${
+								index < 3 ? 'md:w-1/3' : 'md:w-1/2'
+							}`}>
+							<ApartmentItem property={apartment} />
+						</div>
+					))}
 			</div>
 			<div className='mt-auto flex justify-center items-center'>
 				<a
