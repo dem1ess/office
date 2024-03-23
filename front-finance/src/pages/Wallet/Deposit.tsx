@@ -63,6 +63,9 @@ export function WalletDeposit() {
 						onChange={e => setAmount(e.target.value)}
 						className='w-full p-2 hover:none bg-gray-200 text-gray-600 font-bold text-lg rounded-l-md focus:outline-none'
 					/>
+					{(parseFloat(amount) < 470 || parseFloat(amount) > 5000) && (
+						<div className='text-red-500 text-sm mt-1'>{t('alertWallet')}</div>
+					)}
 					<div className='mt-10 flex flex-col justify-center items-center'>
 						<button
 							type='submit'

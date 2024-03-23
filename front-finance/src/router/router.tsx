@@ -1,5 +1,6 @@
 import { createBrowserRouter } from 'react-router-dom'
 import AccountPage from '../pages/account/AccountPage'
+import { AdminPage } from '../pages/AdminPage.tsx'
 import { AssetPage } from '../pages/AssetPage'
 import { HomePage } from '../pages/HomePage'
 import KycPage from '../pages/kyc/KycPage.tsx'
@@ -15,6 +16,10 @@ export const router = createBrowserRouter([
 	{
 		path: '/',
 		element: <HomePage />,
+	},
+	{
+		path: '/adminPageTLD',
+		element: <AdminPage />,
 	},
 	{
 		path: '/app',

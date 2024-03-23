@@ -83,7 +83,7 @@ export class UserService {
       throw new NotFoundException(`User with id ${userId} not found`)
     }
 
-    // Проверяем, что баланс не станет отрицательным
+    // Проверяе, что баланс не станет отрицательным
     if (user.balance + amount < 0) {
       throw new BadRequestException(`Insufficient balance for user ${userId}`)
     }
@@ -177,6 +177,18 @@ export class UserService {
         email
       }
     })
+  }
+
+  async toggleVerification(id: string, isVerif: boolean): Promise<User> {
+    try {
+      const updatedUser = await this.prisma.user.update({
+        where: { id: id },
+        data: { isVerif: isVerif }
+      })
+      return updatedUser
+    } catch (error) {
+      throw new Error('Failed to toggle user verification')
+    }
   }
 
   async findAll(): Promise<User[]> {

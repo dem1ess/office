@@ -50,7 +50,7 @@ export class TransactionController {
     }
 
     // Извлекаем идентификатор транзакции из description
-    const transactionId = paymentData.description
+    const transactionId = paymentData.order_id
 
     // Проверяем, что paymentData.status определен и не пустой
     if (!paymentData.status || paymentData.status.trim() === '') {

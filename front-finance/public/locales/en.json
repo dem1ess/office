@@ -63,6 +63,7 @@
 	"location": "Location",
 	"financials": "Financial",
 	"moreQuestions": "Have more questions about property?",
+	"callUser": "https://wa.me/message/7IRLJKFEV3DJP1",
 	"callUs": "Call us an WhatsApp",
 	"BALIWOODDescription": "BALIWOOD VILLAS is a beachfront holiday home in Changu, 300 metres from attractions such as Seseh Beach. Amenities include an outdoor pool, a garden and a terrace. Free WiFi is provided. Amenities include a private pool and free private parking.<br/><br/>This air-conditioned holiday home features multiple bedrooms (4), a kitchen and multiple bathrooms (4).<br/><br/>BALIWOOD VILLAS - OCEAN VIEW is located 300 metres and 1.7 km respectively from attractions such as Pererenan Beach and Echo Beach. Ngurah Rai International Airport is 20 km away.",
 	"MILADescription": "Villa Mila is a villa located in Bingin Beach. It features an outdoor pool, a garden and a terrace, and free WiFi is installed. It offers pool views from the windows. Amenities include a private pool and free private parking.<br/><br/>This villa has several bedrooms (3), a kitchen with a fridge and a microwave, a seating area, and several bathrooms (3) with a shower. A flat-screen TV is at guests' disposal. Towels and bed linen are provided to guests of this villa.<br/><br/>Villa Mila, new is located 2.4 km and 2.4 km respectively from attractions such as Bingin Beach and Chemongkak Beach. Ngurah Rai International Airport is 14 km away.",
@@ -207,5 +208,6 @@
 	},
 	"acknowledgement": {
 		"content": "By using the Site, you acknowledge that you have read, understood, and agree to be bound by these Terms."
-	}
+	},
+	"alertWallet": "Amount should be between 470 USD and 5000 USD."
 }
